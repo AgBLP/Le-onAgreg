@@ -1,0 +1,100 @@
+%%%% header
+\pagestyle{fancy}
+\lhead { % left header
+  \textbf{\footnotesize \'Ecole normale supérieure}
+  \newline
+  \footnotesize Préparation à l'agrégation de physique-chimie option physique
+}
+\chead{ % central header
+}
+\rhead{ % right header
+  \hfill \textbf{\footnotesize Compte-rendu leçon physique}
+  \newline \hfill
+  \footnotesize 2022-2023
+}
+\renewcommand{\headrulewidth}{0.4pt}
+
+
+%%%% blocks for report
+\newenvironment{reportBlock}[1]{
+  \begin{tcolorbox}
+  [
+    breakable, enhanced jigsaw, % to break box over page
+    arc = 0mm, % straight line
+    title = \textbf{#1}, % title
+    coltitle = black, % title font color
+    colbacktitle= black!10!white, % light-gray title
+    colback= white, % white background
+    colframe= black % dark frame
+  ]
+} 
+{
+  \end{tcolorbox}
+}
+
+
+%%%% blocks for experiment
+\newenvironment{experimentBlock}{
+  \begin{tcolorbox}
+  [
+    breakable, enhanced jigsaw, % to break box over page
+    arc = 0mm, % straight line
+    colback= white, % white background
+    colframe= black % dark frame
+  ]
+}
+{
+  \end{tcolorbox}
+}
+
+
+%%%% header block
+\newenvironment{headerBlock}{
+  \begin{tcolorbox} 
+  [
+    arc= 0mm, % straight line
+    colback= black!10!white, % light-gray background
+    colframe= white % no frame
+  ]
+}
+{
+  \end{tcolorbox}
+}
+
+
+%%%% Section
+\newcommand{\sectionC}[1]{%
+  \refstepcounter{section}
+  % number and text
+  \textcolor{section} {\textbf {\Roman{section}-- #1}}
+  
+  % subsection counter update
+  \setcounter{subsection}{0}
+  \addcontentsline{toc}{section}{\protect\numberline{} #1}
+}%
+
+
+%%%% Subsection
+\newcommand{\subsectionC}[1]{%
+  \refstepcounter{subsection}
+  % number and text
+  \textcolor{section} {\arabic{subsection}--  #1}
+  
+  % subsection counter update
+  \addcontentsline{toc}{subsection}{\protect\numberline{} #1}
+}%
+
+
+%%%% Highlight frame
+\newenvironment{highlightFrame}[1]{
+  \begin{tcolorbox}
+  [
+    breakable, enhanced jigsaw, % to break box over page
+    arc = 0mm, % straight line
+    colback= white, % white background
+    colframe= highlight % orange frame
+  ]
+} 
+{
+  \end{tcolorbox}
+}

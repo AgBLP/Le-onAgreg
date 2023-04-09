@@ -1,0 +1,154 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[14pt]{extbook}
+
+
+%%%% french character
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+%%%% useful package
+\usepackage[left=1.8cm, right=1.8cm, top=2cm, bottom=2.5cm]{geometry}
+\usepackage{subcaption} % for figure caption
+\usepackage{graphicx} % image
+\usepackage{tabularx} % table
+\usepackage[table]{xcolor} % color in table
+\usepackage{amsmath} % math
+\usepackage{amssymb} % bold math
+\usepackage{wasysym} % integral
+\usepackage[many]{tcolorbox} % colored box
+\usepackage{fancyhdr} % headers
+\usepackage{enumitem} % for bullet in itemize
+\usepackage{hyperref} % for link
+\usepackage[version=4]{mhchem}
+\usepackage{braket}
+
+%%%% settings
+\setlength{\parskip}{0cm}
+\setlength{\parindent}{0.8cm}
+\setlength{\headheight}{25.86253pt}
+\renewcommand{\baselinestretch}{1}
+\renewcommand{\thesection}{\Roman{section}}
+\addto\captionsfrench{\renewcommand\chaptername{Leçon}}
+
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}}
+
+%%%% small macros
+\newcommand{\unit}[1]{\; \mathrm {#1}}
+\newcommand{\ex}{\mathrm {e}}
+\newcommand{\deriv}{\mathrm {d}}
+\newcommand{\timeD}[1]{\frac{\deriv #1}{\deriv t}}
+\newcommand{\fracD}[2]{\frac{\deriv #1}{\deriv #2}}
+\newcommand{\partialD}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\timeCode}[1]{\textit{#1}\bigskip}
+\newcommand{\Int}{\displaystyle\int}
+\newcommand{\grad}{\Vec{\mathrm{grad}}}
+\newcommand{\Frac}[2]{\displaystyle\frac{#1}{#2}}
+\newcommand{\vecb}[1]{\mathbf {#1}}
+\newcommand{\sinc}{\mathrm{sinc}}
+% fluide
+\newcommand{\Rey}{$R_e$ }
+\newcommand{\convec}{(\Vec{v}\cdot\grad)\Vec{v}}
+\newcommand{\visq}{\eta\Delta\Vec{v}}
+\newcommand{\ud}{\mathrm{d}}
+
+
+%%%% color
+\definecolor{correction}{rgb}{0.58, 0.00, 0.82}
+\definecolor{experience}{rgb}{0.00, 0.48, 0.44}
+\definecolor{highlight} {rgb}{0.78, 0.12, 0.12}
+\definecolor{section}   {rgb}{0.00, 0.45, 0.00}
+\definecolor{slide}     {rgb}{0.89, 0.00, 0.30}
+
+%%%% color macros
+\newcommand{\correction}[1]{\textcolor{correction}{#1}}
+\newcommand{\experience}[1]{\textcolor{experience}{#1}}
+\newcommand{\partC}[1]{\textcolor{section}{\textbf{#1}}}
+\newcommand{\slide}[1]{\textcolor{slide}{$\rightarrow$ #1}}
+
+%%%% bigger macros
+\input{macros_physique.tex}
+
+%%%% document
+\begin{document}
+\input{Transition_Physique.tex}
+\newpage
+\tableofcontents
+\newpage
+\input{LP_avancement.tex}
+\newpage
+\input{LP_Gravitation.tex}
+\newpage
+\input{LP_LoideConservation}
+\newpage
+%\input{LP_Viscosite}
+%\newpage
+\input{LP_EcoulementParfait}
+\newpage
+\input{LP_PremierPrincipe.tex}
+\newpage
+%\input{LP_TransitionPhase.tex}
+%\newpage
+\input{LP_PhenomenesTransport.tex}
+\newpage
+\input{LP_ConversionPuissance.tex}
+\newpage
+\input{LP_Induction.tex}
+\newpage
+%\input{LP_RetroactionOscillations.tex}
+%\newpage
+\input{LP_TraitementSignal/LP_TraitementSignal}
+\newpage
+%\input{LP_OndeProgressive.tex}
+%\newpage
+%\input{LP_OndeAcoustique.tex}
+%\newpage
+%\input{LP_PropagationGuidee.tex}
+%\newpage
+%\input{LP_Microscopies.tex}
+%\newpage
+\input{LP_InterferencesDeuxOndes}
+\newpage
+\input{LPO3/LPO3_Division_Amplitude.tex}
+\newpage
+%\input{LP_DiffractionFraunhofer}
+%\newpage 
+\input{LP_DiffractionPeriodique/LP_DiffractionStructurePeriodique}
+\newpage 
+\input{LP_AbsorbtionEmission}
+\newpage
+\input{LPF3/LPF3_Tension_surface.tex}
+\newpage
+\include{LPS2_Ferromagnétisme.tex}
+\newpage
+\include{LP_ConductionElec}
+\newpage
+\include{LP_Resonance/LP_Resonance}
+\newpage 
+\include{LP_CinematiqueRelativiste}
+\newpage
+\input{Transition_Chimie.tex}
+\newpage
+\input{LC_Avancement}
+\newpage
+\input{LC_Eau}
+\newpage
+\input{LC_Solubilite}
+\newpage
+\input{LC_Diagramme_binaire.tex}
+\newpage
+\input{LC22/LC22_Conductimétrie.tex}
+\newpage
+\input{LC_CinetiqueElectrochimique}
+
+\end{document}

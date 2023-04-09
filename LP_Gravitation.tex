@@ -1,0 +1,212 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Gravitation}
+    \label{LP_Gravitation}
+\end{headerBlock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+La physique par la pratique    & B. Portelli et J. Barthes   &  H\&K (2005) &    \\
+  \hline 
+     Mécanique & E. Hecht  & de boeck (2006)  &   \\
+  \hline 
+    Mécanique, Fondements et applications & J.-Ph. Pérez   & Dunod (2014)   &      \\
+  \hline 
+  Physique tout-en-un 2ème année PC-PSI & M.-N. Sanz & Dunod (2004) & \\
+  \hline
+\end{tabularx}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Plan
+\begin{reportBlock}{Plan détaillé}
+  \textbf{Niveau choisi pour la leçon :} CPGE 2ème année
+  \newline
+  \textbf{Prérequis : }Mécanique newtonienne ; Equations de Maxwell en éléctrostatique ; Loi de l'hydrostatique ; Référentiels non galiléens ; Lois de Kepler
+  \newline
+  
+  \textbf{Déroulé détaillé de la leçon: }   \newline
+  
+  \section*{Introduction}
+
+Introduction historique avec Aristote et Galilée et la chute des corps. Expérience de pensée de Galilée : tous les objets tombent à la même vitesse dans le vide. Enfin, Newton qui décrit les lois de la mécanique classique, en particulier de gravitation universelle.
+
+
+\section{Interaction gravitationnelle (1'03)}
+
+\subsection{Force de gravitation}
+
+Gravitation = interaction entre deux masses. Schéma avec deux masses. $\overrightarrow{F}_G = - \frac{m_1 m_2}{r_{12}^3} \overrightarrow{r_{12}}$. \\
+\begin{itemize}
+\item Force attractive dirigée suivant $\mathbf{r_{12}}$.
+\item $G = 6.67\times10^{-11} kg^{-1} m^3 s^{-2}$
+\end{itemize}
+
+Rappel force électrostatique $\overrightarrow{F}_e = \frac{q_1 q_2}{4\pi \epsilon_0 r_{12}^3} \overrightarrow{r_{12}}$.
+
+
+\subsection{Analogie avec le champ électrostatique (sur slide) (3'40)}
+
+Analogie entre :
+
+\begin{itemize}
+\item Forces $F_e$ vs $F_G$
+\item charge vs masse
+\item $\frac{1}{4 \pi \epsilon}$ vs $-G$
+\item Champs électrique vs champ gravitationnel
+\item Equations de Maxwell-Gauss et Maxwell-Faraday en statique vs leurs analogue en mécanique
+\item Potentiel électrique vs potentiel gravitationnel
+\end{itemize}
+
+\subsection{Champ gravitationnel d'une boule homogène (4'25)}
+
+Schéma boule, coordonnées sphériques. Détermination des invariances et des plans de symétrie. Application du théorème de Gauss dans le cas $r\leq R$ pour le calcul du champ gravitationnel terrestre. Tracé du champ gravitationnel vs $r$. Discussion de la limite de l'analogie entre les interactions électrostatique et gravitationnelle.
+
+\section{Dynamique terrestre (10'35)}
+
+\subsection{Caractère non galiléen terrestre}
+
+Référentiel géocentrique supposé galiléen.
+$\Omega_T = \frac{2 \pi}{T}=7.27\times10^{-5} rad/s$.  \\
+
+Calcul de l'accélération dans le référentiel terrestre (non galiléen). PFD dans le référentiel terrestre :
+\begin{equation}
+    \mathbf a = \mathbf{\mathcal{G}}_T(M) - \mathbf \Omega_T \land \mathbf \Omega_T \land \mathbf{HM} + \sum_p \left(\mathbf{\mathcal{G}}_p(M) - \mathbf{\mathcal{G}}_p(T) \right) - 2  \mathbf \Omega_T \land \mathbf v_{/R_t}(M)
+\end{equation}
+\begin{itemize}
+    \item Les deux premiers termes : $\mathbf g(M)$ 
+    \item Dernier terme : négligeable
+    \item Terme de somme : terme de marée
+\end{itemize}
+\begin{equation}
+    \mathbf{a} = \mathbf{g} + \sum_{p} \left( \mathbf{\mathcal{G}}_p(M) - \mathbf{\mathcal{G}}_p(T) \right)
+\end{equation}
+avec $p$ une planète, le soleil ou un satellite.\\
+
+Ordres de grandeurs des accélérations de Coriolis et d'entraînement:
+\begin{align}
+v & \simeq  1m/s \\
+\mid a_c \mid & = 2 \Omega_T v \sim 10^{-4} m s^{-2}   \\
+\mid a_e \mid & = \Omega_T^2 R_T \sin^2(\lambda) \sim 3\times10^{-2} m s^{-2}
+\end{align}
+
+\subsection{Mesure du champ de pesanteur à la latitude 48.8 N (19'30)}
+
+Schéma pendule simple. PFD $\ddot{\theta} + \frac{g}{L} \sin \theta$. Approximation des petits angles $\ddot{\theta} + \frac{g}{L} \theta$. Période $T = 2\pi\sqrt{\frac{L}{g}}$. Mesure expérimentale de la longueur de la tige, le rayon et la hauteur du cylindre. Tracé de l'angle en fonction du temps avec Latis Pro et fit sur Qtiplot.\\
+
+Discussion champ de pesanteur non uniforme sur la Terre dû à la non sphéricité de la Terre.
+
+\section{Effets de marées (33'20)}
+
+Schéma système Terre+Lune. Champ de marée $\mathbf{\mathcal{C}}(M) = \mathbf{\mathcal{G}}_L(M) - \mathbf{\mathcal{G}}_L(T) =  G m_L \left( \frac{\mathbf{MA}}{MA^3} - \frac{\mathbf{TA}}{TA^3} \right) = G \frac{m_A r}{2d^3} \left[(3cos^2(\theta) - 1) \mathbf{e_r} - \frac{3}{2} sin(2\theta) \mathbf{e_\theta} \right] = - \nabla V_A(M)$.
+
+
+Discussion $\theta = 0$ et $\theta = \pi$ et bourrelets océaniques.
+
+(41'30)
+
+\end{reportBlock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Questions
+\begin{reportBlock}{Questions posées par l’enseignant (avec réponses)}
+  \textbf{C : Vous nous avez parlé du potentiel de marée. Je n'ai pas compris le lien entre le champ $\mathbf{\mathcal{C}}$ et la rotation de la Terre.}  \textcolor{purple}{Du fait que la Terre tourne sur elle-même, il faut prendre en compte la force d'inertie d'entraînement qui donne le terme $\sum_{p}\mathbf{G}_{p}(T)$ dans l'expression du champ de marée sur Terre. % En raison de la rotation de la Terre autour de l'axe passant pas ses pôles, chaque point à la surface de la Terre passe par deux marées basses et deux marées hautes par jour. C'est un modèle approximatif car il existe des endroits sur Terre où les marées ne sont pas au nombre de 4 par jours. Mais c'est plus compliqué, il faut prendre en compte l'orientation avec le soleil, la profondeur de l'eau, etc ...Pour un même point M sur Terre, ce point M est aligné avec la lune et le soleil tous les 29jours12h44min (c'est ce qu'on appelle la lunaison). La Terre elle fait une révolution toutes les 24h. Si on imagine que la lune est au zénith à une certaine heure T d'un point M sur Terre, le jour d'après la lune sera légèrement décalée d'un angle $\theta=360\frac{T_{rot}}{T_{rev}}\sim13^{\circ}$
+  }.\newline
+  
+  \textbf{C : Quel est le lien entre les marées et l'eau ?}  \textcolor{purple}{C'était pour expliquer le fait qu'on ait des marées hautes et basses sur Terre.}\newline
+  
+  \textbf{C : Mais ça s'applique sur tout, à la fois l'eau, la terre, les hommes.}  \textcolor{purple}{La croûte terrestre aussi peut subir une force de marée mais moins perceptible à l'\oe uil humain. }\newline
+  
+  \textbf{C : Vous modélisez la terre comme un fluide ?}  \textcolor{purple}{ça dépend sur quelle durée d'observation on se place. \'{A} l'échelle des temps géologiques, la Terre est effectivement un fluide}\newline
+  
+  \textbf{C : Est-ce qu'il y a aussi un effet de marée de la Terre sur la Lune ?}  \textcolor{purple}{Oui. Et c'est grâce à cet effet que la rotation s'est synchronisée et qu'on voit toujours la même face.}\newline
+  
+  \textbf{C : Connaissez-vous un autre exemple notable des champs de marées sur un satellite autour d'une autre planète ?}  \textcolor{purple}{Io, un satellite de Jupiter, présente une activité volcanique importante du fait des compressions et dilatations importantes du manteau générées par les forces de marées. }\newline
+  
+  \textbf{C : Je n'ai pas compris l'orgine du second lobe de l'autre côté de la Lune ? Comment tu l'expliques}  \textcolor{purple}{Le terme de marée est un terme différentiel. La force de marée créée par la lune en un point M de la terre a pour origine la différence entre le champ de gravitation créé par la lune au point M de la terre et le champ de gravitation créé par la lune au centre de la terre. Dans l'expression du champ de marée, on voit qu'il est maximal en $\theta=0$ et $\theta=\pi$. Dans le premier cas, le champ est dirigé suivant $\mathbf{e_r}=\mathbf{e_x}$ et dans le second cas $\mathbf{e_r}=-\mathbf{e_x}$.}\newline
+  
+  \textbf{C : Vous avez introduit deux visions différentes entre Aristote et Galilée. Une façon de déterminer qui a raison et qui a tort ?}  \textcolor{purple}{Galilée s'est posé la question de savoir qu'est-ce qui se passerait si on faisait une expérience de chute libre dans le vide. Il a fait des expériences dans différents fluides pour voir l'effet de la viscosité pour mais il avait pas le moyen de le faire à l'époque.}\newline
+  
+  \textbf{C : On a les moyens de le faire aujourd'hui ? Avez-vous une vidéo d'expérience spectaculaire faite ?}  \textcolor{purple}{https://www.sciencesetavenir.fr/fondamental/video-qu-est-ce-qui-tombe-le-plus-vite-une-plume-ou-une-boule-de-billard\_23185. Franchement incroyable.}\newline
+  
+  \textbf{C : Unité de $G$ ?}  \textcolor{purple}{Analyse dimensionnelle donne $kg^{-1}.m^3.s^{-1}$}\newline
+    
+  \textbf{C : Rappelez l'expression du champ électrique en fonction des potentiels.}  \textcolor{purple}{$\mathbf E = - \nabla V - \frac{\partial \mathbf A}{\partial t}$}\newline
+    
+  \textbf{C : $A$ a-t-il une analogie en mécanique ?}  \textcolor{purple}{Si on a un flux de masse, on peut définir l'équivalent du champ $\mathbf B$.}\newline
+    
+  \textbf{C : Peut-on mesurer son effet ? A-t-on un ordre de grandeur ? Quelle serait la correction dans la force ?}  \textcolor{purple}{Voir Effet Lense-Thirring. C'est une correction extrêmement faible qui nécessite des masses importantes et une vitesse des corps relativiste pour qu'elle soit observable. À titre d'exemple, le pendule de Foucault devrait osciller environ 16000 ans avant de précesser de 1 degré (cf. Wikipédia).}\newline
+    
+  \textbf{C : Une expérience de pensée qui permettrait de mettre ça en évident ?}  \textcolor{purple}{Un tube dans lequel je fais passer des billes à vitesse constante dans le vide, il faudrait regarder l'effet que ça fait sur une bille suspendue sur un ressort.}\newline
+    
+  \textbf{C : Si on place une personne à l'intérieur de la terre, qu'est-ce qu'elle ressent ?}  \textcolor{purple}{Elle serait en apesanteur au centre de la terre.}\newline
+    
+  \textbf{C : Et au centre d'une étoile à neutron ?}  \textcolor{purple}{Au centre, en apesanteur. Par contre les forces exercées en chaque point du corps, sont très différentes et on est écartelé.}\newline
+  
+  \textbf{C : Dans les limites de l'analogie, vous avez dit que l'interaction électrostatique était plus grand que l'interaction gravitationnelle. Pouvez-vous quantifier ça ?}  \textcolor{purple}{Si on considère deux électrons : $\frac{F_G}{F_e} = \frac{G 4 \pi \epsilon_0 m_e^2}{e^2} \sim 10^{-44}$} \newline
+
+  \textbf{C : Expérience : quel théorème utilisé pour l'équation ?}  \textcolor{purple}{Principe fondamental de la dynamique dans le référentiel terrestre}\newline
+
+  \textbf{C : Et les forces d'inertie ?}  \textcolor{purple}{On veut juste $g$, c'est un $g$ effectif qui inclus l'accélération d'entraînement.}\newline
+
+  \textbf{C : Vous avez mesuré ce $g$ effectif ? Donc vous avez pris en compte les forces d'inertie d'entraînement.}  \textcolor{purple}{Oui.}\newline
+
+  \textbf{C : Et de coriolis ?}  \textcolor{purple}{Non car négligeable : $F_c = 2 m \Omega_T v_{pendule}$, $F_e \sim m \Omega_T^2 T_T$ d'où $\frac{F_e}{F_c} \sim \frac{\omega_T}{2 v_{pendule}} \sim 10^6 $}\newline
+
+  \textbf{C : Système ?}  \textcolor{purple}{masse et tige. J'ai négligé la masse de la tige, a peu près ok car facteur 10 entre les deux.}\newline
+
+  \textbf{C : La mesure que vous avez faîtes est indépendante de la masse ?}  \textcolor{purple}{Pas tout à fait vrai. Si je voulais faire une mesure propre, il aurait fallu que je détermine le moment d'inertie du système total.}\newline
+
+  \textbf{C : Slide du champ de pensanteur terrestre. Réexpliquez ce qu'est $g_0$}  \textcolor{purple}{Le rayon terrestre n'est pas homogène partout sur la terre donc variation de $g_0$ en fonction de la latitude.}\newline
+ 
+  \textbf{C : et $g$ ?}  \textcolor{purple}{Correction due à l'accélération d'entraînement.}\newline 
+  
+  \textbf{C : Comment vous définiriez le poids pour une classe de 1ere année sup ?}  \textcolor{purple}{Force de réaction c'est  l'opposé du poids. Une bonne mesure du poids est l'utilisation d'une balance qui, lorsqu'il y a équilibre, donne la force de réaction du support de norme égale au poids.}\newline 
+
+  
+\end{reportBlock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Commentaires
+\begin{reportBlock}{Commentaires lors de la correction de la leçon}
+
+Les choix faits sont intéressants. En revanche, il y a un manque de continuité dans la leçon et dans les transitions. Le calcul du champ gravitationnel était bien maîtrisé. Vu ton intro, je m'attendais à ce que tu partes de ton expérience puis que tu discutes la dépendance en la latitude et que tu dises qu'il manque des choses puis partir sur ça.
+
+\end{reportBlock}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Correction
+\begin{reportBlock}{Partie réservée au correcteur}
+  \textbf{Avis général sur la leçon (plan, contenu, etc.) Le plan est raisonnable. Pour une leçon docteure, je m'attendrais plus à partir des expériences et aller vers la modélisation.\\:}
+  
+  
+  \textbf{Notions fondamentales à aborder, secondaires, délicates :} À aborder en priorité: la gravitation, la pesanteur, notion de référentiel, champ gravitationnel, Kepler \\
+  
+  Notions possibles: l'égalité masse grave masse inerte; l'altitude des satellites selon leur vitesse angulaire et en particulier pour la Terre la différence d'altitude entre satellite géostationnaire et l'ISS par exemple; de l'astrophysique (galaxie, amas, Jupiter, trou noir, exoplanète, etc.) \\
+  
+  Notion importante mais subtile: les effets de marées. Il faut savoir différencier ce qui vient de la rotation propre de la Terre et de sa révolution autour du Soleil. On peut parler de limite de Roche, de la façon dont se créent les anneaux d'une planète (Saturne bien sûr, mais aussi Jupiter, trou noir, etc.). Les marées océaniques bien sûr, mais c'est un problème très complexe avec pleins d'effets subtils. À aborder avec précaution. \\
+  
+  \textbf{Ne pas oublier de contextualiser la leçon}, et ici il y avait un boulevard: pleins de prix Nobel récents (2020 trous noirs, 2019 exoplanètes, 2017 ondes gravitationnelles), parler d'autres satellites (Io, Europe), parler des satellites du GPS, de Starlink, du James Webb telescope lancé récemment sur un point de Lagrange, etc.\\
+  
+  
+  
+  \textbf{Expériences possibles (en particulier pour l'agrégation docteur) :} Pendule, balle de ping pong, gyroscope, viscosimètre de Stokes, ondes de surface (régime gravitaire)
+  
+  
+  \textbf{Bibliographie conseillée : }Le Bocquet, Faroux, Renault, \emph{Toute la mécanique}, est très complet sur la partie effet de référentiel non galiléen sur la Terre, tout en restant au niveau prépa. Je recommande.
+\end{reportBlock}
+

@@ -1,0 +1,191 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Propriétés macroscopiques des corps ferromagnétiques}
+  \label{LP_Ferromagnetisme} 
+\end{headerBlock}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+  Électromagnétisme. Tome 4 - Milieux diélectriques et milieux aimantés & M. Bertin, J.P. Faroux et J. Renault  & Dunod (1984) &    \\
+  \hline 
+  Electromagnétisme - Fondements et applictions & J-Ph. Pérez & Dunod 4ème édition (2019) &    \\
+  \hline 
+  Physique Spé. PSI*, PSI & S. Olivier, C. More, H. Gié & Tec \& Doc (2000) &    \\
+  \hline 
+  Physique de l'état solide & C. Kittel & Dunod 7ème édition (1998) &    \\
+  \hline
+\end{tabularx}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Plan
+\begin{reportBlock}{Plan détaillé}
+
+  \textbf{Niveau choisi pour la leçon :} Licence 3
+  \newline
+  \textbf{Prérequis} : \begin{itemize}
+      \item Electrocinétique
+      \item Induction
+      \item Notions sur la paramagnétisme et le diamagnétisme
+      \item Milieu LHI
+  \end{itemize}
+
+  \textbf{Déroulé détaillé de la leçon: }  
+  
+  \section*{Introduction}
+
+Introduction sur les matériaux ferromagnétiques en prenant l'exemple de la magnétite (Fe$_2$O$_3$).
+Définition : corps qui, sous l'action d'un champ EM extérieur, s'aimante très fortement.
+
+\section{Aimantation d'un corps ferromagnétique (1min15)}
+
+\subsection{Magnétostatique dans un milieu aimanté}
+
+Dans la matière, il y a des électrons et des atomes qui portent des moments magnétiques. 
+
+Définition de l'aimantation : $\mathbf M = \frac{\ud \mathbf m}{\ud t}$ (en A.m$^{-1}$).
+
+Vecteur excitation magnétique : $\mathbf H = \frac{\mathbf B}{\mu_0} - \mathbf M$. 
+
+Equation de Maxwell-Ampère : $\nabla \times \mathbf H j_{\text{libre}}$.
+Equation de Maxwell-flux : $\nabla \cdot \mathbf B = 0$.
+
+Pour un LHI : $\mathbf M = \chi_m \mathbf H$, avec $\chi_m$ la susceptibilité magnétiques.
+
+Pour les milieux paramagnétiques et diamagnétiques, $\mid\chi_m \mid << 1$. Alors que pour les ferromagnétiques : 
+\begin{itemize}
+    \item $\chi_m(\mathbf H)$ : relation non linéaire entre $\mathbf M$ et $\mathbf H$.
+    \item $\mid\chi_m \mid >> 1$
+\end{itemize}
+
+\subsection{Courbe de première aimantation (7min10)}
+
+Courbe $M(H)$ pour un matériau ferrmoagnétique initialement non aimanté : (1) courbe linéaire pour les petits $H$ puis (2) fortement croissante puis (3) sature progressivement jusqu'à $M_{sat}$.
+
+$\mu_0 M_{sat}$ est le champ magnétique maximal d'un ferromagnétique à $T$ donnée et dépend du matériau. $M_{sat}(Fe) = 2.1 T$
+
+
+\subsection{Interprétation microscopique (9min12)}
+Slide : Domaines de Weiss. Déplacement des domaines réversible à faible $B$, mais irreversible pour $B$ plus élevé du fait de la présence d'impuretés dans le matériau.\\
+
+Une propriété des ferromagnétiques est la canalisation des lignes de champs magnétiques. Slide: illustrations pour différentes géométries. Pour un ferromagnétique torique, les lignes de champ sont complètement canalisées.
+
+\section{Cycle d'hystérésis (14min)}
+
+Présentation de l'expérience. Transformateur: un primaire et un secondaire. \textbf{C'est l'expérience "Étude du cycle d'hystérésis du fer d'un transformateur" du TP Conversion de puissance électrique, version 2023}.
+
+\subsection{Etude du noyau de fer d'un transformateur(15min)}
+
+Schéma électrique du montage (cf. TP Conversion de puissance électrique)
+
+Théorème d'Ampère : $L H = n_1 i_1 + n_2 i_2$
+$L$ : longueur totale du tore (fer doux), $n_i$ nombre de spires de la bobine $i$. $H = \frac{n_1 i_1 + n_2 i_2}{L}$ donne (avec $i_2$ négligeable devant $i_1$ car la résistance imposée dans le secondaire ($\sim 10$~k$\Omega$) associée est bien plus élevée que celle du primaire ($\sim 30$~$\Omega$)) $i_1 = \frac{L}{n_1} H$. Ainsi, si on mesure la tension aux bornes de la résistance du circuit primaire : 
+
+$V_x = R i_1 = \frac{R L}{n_1} H$ avec ici $\frac{R L}{n_1} = 62.4 V/(Am^{-1})$ qu'on place sur la voie 1 de l'oscillo.
+
+Dans le circuit secondaire, on a (Loi de Faraday) : $e = -\frac{\ud \phi}{\ud t} = -n_2 S \frac{\ud B}{\ud t} = R' i_2 + \int \frac{i_2}{C}$ (cf. TP). $R'$ et $C$ sont choisies de telle sorte que $\int \frac{i_2}{C}$ soit négligeable devant $R' i_2$. Il vient :
+
+$i_2 = \frac{S}{R'} \frac{\ud B}{\ud t}$.
+
+Conséquences, aux bornes du condensateur: $U_c = \int \frac{n_2 S}{c R'} \frac{\ud B}{\ud t} \ud t$. Finalement :
+
+$V_y = U_c = \frac{n2 S}{R' C} B$ qu'on place sur la voie 2 de l'oscillo.
+
+\subsection*{Début de l'expérience (24min45)}
+
+\begin{itemize}
+    \item Visualisation du cycle d'hystérésis avec le mode XY.
+    \item Tracé du cycle $B(H)$ au tableau et définition du champ coercitif $H_c$ (pour $B=0$) et du champ rémanent $B_r$ (pour $H=0$).
+    \item Mesure expérimentale de $B_r$. Valeurs : $V_y = 2.70 \pm 0.02$~V donne $B_r = 0.532 \pm 0.004 T$. 
+    \item Mesure expérimentale de $H_c$. Valeurs : $V_x = 2.10 \pm 0.01$~V donne $H_c = 313 \pm 1$~A/m. Valeur caractéristique des ferro doux. Plus cette valeur est faible, plus l'excitation à devoir appliquer pour désaimanter le matériau sera faible: ce type de matériau se désaimante facilement.  
+\end{itemize}
+
+On distingue deux types de ferro (slide tableau comparatif). Ferro doux (Transformateurs, inductance à haute fréquence) et ferro durs (application générateur électrique, RMN, etc.).
+
+\subsection{Bilan de puissance (35min38)}
+
+Loi des mailles : $U i_1 + e i_1 - R i_1 = 0$. Premier terme: ; dernier terme : puissance dissipée par effet Joule. $e i_1 = - \frac{\ud \phi}{\ud t} i_1$. $\delta W = - \ud \phi i_1 = - \frac{SHL}{n_1} = \ud B$. $P = \frac{1}{T} SL \oint H _ud B$. ¨
+
+\section*{Conclusion (39min50)}
+
+Application : disques durs.
+Fin : 40min35.
+
+\end{reportBlock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Questions
+\begin{reportBlock}{Questions posées par l’enseignant (avec réponses)}
+  \textbf{Q: Si je lis votre relation, si j'augmente le nombre de spires, je vais diminuer la perte par hystérésis ?} \textcolor{purple}{Non, il y a une erreur dans ma formule, elle ne dépend pas du nombre de spires.} \newline
+  
+  \textbf{Q: Si je regarde le cycle d'hystérésis, le champ $B$ sature ?} \textcolor{purple}{Non, il continue à croître linéairement.} \newline
+  
+   \textbf{Q: Pourquoi on utilise des ferro doux pour l'inductance à haute fréquence.?} \textcolor{purple}{Ce qui compte dans une inductance c'est la variation du flux. Mais dans le ferro dur, quand c'est saturé, certes le champ est fort, mais il n'est plus sensible au champ extérieur. Un ferro doux, en première approximation, c'est linéaire et la pente est la susceptibilité. Mais pour le ferro dur, la pente est nulle.} \newline
+  
+  \textbf{Q: Pourquoi à haute fréquence ?} \textcolor{purple}{Pour minimiser les pertes par courants de Foucault.} \newline
+  
+   \textbf{Q: Quels matériaux qui minimisent ces pertes à hautes fréquence?} \textcolor{purple}{Utiliser des isolants (ferrites), on va limiter ainsi des pertes par courants de Foucault.} \newline
+  
+  \textbf{Q: Est-ce que la canalisation des champ est générique à tous les ferro ?} \textcolor{purple}{Ce n'est pas le cas pour les ferros durs, que pour les ferros doux. Toutes les applications qui utilisent $\chi$ ou $\mu_r$ très grand c'est les ferro doux, car il n'y a plus de pente pour les ferro durs.} \newline
+  
+   \textbf{Q: Dans quel état sont les ferromagnétiques ?} \textcolor{purple}{Solides cristallin. L'état ferro provient d'interaction au niveau des atomes qui n'existent pas à l'état fluide.} \newline
+  
+  \textbf{Q: L'aimantation à saturation et le champ coercitif dépendent des matériaux ?} \textcolor{purple}{Varie de quelques magnétons de Bohr mais reste du même ordre de grandeur alors que $H_c$ varie beaucoup : un ferro doux a un champ coercitif faible (10$^{-3}$~T), un ferro dur très grand (0.1~T) matériau à un autre.} \newline
+  
+   \textbf{Q: Sur l'histoire du transformateur, vous avez appliqué le théorème d'Ampère. C'est évident que $\oint H.\ud l = H L$ ? } \textcolor{purple}{Il faut utiliser les relations de passage des champs B et H pour démontrer la canalisation des lignes de champs dans le ferro en l'absence de courants surfaciques à l'interface fer$\rightarrow$air. Ensuite, les symétries et invariances du tore donnent $\mathbf{H}=H(r)\mathbf{e_{\theta}}$ et le théorème d'Ampère le long d'une ligne de champ permet d'avoir la formule donnée si on considère que la section du tore est faible devant la distance à l'axe.%Vous n'avez pas utilisé $\nabla \cdot B = 0$, il faut l'utiliser
+   .} \newline
+  
+  \textbf{Q: Dans un éléctroaimant ?} \textcolor{purple}{Il n'y a pas conservation de la norme de $H$. Pour relier $H$ dans l'entre-fer et dans le milieu, il faut utiliser la conservation du flux.} \newline
+  
+   \textbf{Q: Pourquoi le système forme les domaines de Weiss ?} \textcolor{purple}{Au niveau microscopique, il y a une compétition entre l'énergie qu'il va falloir fournir pour créer ces interfaces et le coût en énergie pour créer un champ via l'alignement des moments magnétiques.} \newline
+  
+  \textbf{Q: La taille des domaines ?} \textcolor{purple}{De l'ordre du micromètre.} \newline
+  
+   \textbf{Q: Est-ce qu'il y a des directions priviligiées au départ dans champ extérieur? Est-ce que je peux avoir une courbe d'hystérésis qui dépend du champ $B$?} \textcolor{purple}{Oui, il y a un axe de facile aimantation. Les champs coercitifs vont être plus forts dans l'axe de facile aimantation. Cela va exister dans des monocristaux. Les axes de facile et difficile aimantation sont définis par rapport à l'orientation cristalline du matériau et des interactions entre les moments magnétiques dans le matériau. Il n'y a pas de raison pour que l'orientation du domaine soit dans la direction du champ appliqué.} \newline
+  
+  \textbf{Q:  Quels sont les conditions qui vous permettent de lire directement $B$?} \textcolor{purple}{$e = U_{R'} + U_c = R' i_2 + \frac{1}{jC\omega} i_2 = R'(1+\frac{1}{jRC\omega}) i_2$. On veut alors $R'C >> \frac{1}{\omega}$ avec $\omega=2\pi f$ et $f=50$~Hz (fréquence du secteur).} \newline
+  
+  \textbf{Q: Les applications des ferros durs?} \textcolor{purple}{Tous les aimants permanents. } 
+  
+ 
+  
+  \end{reportBlock}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Commentaires
+\begin{reportBlock}{Commentaires lors de la correction de la leçon}
+
+Agréable à suivre. Le rythme était un peu lent. Parfois vous vous répétez un peu, c'est très bien pour un vrai cours mais pas nécéssaire pour une leçon d'agrégation, ce qui permet de gagner un peu de temps pour la partie ferro dur/ferro doux qui est un point central, et aussi pour l'histoire du $\nabla \cdot B$. Ne pas faire la démonstration pour la canalisation est un choix, vous auriez pu le faire sur transparent pour gagner du temps. Votre exploitation de la manipulation est remarquable. Il faut donner les chiffres des ordres de grandeurs. 
+
+\end{reportBlock}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Correction
+\begin{reportBlock}{Partie réservée au correcteur}
+  \textbf{Avis général sur la leçon (plan, contenu, etc.) :}
+  
+  
+  \textbf{Notions fondamentales à aborder, secondaires, délicates :}
+  
+  
+  \textbf{Expériences possibles (en particulier pour l'agrégation docteur) :}
+  
+  
+  \textbf{Bibliographie conseillée :}
+\end{reportBlock}

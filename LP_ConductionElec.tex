@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Mécanismes de la conduction électrique dans les solides}
+    \label{LP_Conduction}
+\end{headerBlock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+Physique des Solides (Chap 1 à 3)  & N. Ashcroft et D.Mermin   &  EDP Sciences (2002) & 2-86883-577-5  \\
+  \hline 
+     Slides de cours & Gwendal Fève &  &  Site Montrouge \\
+  \hline 
+  Physique des Solides & C. Kittel &  Dunod &  \\
+\hline
+\end{tabularx}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Approche classique}
+\subsection{Modèle de Drude (1902) 10min max}
+%Définition résistivité : $\rho=\frac{RS}{L}$.\\
+Contexte historique : découverte de l'électron par Thomson (1899), avant expérience de Rutherford.\\
+Cristal métallique : [grosses sphères chargés + avec des électrons de c\oe ur] = ions métalliques  + électrons de valence pour assurer électroneutralité.\\
+Remarque : $n_{gaz}=10^{25}$m$^{-3}$ tandis que $n_{e^{-}}=10^{29}$m$^{-3}$, cf p4 Ashcroft.\\
+Hypothèses :\begin{itemize}
+    \item pas d'interaction élec entre les électrons et les ions, et entre les électrons et les électrons : \textcolor{red}{"électrons libres"}
+    \item \textcolor{red}{collisions et changement de vitesse instanées} entre les électrons de c\oe ur et les électrons de valence
+    \item électrons de valence (conduction) se déplacent en ligne droite jusqu'à collision avec proba $1/\tau$. $\tau$ est \textcolor{red}{le temps de collision} ou libre parcourt moyen, temps moyen de propagation entre deux chocs
+    \item \textcolor{red}{chaos moléculaire}, la distribution des vitesses suit une loi de Maxwell-Boltzmann comme le gaz classique, la direction des électrons est aléatoire. L'équilibre thermodynamique local des électrons avec leur entourage par le biais des collisions (seul mécanisme restant) : 
+\end{itemize}
+
+Ce modèle décrit bien la conductivité dans un métal.
+Déduire équation du mouvement + 
+\subsection{Limitations du modèle de Drude}
+\begin{itemize}
+    \item en utilisant $1/2mv^2=3/2k_BT$, on trouve $v=10^5$m/s alors que $v_{F}=10^6$m/s et indépendante de T,
+    \item quid des matériaux isolants ? semi-conducteurs ?
+    \item effet Hall classique dans l'aluminium (p18 Ashcroft) montre que n dépend fortement de B appliqué, ce qui est inenvisagable dans le modèle de Drude + constante de Hall parfois positive
+\end{itemize}
+
+Conclusion : il faut passer à un autre modèle plus poussé : un modèle quantique.
+
+\section{Modèle quantique - théorie des bandes}
+Electrons obéissent à la statistique de Fermi-Dirac. La conséquence : bandes d'énergie.
+\subsection{Bandes d'énergie}
+Modèle : électrons en intéraction avec le potentiel périodique du réseau cristallins.\\
+Cf Kittel (chap 7) + TD 1 Physique des Solides : mettre en prérequis pour les calculs.\\
+Slide : schéma bande avec isolant+ tableau périodique 
+
+\subsection{Modèle des électrons libres}
+Cf Kittel chap 8 ou Ashcroft chap 2 et 13. Modèle de Sommerfeld. Faire les calculs Justifier qu'on peut se placer à T=0K.
+\subsection{Conductivité dans un semi-conducteur}
+Densité d'état varie en $\exp(-\Delta/k_BT)$ donc $\sigma$ aussi.\\
+\textcolor{green}{Mesure de la conductivité dans un semi-conducteur dopé pour déterminer le gap.}, cf TP semiconducteurs. Durée 30min environ, $\Delta_{exp}=0.6$eV alors que $\Delta_{th}=0.7$eV. Interprétation : matériel vieux, gap a pu changer. Matériau pas pur.\\
+\section{Conclusion}
+Ouverture sur l'ingénierie des semi-conducteurs : micro-électronique, jonctions pn, transistors. Prix Nobel 2014 pour l'invention de la diode bleue (en 1992).\\
+Ouverture sur la supraconductivité.\\
+Ouverture possible sur la conduction thermique, loi de Wiedemann-Franz.

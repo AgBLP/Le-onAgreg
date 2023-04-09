@@ -1,0 +1,174 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+ \chapter{Induction électromagnétique}
+ \label{LP_Induction}
+\end{headerBlock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+   Electromagnatisme 3 : magnétostatique, induction, équations de Maxwell et compléments électroniques & M. Bertin, J. P. Faroux, J. Renault & Dunod Université (1986) & 2-04-016916-4 \\
+  \hline 
+   Physique Spé. MP*, MP et PT*, PT & Hubert Gié, Jean-Pierre Sarmat, Stéphane Olivier, Christophe More & Editions Tec \& Doc (2000) & 2-7430-0398-7 \\
+  \hline 
+   Physique Spé. PSI*, PSI & Stéphane Olivier, Christophe More, Hubert Gié & Editions Tec \& Doc (2000) & 2-7430-0399-5 \\
+  \hline 
+\end{tabularx}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Plan
+\begin{reportBlock}{Plan détaillé}
+  \textbf{Niveau choisi pour la leçon :} L3
+  \newline
+  \textbf{Prérequis : } Equations de Maxwell ; Forces de Lorentz, de Laplace ; ARQS magnétique ; Potentiels scalaire et vecteur ; Electrocinétique
+  \newline
+  
+  \textbf{Déroulé détaillé de la leçon: }\newline
+  \textbf{0. Introduction} 
+  \begin{itemize}
+      \item \textbf{Cadre général :} ARQS magnétique
+      \item \textbf{Introduction historique :} Oersted (1820): courants éléctriques induisent $\mathbf B$. Faraday (1831): Variations de $\mathbf B$ qui induisent des courants électriques. 
+  \end{itemize}
+  \vspace{1cm}
+  \textbf{I. Approche expérimentale} 3min20
+  \begin{itemize}
+      \item \textbf{Expérience qualitative 1:} Approche un aimant et éloigne un aimant droit d'une bobine fixe branchée à un oscilloscope : apparition d'une tension. Même observation avec déplacement de la bobine dans aimant fixe. Amplitude de l'intensité proportionnelle à la vitesse de variation de $\mathbf B$.
+      \item \textbf{Définition générale de l'induction (slide)} apparition d'une f.e.m et, s'ils peuvent s'écouler, de courants, dans un conducteur mobile placé d'un champ magnétique variable.
+      \item \textbf{Deux cas particuliers:} \\
+      Induction de Neumann (circuit fixe, champ variable) ; \\ Induction de Lorentz (circuit mobile, champ stationnaire).
+        \end{itemize}
+\begin{enumerate}
+      \item \textbf{Loi de Faraday :} 4min20 $e = - \frac{\ud \phi}{\ud t}$ ; \\
+      Validité : circuits filiformes ; \\
+      Définition du flux : $\phi = \iint \mathbf B \cdot \ud \mathbf S$ \\
+      Unités de $e$ et $\phi$, convention d'orientation de la surface par rapport au circuit (règle de la main droite) ; \\ Convention générateur de la f.e.m.
+      \item \textbf{Loi de Lenz :} discussion du signe $-$ dans la loi de Faraday, expérience qualitative 2 : chute d'un aimant dans un tube conducteur.
+\end{enumerate}
+
+\vspace{1cm}
+\textbf{II. Théorie de l'induction} 6min10
+\begin{enumerate}
+    \item \textbf{Définition formelle de la fem}: $e = \frac{1}{q} \oint \mathbf F(\mathbf r, t) \cdot \ud \mathbf l$. \\
+    Ici : $\mathbf F$ force de Lorentz $\rightarrow e = \oint \mathbf E \cdot \ud \mathbf l + \oint (\mathbf B \land \mathbf v) \cdot \ud \mathbf l$.
+    \item \textbf{Induction de Neumann}: $\mathbf v \slash\slash
+ \ud \mathbf l \rightarrow e = \oint \mathbf E \cdot \ud \mathbf l$. \\
+ $\mathbf E = - \nabla V - \frac{\partial \mathbf A}{\partial t} \rightarrow e = \oint \mathbf{E_m} \cdot \ud \mathbf l $ où $E_m = - \frac{\partial \mathbf A}{\partial t}$ est le \textbf{champ électromoteur de Neumann}. \\
+ Equation de Maxwell-Faraday : $\nabla \land \mathbf E = - \frac{\partial \mathbf B}{\partial t}$ donne la loi de Faraday.
+    
+    \item \textbf{Induction de Lorentz}: Schéma. \\
+    Non relativiste : $\mathbf v = \mathbf{v_r} + \mathbf{v_e}$, $\mathbf{v_r} \slash\slash \ud \mathbf l$ \\
+    $\mathbf E = - \nabla V$. \\
+    $e = \oint (\mathbf v_e \land \mathbf B) \cdot \ud \mathbf l$. Le terme $\mathbf v_e \land \mathbf B$ se subtitue au champ électromoteur de Neumann. \\
+    A l'oral (sans faire le calcul) : on peut montrer qu'en utilisant l'équation de Maxwell-Flux, on retrouve la loi de Faraday.
+\end{enumerate}
+\textbf{Conclusion orale}: Cas général : somme des deux cas (Neumman et Lorentz). Même phénomène : on le voit par changement de référentiel (exemple avec la première expérience qualitative).
+
+\vspace{1cm}
+\textbf{III. Aspects pratiques} 15min30
+\begin{enumerate}
+    \item \textbf{Auto-induction :} Dessin spire avec ligne de champ. \\
+    Flux propre : $\phi_p = L i$, $L$ inductance propre (H). \\
+    f.e.m : $e = - L \frac{\ud i}{\ud t}$. \\
+    Schéma équivalent en éléctrocinétique : convention générateur avec générateur, convention récepteur avec bobine. \\
+    - \textbf{Expérience quantitative 1 : Mesure de L}: Circuit RL, mesure du temps caractéristique sur oscilloscope.
+    26min
+    \item \textbf{Inductance mutuelle}: Dessin spire 1 avec ligne de champ et spire 2 dans champ magnétique créé par spire 1. \\
+    - Flux créé par spire 1 à travers spire 2: $\phi_{21} = M_{21} i_1$ ; \\
+    - Flux créé par spire 2 à travers spire 1: $\phi_{12} = M_{12} i_2$ ; \\
+    - $M_{12} = \oint \oint \frac{\mu_0 \ud \mathbf{l_1} \cdot \ud \mathbf{l_2}}{4 \pi r_{12}} = M_{21}$. \\
+     - \textbf{Expérience quantitative 2 : Mesure de M}: Modèle simple de transformateur (schéma sur slide). Secondaire en circuit ouvert $(i_2 = 0)$. Loi des mailles (en complexe) donne: $ M = L_1 \left| \frac{U_2}{e_g} \right|$. Expérience avec deux bobines placées dans un entrefer en fer doux. \\
+     \textbf{\textcolor{red}{Attention: cette mesure expérimentale est fausse ! (ne pas reproduire). Mettre un entrefer modifie M et L qui peuvent dépendre des courants.}}
+     \newline 37min20
+\end{enumerate}
+
+\vspace{1cm}
+\textbf{Conclusion} Applications diverses (on a vu bobines et transformateurs). \\
+Autres applications (slides) : Plaques à induction, Feinage par induction.\newline
+39min12
+\end{reportBlock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Questions
+\begin{reportBlock}{Questions posées par l’enseignant (avec réponses)}
+  \textbf{C :} Revenir sur la toute première manip (aimant+bobine). Peut-on remonter directement au flux $\phi$ ? \textcolor{purple}{Oui en faisant l'intégrale de la tension sur un aller à l'oscilloscope. Par ailleurs, on peut diviser le nombre de spire par deux et voir que la tension est également divisée par deux.} Peut-on retrouver que c'est une tension négative en premier et positive en deuxième ? \textcolor{purple}{Il faut connaître dans quel sens est orienté le bobinage de la bobine. A partir de là, le sens des lignes de champ de l'aimant étant connu, on peut connaître le signe du flux et de sa variation temporelle, et ainsi connaître le signe de la tension aux bornes de la bobine.}\newline
+  
+  \textbf{C :} Symbole du Weber ? \textcolor{purple}{Wb, ce sont des T.m$^{-2}$.}\newline
+  
+  \textbf{C :} Dans la loi de Faraday, vous avez dit que $e$ doit être orienté suivant le sens du courant. Pourtant il n'y a pas de courant à la base car c'est la fem qui induit le courant (s'il peut circuler) ? \textcolor{purple}{On choisit une convention d'orientation du circuit. Celle-ci nous impose l'orientation de la surface du flux sortant. La fém est alors \textbf{dans le sens de l'orientation du circuit}. Enfin, si le courant peut circuler, pour $e>0$, le champ de force tend à faire circuler les porteurs de charge positive dans le sens positif du circuit, c'est-à-dire à produire une intensité $i>0$ (on rappelle que le sens de circulation du courant est par convention inverse au sens de circulation des électrons).}\newline
+  
+  \textbf{C :} Peut-on prendre la surface du circuit filiforme pour calculer le flux de B ? \textcolor{purple}{Oui car le flux est indépendant du choix de la surface (il faut par contre que celle-ci s'appuie sur le contour défini par le circuit).}\newline
+  
+  \textbf{C :} Pourquoi la manip avec le tube est une illustration de la loi de Lenz ? \textcolor{purple}{Le mouvement de chute est freiné par la force de Laplace créée par les courants induits dans le conducteur : la force s'oppose donc au mouvement qui lui a donné naissance.} Peut-on retrouver que la force doit être opposée au mouvement avec la loi de Faraday ? \textcolor{purple}{Oui, on peut voir le conducteur cylindrique comme une superposition de spires infiniment fines et faire le raisonnement avec la loi de Faraday sur chacune des spires et sommer le tout.}  \newline
+  
+  \textbf{C :} Dans quel cas un fil peut-être considéré comme filiforme (pour la validité de la loi de Faraday) ? \textcolor{purple}{Si la largeur du fil est petite devant la taille caractéristique de variation du champ magnétique (alors le champ magnétique est quasi-constant dans le volume).} \newline
+  
+  \textbf{C :} Quelle est le cadre de l'ARQS magnétique ? \textcolor{purple}{L'ARQS revient à négliger le temps de propagation des quantités électromagnétiques. Si $T$ est le temps typique de variation des densités de courants $\mathbf j$ et de charges $\rho$ et $L$ la distance typique entre les sources et le champ électromagnétique observé alors l'ARQS est valable si $T \gg \frac{L}{c}$. Si de plus $\mid \mathbf j \mid \gg \mid \rho c \mid$, on est dans l'ARQS \textbf{magnétique}. Odg : pour un circuit $L \sim 1$m, on doit avoir $f = \frac{c}{T} \ll 10^{14}$ Hz.} \newline
+  
+  \textbf{C :} Y-a-t'il une raison pour laquelle on associe la fem à une tension autre que l'homogénéité de son unité ? \textcolor{purple}{Par exemple, si je n'ai que un champ électrique, $\frac{\mathbf F}{q} = \mathbf E$ et $e = \oint \mathbf E \cdot \ud \mathbf l$ : c'est la tension. On a bien une force qui met en mouvement les électrons, ce qui ressemble à ce que fait une tension électrique, c'est comme un générateur. \\
+  Par ailleurs, on peut retrouver à partir de la loi $W = \oint \mathbf{F}(\mathbf{r},t) \cdot \ud \mathbf l$ la loi d'Ohm généralisée en électrocinétique.} \newline
+  
+  \textbf{C :} Vous avez obtenu la fem dans le cadre de Neumann, quid dans le cas de Lorenz ? \textcolor{purple}{On prend un circuit filiforme orienté dont chaque élement $\ud \mathbf l$ subit un déplacement $\ud \mathbf r$ (on suppose que l'orientation du circuit ne change pas au cours du temps). On a $e = \oint \mathbf{v}_e\land\mathbf{B} \cdot \ud \mathbf l$ avec $\mathbf{v}_e = \deriv \mathbf{r}/\deriv t$ la vitesse d'entrainement des électrons par déplacement due au déplacement du circuit au cours de $\deriv t$. Par permutation circulaire du produit vectoriel avec le produit scalaire, on a : $\mathbf{v}_e\land\mathbf{B} \cdot \ud \mathbf l = - \frac{1}{\ud t} (\mathbf{B} \cdot \ud^2 S_c) = - \frac{\ud^2 \phi_c}{\ud t}$ où on a introduit $\deriv^2 S_c \equiv \deriv \mathbf{r} \cdot \deriv \mathbf l$ l'aire balayée pendant $\ud t$ par le déplacement du conducteur et $\ud \phi_c \equiv \mathbf B \cdot \deriv^2 S_c$ le flux "coupé" (flux du champ magnétique à travers $\deriv^2 S_c$, "coupé" car lors de son déplacement, l'élement de conducteur "coupe" les lignes de champs magnétiques). Enfin, en utilisant l'équation de Maxwell-Flux, on peut montrer que pour un champ magnétique stationnaire, $\oint \ud^2 \phi_c = \ud \phi$, nous permettant de retrouver la loi de Faraday.} \newline
+  
+  \textbf{C :} \`{A} t-on toujours une fem dans le cas où le circuit se déplace ? \textcolor{purple}{Si le circuit se déplace sans déformation, la variation de flux magnétique est nulle ($\phi(t+\ud t) = \phi(t)$) et donc $e=0$.}\newline
+  
+  \textbf{C :} Pourquoi la manip n'a pas marché pour la mesure de l'inductance ? \textcolor{purple}{Mesure mal faite, on a trouvé la bonne valeur quand elle a été refaite pendant la séance de question.}  \newline
+  
+  \textbf{C :} Est-ce que la bobine peut créer une inductance mutuelle sur le circuit électrique et donc modifier l'inductance du circuit ? \textcolor{purple}{C'est possible en théorie, elle est d'autant plus importante que le circuit est grand car l'inductance mutuelle est proportionnelle à la surface d'intégration.} Est-ce que c'est valable pour un solénoïde infini ? \textcolor{purple}{Non car le champ est nul à l'extérieur de la bobine.}\newline
+  
+  \textbf{C :} Retour sur la manip de l'inductance mutuelle ? Quelle est l'influence du fer doux ? \textcolor{purple}{Il canalise les lignes de champs dans les bobines, cela permet d'avoir un champ plus fort.} Pourquoi la tension n'est pas sinusoïdale à la sortie de la bobine alors que celle à l'entrée l'est ? \textcolor{purple}{Les inductances propres et mutuelle peuvent dépendre des courants induits. Ces courants dépendent de la réponse du fer doux à une excitation magnétique qui n'est pas linéaire avec le champ. Cela entraîne donc des non-linéarités du courants et donc de la fem en sortie.}\newline
+  
+  \textbf{C :} Quel instrument permet de mesurer beaucoup mieux la tension crête à crête ? \textcolor{purple}{Un voltmètre en configuration AC.}\newline
+  
+  \textbf{C :} Contrairement à $L$, $M$ est algébrique. Qu-est-ce que ça veut dire ? \textcolor{purple}{$M$ dépend des conventions d'orientation des circuits. $L$ est toujours positive car changer l'orientation du circuit change l'orientation du courant d'une part, et celui du vecteur surface donc du flux d'autre part, de sorte que $L$ reste toujours positive.}\newline
+  
+  \textbf{C :} Pourquoi il y a-t'il un déphasage dans le signal de sortie de la manip de mesure d'inductance ? \textcolor{purple}{Le circuit est un filtre passe-bas d'ordre 1, la fréquence de travail induit un déphasage dans la réponse du système qui vaut $0$ pour $\omega=0$ et $-\pi/2$ pour $\omega\rightarrow\infty$}.
+  
+  
+\end{reportBlock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Commentaires
+\begin{reportBlock}{Commentaires lors de la correction de la leçon}
+\end{reportBlock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Correction
+\begin{reportBlock}{Partie réservée au correcteur}
+  \textbf{Avis général sur la leçon (plan, contenu, etc.) :}
+  
+  
+  \textbf{Notions fondamentales à aborder, secondaires, délicates :}
+  
+  
+  \textbf{Expériences possibles (en particulier pour l'agrégation docteur) :}
+  
+  
+  \textbf{Bibliographie conseillée :}
+\end{reportBlock}
+
+
+\begin{reportBlock}{Partie réservée au correcteur}
+  \textbf{Avis général sur la leçon (plan, contenu, etc.) :}
+  
+  
+  \textbf{Notions fondamentales à aborder, secondaires, délicates :}
+  
+  
+  \textbf{Expériences possibles (en particulier pour l'agrégation docteur) :}
+  
+  
+  \textbf{Bibliographie conseillée :}
+\end{reportBlock}
