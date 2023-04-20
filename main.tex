@@ -23,6 +23,8 @@
 \usepackage{hyperref} % for link
 \usepackage[version=4]{mhchem}
 \usepackage{braket}
+\usepackage{awesomebox}
+\usepackage{chemist}
 
 %%%% settings
 \setlength{\parskip}{0cm}
@@ -46,7 +48,7 @@
 %%%% small macros
 \newcommand{\unit}[1]{\; \mathrm {#1}}
 \newcommand{\ex}{\mathrm {e}}
-\newcommand{\deriv}{\mathrm {d}}
+%\newcommand{\deriv}{\mathrm {d}}
 \newcommand{\timeD}[1]{\frac{\deriv #1}{\deriv t}}
 \newcommand{\fracD}[2]{\frac{\deriv #1}{\deriv #2}}
 \newcommand{\partialD}[2]{\frac{\partial #1}{\partial #2}}
@@ -152,5 +154,8 @@
 \input{LC_Conductimetrie/LC22_Conductimétrie.tex}
 \newpage
 \input{LC_CinetiqueElectrochimique}
-
+\newpage
+\input{LC_DiagrammeEpH.tex}
+\newpage
+\input{LC_SyntheseTraitement}
 \end{document}
