@@ -25,6 +25,7 @@
 \usepackage{braket}
 \usepackage{awesomebox}
 \usepackage{chemist}
+\usepackage[squaren, Gray, cdot]{SIunits}
 
 %%%% settings
 \setlength{\parskip}{0cm}
@@ -46,7 +47,7 @@
   \item[]}{\end{list}}
 
 %%%% small macros
-\newcommand{\unit}[1]{\; \mathrm {#1}}
+%\newcommand{\unit}[1]{\; \mathrm {#1}}
 \newcommand{\ex}{\mathrm {e}}
 %\newcommand{\deriv}{\mathrm {d}}
 \newcommand{\timeD}[1]{\frac{\deriv #1}{\deriv t}}
@@ -137,6 +138,8 @@
 \newpage
 \include{LP_Resonance/LP_Resonance}
 \newpage 
+\include{LP_PortaitPhase.tex}
+\newpage
 \include{LP_CinematiqueRelativiste}
 \newpage
 \include{LP_EffetTunnel}
@@ -158,4 +161,8 @@
 \input{LC_DiagrammeEpH.tex}
 \newpage
 \input{LC_SyntheseTraitement}
+\newpage
+\input{LC_BiomoleculesEnergie}
+\newpage
+\input{LC_GestionRisqueLabo}
 \end{document}

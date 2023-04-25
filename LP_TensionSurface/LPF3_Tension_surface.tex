@@ -5,9 +5,6 @@
     \label{LP_PhenomenesInterfaciaux}
 \end{headerBlock}
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Références
 \begin{center}
@@ -21,11 +18,11 @@
   \hline 
  Hydrodynamique physique & \'Etienne Guyon, Jean-Pierre Hulin et Luc Petit  &  CNRS ÉDITIONS (3ème édition) &    \\
   \hline 
-  Capillarité (cours) & P. Lidon  & \url{https://cel.hal.science/cel-01332274} &  \\
-  \hline
 Notes de cours sur les fluides (2019-2020) & Marc Rabaud  &  Site agreg Montrouge  &    \\
   \hline 
  Why is surface tension a force parallel to the interface? & Marchand, A., Weijs, J. H., Snoeijer, J. H., \& Andreotti, B   & American Journal of Physics (2011)  &    \\
+  \hline
+  Ce que disent les fluides & Guyon, Hulin, Petit & & \\
   \hline
 \end{tabularx}
 \end{center}
@@ -36,80 +33,92 @@ Notes de cours sur les fluides (2019-2020) & Marc Rabaud  &  Site agreg Montroug
 %%%% Plan
 \begin{reportBlock}{Plan détaillé}
 
-  \textbf{Niveau choisi pour la leçon :} License 3
+  \textbf{Niveau choisi pour la leçon :} Licence 3
   \newline
   \textbf{Prérequis} : \begin{itemize}
       \item Forces, travaux de force, énergie
       \item Principe de travaux virtuels
       \item Equation de l'hydrostatique
   \end{itemize}
-
-  
-  \textbf{Déroulé détaillé de la leçon: }   \newline
   
   \section*{Introduction (3min)}
-L'étude des phénomènes interfaciaux permet de répondre à un certain nombre de questions comme : pourquoi est-ce que insectes marchent sur l'eau, pourquoi les gouttes et les bulles ont la formes qu'elles ont, ou encore pourquoi en TP de chimie, lorsqu'on met un liquide dans un tube, on voit la formation d'un ménisque ?
-  \section{Tension de surface}
-  \subsection{Définition}
-  \textcolor{purple}{Expérience qualitative films de savon sur des surfaces (cubes) : il faut que le système minimise son énergie de surface.}\\
-  Si on augmente la surface d'une interface \textit{dA}, le coût en énergie associé vaut : 
-  \begin{equation}
-      \delta W = \gamma dA
-  \end{equation}
-  avec $\gamma$ le coefficient de tension de surface (J.m$^{-2}$). C'est l'énergie qu'il faut fournir pour augmenter la surface d'une interface d'une unité. Ex : pour l'interface eau-air, $\gamma = 72.8$~mJ/m$^2$ à $20^{\circ}$C. 
-  
-  \subsection{Origine microscopique}
-  Une molécule en volume subit des interactions de cohésion de la part de ses voisines qui la stabilisent. Une molécule à l'interface n'a plus de voisines au dessous, cette configuration augmente son énergie. Le fluide ajuste donc sa forme pour exposer le minimum de surface afin de minimiser son énergie.
+L'étude des phénomènes interfaciaux permet de répondre à un certain nombre de questions comme : pourquoi est-ce que certains insectes marchent sur l'eau, pourquoi les gouttes et les bulles ont la formes qu'elles ont, pourquoi en TP de chimie, lorsqu'on met un liquide dans un tube, on voit la formation d'un ménisque, pourquoi encore voit-on des flaques et pas des bulles d'eau posée sur le sol ? Nous allons dans cette leçon essayer d'interpréter ces phénomènes qui nous paraissent somme toute très naturels.
 
-  La forme minimale pour une goutte ou une bulle en l'absence d'interaction est une sphère (vidéo bulle d'eau dans l'espace : \url{https://www.youtube.com/watch?v=bKk_7NIKY3Y}). 
+  \section{Tension de surface}
+  \subsection{Origine microscopique}
+  Une molécule en volume subit des interactions attractives de la part de ses voisines qui la stabilisent. Une molécule à l'interface a moins de voisines qu'en-dessous : cette configuration augmente son énergie de la différence $\Delta E = p_{sup}E_{intermolec}-p_{sub}E_{intermolec}$ avec $p$ le nombre de premiers voisins. Attention, ici $E_{intermolec}$ est négatif. Par exemple en configuration carré, $p_{sub}=8$ et $p_{sup}=5$. \textbf{Le fluide ajuste donc sa forme pour exposer le minimum de surface afin de minimiser son énergie. Surface = lieu des contraintes}
   
-  \subsection{Force capillaire (7min)}
-  Le coefficient de tension de surface peut également être vu comme une force par unité de longueur. \\
-  Vidéo force capillaire \url{https://www.youtube.com/watch?v=g4c_tj1CccE}.
-  Permet de répondre à pourquoi le gerris peut marcher sur l'eau: les pattes hydrophobes du gerris déforment la surface de l'eau qui va chercher à retrouver sa forme en appliquant une force capillaire sur les pattes. Comme l'insecte est suffisamment léger, la force arrive à compenser le poids. 
+  \subsection{Définition}
+  L'énergie pour nécessaire pour accroître la surface d'une interface d'une quantité $dS$ est égale à ce coût en énergie multiplié par le nombre de molécules en surface qui est lui-même proportionnel à $dS$ :
+  \begin{equation}
+      \delta W = \gamma dS
+  \end{equation}
+  avec $\gamma$ le coefficient de tension de surface (J.m$^{-2}$). L'ordre de grandeur de $\gamma$ doit être celui des énergies de liaison divisé par la surface d'interaction de la molécule (typiquement une sphère de rayon quelques $\angstrom$. Ex : pour l'interface eau-air, $\gamma = 72.8$~mJ/m$^2$ à $20^{\circ}$C. \\
   
- \subsection{Pression et tension de surface}
- Question : La pression est-t-elle plus grande dans les petites bulles ou dans les grandes bulles ? \\
- \textcolor{purple}{Expérience avec générateur de bulles : la petite bulle est "mangée" par la grosse.}
+  \textcolor{green}{slide tableau des valeurs de $\gamma$. On commente le fait que pour les métaux, les énergies de liaison sont plus fortes et donc $\gamma$ est plus grand.}\\
+
+  \textcolor{blue}{Expérience qualitative films de savon sur des surfaces (cubes) : il faut que le système minimise son énergie de surface.}
+
+   La forme sphérique d'une goutte ou d'une bulle assure une surface minimale en l'absence d'interaction (vidéo bulle d'eau dans l'espace : \url{https://www.youtube.com/watch?v=bKk_7NIKY3Y}).
+   
+  \subsection{Force capillaire}
+
+  \textcolor{blue}{Expérience qualitative films de savon sur des surfaces (surface avec ficelle) : si on perce un film de savon, la ficelle se déplace.}
+  Le coefficient de tension de surface peut également être vu comme une force par unité de longueur. Pour un film de savon rectangulaire, il y a deux interfaces air-liquide dont les vecteurs normaux à la surface sont opposés. Tout segment $d\mathbf{l}$ dans le plan de cette surface est soumise à deux forces égales et opposées si cette surface est à l'équilibre  :
+  \begin{equation}
+      d\mathbf{f} = \gamma((\mathbf{+\hat{n}})\wedge d\mathbf{l}) +\gamma((\mathbf{-\hat{n}})\wedge d\mathbf{l})
+  \end{equation}
+  Cette force est tangeante à la surface et normale au contour séparant les deux systèmes.\\
+  
+  \textcolor{green}{Vidéo force capillaire }\url{https://www.youtube.com/watch?v=g4c_tj1CccE}.
+  
+  Permet de répondre à pourquoi le geris peut marcher sur l'eau: les pattes hydrophobes du gerris déforment la surface de l'eau qui va chercher à retrouver sa forme en appliquant une force capillaire sur les pattes. Comme l'insecte est suffisamment léger, la force arrive à compenser le poids. \\
+
+  \textcolor{red}{Transition : On a vu l'exemple des surfaces planes, on va s'intéresser à présent aux interfaces courbes.}
+  
+ \section{Pression et tension de surface}
+ 
+ \subsection{Loi de Laplace}
+ Nous avons ici un générateur de bulle. On va faire une expérience simple en créant deux bulles de tailles différentes. \textcolor{blue}{La petite bulle est "mangée" par la grosse.}
  \begin{center}
      \includegraphics[scale=0.1]{LP_TensionSurface/Manip_Laplace.jpg}
      
  \end{center}
- CCL : la pression est donc plus grande dans les petites bulles : on peut le démontrer mathématiquement via la \textbf{Loi de Laplace.}
- Pour cela, on applique le principe des travaux virtuels. On imagine que l'on déforme une bulle de $dR$ : \\
- $\delta W = -P_1dV_1-P_2dV_2+\gamma dA =0$ à l'équilibre.\\
- $\ud V_1 = - \ud V_2 = 4 \pi R^2 \ud R$\\
- $dA = d(4\pi R^2) = 8\pi RdR$.\\
- Finalement : 
+ La différence de pression avec l'extérieur est donc plus grande dans les petites bulles : on peut le démontrer mathématiquement via la \textbf{Loi de Laplace.}
+ Pour cela, on applique le principe des travaux virtuels. On imagine qu'on accroît le rayon de la bulle de $dR$ sous une différence de pression $\Delta P = P_1-P_2$ constante. La valeur de $\Delta P$ correspondant à l'équilibre mécanique sera telle que la variation d'énergie totale $d\delta W_{tot}$ correspondante est nulle. Celle-ci est la somme du :
+ \begin{enumerate}
+     \item travail des forces de pression $\delta W_p = -(P_1-P_2)d(\frac{4}{3}\pi R^3)$
+     \item la variation d'énergie de surface de la sphère : $\delta W_s = 2d(4\pi R^2\gamma)$, le facteur 2 correspond au fait qu'il y a deux interfaces pour une bulle.
+ \end{enumerate}
+ A l'équilibre : $\delta W_p+\delta W_s =0$.  Finalement : 
  \textcolor{red}{Loi de Laplace : }
  \begin{equation}
-     (P_1-P_2)=\frac{2\gamma}{R}
+     (P_1-P_2)=\frac{4\gamma}{R}
  \end{equation}
  \begin{itemize}
      \item Plus $R$ est petit, plus la pression à l'intérieur est grande. 
      \item Lorsque $R \rightarrow \infty$ (surface plane), on a continuité de la pression.
      \item Cette loi nous permet de mesurer $\gamma$ expérimentalement.
+     \item Remarque : pour une gouute, il y a 1 interface liquide-air donc $(P_1-P_2)=\frac{2\gamma}{R})$
  \end{itemize}
- \subsection{Mesure de \text{$\gamma$} (17min)}
- \textcolor{purple}{Expérience :}  Pour une bulle de savon, deux interfaces donc $\Delta P =\frac{4\gamma}{R}$. On génère une bulle, on mesure son rayon et la pression à l'intérieur grâce à un manomètre différentiel de mesurer la différence de pression entre l'intérieur de la bulle et l'extérieur à travers une mesure de tension (piézo). J'ai pris plusieurs points en préparation, je vais en prendre un devant vous. Une regression linéaire $\delta P = \frac{A}{R}$ permet d'obtenir $\gamma$. \\
- \textbf{19min30}\\
+ 
+ \subsection{Mesure de $\gamma_{savon-air}$}
+ \textcolor{blue}{Expérience :}  Pour une bulle de savon, deux interfaces donc $\Delta P =\frac{4\gamma}{R}$. On génère une bulle, on mesure son rayon à l'aide d'un pied à coulisse et la pression à l'intérieur grâce à un manomètre différentiel. Il permet de mesurer la différence de pression entre l'intérieur de la bulle et l'extérieur à travers une mesure de tension (piézo). J'ai pris plusieurs points en préparation, je vais en prendre un devant vous. Une regression linéaire $\delta P = \frac{A}{R}$ permet d'obtenir $\gamma$. \textcolor{red}{Tracer plutôt $R=f(\Delta P)$ car incertitude max sur R.}\\
 
 La pente de $\Delta P = 4 \gamma\times 1/R$ donne $\gamma=28.8 \pm 2.2$~mN/m$^2$ qui est plus faible que celle de l'eau dû à la présence d'un tensioactif (savon = tensioactif). Par ailleurs, on retrouve le bon ordre de grandeur pour une eau savonneuse (internet donne $25$~mN/m$^2$). \\
 
+\subsection{Cas général (cette partie peut sauter)}
+\textcolor{green}{Slide : Film de savon entre deux anneaux.}
+Dans le cas général, on peut montrer (cf cours Marc Rabaut p73) que la loi de Laplace s'écrit $(P_1-P_2)=\gamma\left(\frac{1}{R}+\frac{1}{R'}\right)$ avec R et R' les rayons de courbures principaux de la surface au point considéré, comptés positivement lorsque le centre de la courbure correspondant est situé du côté du fluide (1). Faire un schéma bulle normale, bulle caténoïde (slide). Pour la caténoïde, $\frac{1}{R}=-\frac{1}{R'}$ ce qui permet de satisfaire la loi de Laplace en tout point de l'interface dans le cas ou les pressions sont égales de part et d'autre.\\
 
-  \section{Contact à 3 phases : mouillage (22min)}
-  \textcolor{green}{Mouillage :} étude de l'étalement d'une liquide sur un substrat (solide ou liquide). Utile dans l'industrie (peinture, encre, traitement des pneus, crème, maquillage, etc.).\\
-  $\theta =$ angle de contact, permet de savoir si un liquide mouille plus ou moins bien un substrat. Résulte d'une compétition entre les tensions de surface intervenant dans les trois interfaces (L/G, L/S, S/G). \\
-  \textbf{26min}\\
-  Le système est \{\textbf{dl}$\in$ ligne triple\}. 
-  $\textbf{dF}=0$ à l'équilibre. La projection sur l'axe du solide donne la \textcolor{red}{Loi de Young-Dupré} :
-  \begin{equation}
-      \gamma_{LG}\cos(\theta) = \gamma_{SG}-\gamma_{SL}
-  \end{equation}
-  
+\textcolor{red}{Transition : ce qu'on a vu dans cette partie c'est que les effets de capillarité sont directement reliés à la courbure des interfaces pour des petits objets. Mais pour des gros objets, il y a des effets de gravité qui s'ajoutent.}
+
   \section{Influence de la gravité}
-  On voit que plus la taille de la goutte est importante, plus la goutte est applatie : il y a un effet de gravité qui n'est plus négligeable à partir d'une certaine taille : laquelle ?
-  \subsection{Nombre de Bond (30min)}
+  
+  \textcolor{green}{slide : gouttes de mercure sur une plaque de verre. Plus la taille de la bulle est grande, plus la forme sphérique est déformée.}
+  Il y a un effet de gravité qui n'est plus négligeable à partir d'une certaine taille : laquelle ? C'est ce qu'on va voir dans cette partie.
+  
+  \subsection{Nombre de Bond}
   Compétition entre gravité et tension de surface : $B_0=\frac{\rho R^2g}{\gamma}$. La longueur capillaire $l_c$ est telle que: $B_0=\frac{\rho l_c^2g}{\gamma}=1$ (frontière entre les deux régime), soit $l_c = \sqrt{\frac{\gamma}{\rho g}}$.
   Pour l'eau, $l_c=3$mm.\\
   Deux régimes : 
@@ -129,6 +138,16 @@ La pente de $\Delta P = 4 \gamma\times 1/R$ donne $\gamma=28.8 \pm 2.2$~mN/m$^2$
       h = \frac{2\gamma\cos(\theta)}{\rho g r}
   \end{equation}
   En effet, plus $r$ est petit, plus $h$ est grand. Cette loi permet de mesurer $\gamma$.
+
+\section{Effet de mouillage}
+  \textcolor{green}{Mouillage :} étude de l'étalement d'un liquide sur un substrat (solide ou liquide). Utile dans l'industrie (peinture, encre, traitement des pneus, crème, maquillage, etc.).\\
+  $\theta =$ angle de contact, permet de savoir si un liquide mouille plus ou moins bien un substrat. Résulte d'une compétition entre les tensions de surface intervenant dans les trois interfaces (L/G, L/S, S/G). \\
+  \textbf{26min}\\
+  Le système est \{\textbf{dl}$\in$ ligne triple\}. 
+  $\textbf{dF}=0$ à l'équilibre. La projection sur l'axe du solide donne la \textcolor{red}{Loi de Young-Dupré} :
+  \begin{equation}
+      \gamma_{LG}\cos(\theta) = \gamma_{SG}-\gamma_{SL}
+  \end{equation}
   
   \section*{Conclusion (40min)}
   Expérience de conclusion : Pince à nourrice dans eau flotte, puis coule avec tensio-actif (savon).
