@@ -20,9 +20,11 @@
   \hline 
 Notes de cours sur les fluides (2019-2020) & Marc Rabaud  &  Site agreg Montrouge  &    \\
   \hline 
- Why is surface tension a force parallel to the interface? & Marchand, A., Weijs, J. H., Snoeijer, J. H., \& Andreotti, B   & American Journal of Physics (2011)  &    \\
+ Why is surface tension a force parallel to the interface? \url{https://arxiv.org/abs/1211.3854} & Marchand, A., Weijs, J. H., Snoeijer, J. H., \& Andreotti, B   & American Journal of Physics (2011)  &    \\
   \hline
   Ce que disent les fluides & Guyon, Hulin, Petit & & \\
+  \hline
+  Toute la physique dans un verre d'eau & Clément Santamaria & Ellipses (2005) & \\
   \hline
 \end{tabularx}
 \end{center}
@@ -36,15 +38,16 @@ Notes de cours sur les fluides (2019-2020) & Marc Rabaud  &  Site agreg Montroug
   \textbf{Niveau choisi pour la leçon :} Licence 3
   \newline
   \textbf{Prérequis} : \begin{itemize}
-      \item Forces, travaux de force, énergie
+      \item Forces, travail, énergie
       \item Principe de travaux virtuels
       \item Equation de l'hydrostatique
+      \item interactions intermoléculaires
   \end{itemize}
   
-  \section*{Introduction (3min)}
-L'étude des phénomènes interfaciaux permet de répondre à un certain nombre de questions comme : pourquoi est-ce que certains insectes marchent sur l'eau, pourquoi les gouttes et les bulles ont la formes qu'elles ont, pourquoi en TP de chimie, lorsqu'on met un liquide dans un tube, on voit la formation d'un ménisque, pourquoi encore voit-on des flaques et pas des bulles d'eau posée sur le sol ? Nous allons dans cette leçon essayer d'interpréter ces phénomènes qui nous paraissent somme toute très naturels.
+  \section*{Introduction}
+L'étude des phénomènes interfaciaux permet de répondre à un certain nombre de questions comme : pourquoi est-ce que certains insectes marchent sur l'eau, pourquoi les gouttes et les bulles ont la formes qu'elles ont, pourquoi en TP de chimie, lorsqu'on met un liquide dans un tube, on voit la formation d'un ménisque, pourquoi encore voit-on des flaques et pas des bulles d'eau posée sur le sol ? Ces différentes observations nous amènent en réalité à étudier les propriétés des interfaces liquide/gaz, liquide/solide, solide/gaz ou parfois les 3 en même temps ! Nous allons dans cette leçon essayer d'interpréter ces phénomènes qui nous paraissent somme toute très naturels.
 
-  \section{Tension de surface}
+  \section{Tension superficiellle}
   \subsection{Origine microscopique}
   Une molécule en volume subit des interactions attractives de la part de ses voisines qui la stabilisent. Une molécule à l'interface a moins de voisines qu'en-dessous : cette configuration augmente son énergie de la différence $\Delta E = p_{sup}E_{intermolec}-p_{sub}E_{intermolec}$ avec $p$ le nombre de premiers voisins. Attention, ici $E_{intermolec}$ est négatif. Par exemple en configuration carré, $p_{sub}=8$ et $p_{sup}=5$. \textbf{Le fluide ajuste donc sa forme pour exposer le minimum de surface afin de minimiser son énergie. Surface = lieu des contraintes}
   
@@ -72,7 +75,7 @@ L'étude des phénomènes interfaciaux permet de répondre à un certain nombre 
   
   \textcolor{green}{Vidéo force capillaire }\url{https://www.youtube.com/watch?v=g4c_tj1CccE}.
   
-  Permet de répondre à pourquoi le geris peut marcher sur l'eau: les pattes hydrophobes du gerris déforment la surface de l'eau qui va chercher à retrouver sa forme en appliquant une force capillaire sur les pattes. Comme l'insecte est suffisamment léger, la force arrive à compenser le poids. \\
+  Permet de répondre à pourquoi le geris peut marcher sur l'eau: les pattes hydrophobes du gerris déforment la surface de l'eau (cf clément Santamaria p60) qui va chercher à retrouver sa forme en appliquant une force capillaire sur les pattes. Comme l'insecte est suffisamment léger, la force arrive à compenser le poids. \\
 
   \textcolor{red}{Transition : On a vu l'exemple des surfaces planes, on va s'intéresser à présent aux interfaces courbes.}
   
@@ -108,8 +111,12 @@ L'étude des phénomènes interfaciaux permet de répondre à un certain nombre 
 La pente de $\Delta P = 4 \gamma\times 1/R$ donne $\gamma=28.8 \pm 2.2$~mN/m$^2$ qui est plus faible que celle de l'eau dû à la présence d'un tensioactif (savon = tensioactif). Par ailleurs, on retrouve le bon ordre de grandeur pour une eau savonneuse (internet donne $25$~mN/m$^2$). \\
 
 \subsection{Cas général (cette partie peut sauter)}
-\textcolor{green}{Slide : Film de savon entre deux anneaux.}
-Dans le cas général, on peut montrer (cf cours Marc Rabaut p73) que la loi de Laplace s'écrit $(P_1-P_2)=\gamma\left(\frac{1}{R}+\frac{1}{R'}\right)$ avec R et R' les rayons de courbures principaux de la surface au point considéré, comptés positivement lorsque le centre de la courbure correspondant est situé du côté du fluide (1). Faire un schéma bulle normale, bulle caténoïde (slide). Pour la caténoïde, $\frac{1}{R}=-\frac{1}{R'}$ ce qui permet de satisfaire la loi de Laplace en tout point de l'interface dans le cas ou les pressions sont égales de part et d'autre.\\
+Faire la démo. 
+\begin{center}
+    \includegraphics[scale=0.5]{LP_TensionSurface/Demo_Laplace.jpg}
+\end{center}
+Insister sur le caractère algébrique de R' et R". \textcolor{green}{Slide : Film de savon entre deux anneaux.}
+Faire un schéma bulle normale, bulle caténoïde Pour la caténoïde, $\frac{1}{R}=-\frac{1}{R'}$ ce qui permet de satisfaire la loi de Laplace en tout point de l'interface dans le cas ou les pressions sont égales de part et d'autre.\\
 
 \textcolor{red}{Transition : ce qu'on a vu dans cette partie c'est que les effets de capillarité sont directement reliés à la courbure des interfaces pour des petits objets. Mais pour des gros objets, il y a des effets de gravité qui s'ajoutent.}
 
@@ -119,6 +126,27 @@ Dans le cas général, on peut montrer (cf cours Marc Rabaut p73) que la loi de 
   Il y a un effet de gravité qui n'est plus négligeable à partir d'une certaine taille : laquelle ? C'est ce qu'on va voir dans cette partie.
   
   \subsection{Nombre de Bond}
+  Considérons une goutte sphérique posée sur une surface plane solide. Cette goutte est plongée dans un fluide de masse volumique $\rho$ et possède une masse volumique $\rho+\Delta\rho$.\\
+  
+  La différence de pression hydrostatique au point M(z=h) de la goutte est donnée par la loi de l'hydrostatique :
+  \begin{align}
+      P_1+(\rho+\Delta\rho)gh &= P_2+\rho gh \\
+      P_1-P_2 &= \Delta\rho gh = \Delta P_{grav}
+  \end{align}
+  La différence de pression capillaire à l'interface est donnée par la loi de Laplace :
+  \begin{equation}
+      P_1-P_2 = 2\frac{\gamma_{LG}}{R} = \Delta P_{cap}
+  \end{equation}
+  On définit le nombre de Bond $B_O$ comme le rapport entre ces deux différences de pression :
+  \begin{equation}
+     B_O = \frac{\Delta P_{grav}}{\Delta P_{cap}}\sim \frac{\Delta\rho gr_g^2}{\gamma} = \left(\frac{r_g}{l_c}\right)^2
+  \end{equation}
+  avec $r_g$ le rayon de la ligne de contact. On a définit ici une longueur appelée longueur capillaire $l_c=\sqrt{\frac{\gamma_{LG}}{\Delta\rho g}}$.
+  Cela nous amène à distinguer deux cas :
+  \begin{itemize}
+      \item Si $l_c>>R$, alors les effets gravitaires sont dominants,
+      \item Si $B_O<<1$, l
+  \end{itemize}
   Compétition entre gravité et tension de surface : $B_0=\frac{\rho R^2g}{\gamma}$. La longueur capillaire $l_c$ est telle que: $B_0=\frac{\rho l_c^2g}{\gamma}=1$ (frontière entre les deux régime), soit $l_c = \sqrt{\frac{\gamma}{\rho g}}$.
   Pour l'eau, $l_c=3$mm.\\
   Deux régimes : 
@@ -131,8 +159,8 @@ Dans le cas général, on peut montrer (cf cours Marc Rabaut p73) que la loi de 
       \includegraphics[scale=0.1]{LP_TensionSurface/Menisque.jpg}
   \end{center}
 
-  \subsection{Ascension dans un tube (34min)}
-  Vidéo de l'ascension d'un liquide dans différents tubes capillaires. Plus le tube est fin, plus le liquide monte haute.
+  \subsection{Ascension capillaire dans un tube}
+  Vidéo de l'ascension d'un liquide dans différents tubes capillaires (voir site Laurent Le Guillou dans la partie TP). Plus le tube est fin, plus le liquide monte haute.
   Schéma liquide dans un tube de rayon $r$, rayon de courbure du ménisque $R$, angle de contact $\theta$. On applique la loi de Laplace : $\Delta P = \frac{2\gamma}{R}=\frac{2\gamma\cos(\theta)}{r}$. En appliquant l'équation de l'hydrostatique, on obtient \textcolor{red}{la Loi de Jurin} :
   \begin{equation}
       h = \frac{2\gamma\cos(\theta)}{\rho g r}

@@ -32,15 +32,22 @@ Contexte historique : découverte de l'électron par Thomson (1899), avant expé
 Cristal métallique : [grosses sphères chargés + avec des électrons de c\oe ur] = ions métalliques  + électrons de valence pour assurer électroneutralité.\\
 Remarque : $n_{gaz}=10^{25}$m$^{-3}$ tandis que $n_{e^{-}}=10^{29}$m$^{-3}$, cf p4 Ashcroft.\\
 Hypothèses :\begin{itemize}
-    \item pas d'interaction élec entre les électrons et les ions, et entre les électrons et les électrons : \textcolor{red}{"électrons libres"}
-    \item \textcolor{red}{collisions et changement de vitesse instanées} entre les électrons de c\oe ur et les électrons de valence
-    \item électrons de valence (conduction) se déplacent en ligne droite jusqu'à collision avec proba $1/\tau$. $\tau$ est \textcolor{red}{le temps de collision} ou libre parcourt moyen, temps moyen de propagation entre deux chocs
+    \item pas d'interaction entre les électrons et les ions, et entre les électrons et les électrons : \textcolor{red}{"électrons libres"},
+    \item \textcolor{red}{collisions et changement de vitesse instanées} entre les électrons de c\oe ur et les électrons de valence,
+    \item électrons de valence (conduction) se déplacent en ligne droite jusqu'à collision avec proba $1/\tau$. $\tau$ est \textcolor{red}{le temps de collision} ou libre parcourt moyen, temps moyen de propagation entre deux chocs,
     \item \textcolor{red}{chaos moléculaire}, la distribution des vitesses suit une loi de Maxwell-Boltzmann comme le gaz classique, la direction des électrons est aléatoire. L'équilibre thermodynamique local des électrons avec leur entourage par le biais des collisions (seul mécanisme restant) : 
 \end{itemize}
 
-Ce modèle décrit bien la conductivité dans un métal.
+Ce modèle décrit relativement bien la conductivité dans un métal.
 Déduire équation du mouvement + 
-\subsection{Limitations du modèle de Drude}
+\subsection{Mise en défaut pratique du modèle de Drude}
+Voici ce que Drude prévoit en supposant que la vitesse des électrons obéit à la statistique de Boltzmann :
+\begin{itemize}
+    \item dans un modèle de gaz parfait, la vitesse moyenne des électrons est : $v^*=\sqrt{\frac{3k_BT}{m_e}}=\frac{l}{tau}$ (utiliser le théorème d'équipartition.
+    \item comme $\tau=\frac{\sigma m_e}{N_ee^2}$ avec le modèle de Drude, on obtient $\sigma\propto \frac{1}{\sqrt{T}}$
+\end{itemize}
+
+\textcolor{blue}{Manip quantitative : mesure 4 points d'un morceau de cuivre à différentes températures. Montrer (si possible) que la résistivité est linéaire en température.}\\
 \begin{itemize}
     \item en utilisant $1/2mv^2=3/2k_BT$, on trouve $v=10^5$m/s alors que $v_{F}=10^6$m/s et indépendante de T,
     \item quid des matériaux isolants ? semi-conducteurs ?
@@ -49,18 +56,27 @@ Déduire équation du mouvement +
 
 Conclusion : il faut passer à un autre modèle plus poussé : un modèle quantique.
 
-\section{Modèle quantique - théorie des bandes}
-Electrons obéissent à la statistique de Fermi-Dirac. La conséquence : bandes d'énergie.
-\subsection{Bandes d'énergie}
-Modèle : électrons en intéraction avec le potentiel périodique du réseau cristallins.\\
-Cf Kittel (chap 7) + TD 1 Physique des Solides : mettre en prérequis pour les calculs.\\
-Slide : schéma bande avec isolant+ tableau périodique 
-
+\section{Modèle quantique des électrons libres}
+Electrons obéissent à la statistique de Fermi-Dirac. 
 \subsection{Modèle des électrons libres}
 Cf Kittel chap 8 ou Ashcroft chap 2 et 13. Modèle de Sommerfeld. Faire les calculs Justifier qu'on peut se placer à T=0K.
+
+\section{Théorie des bandes}
+
+\subsection{Electrons dans un potentiel périodique}
+Modèle : électrons en intéraction avec le potentiel périodique du réseau cristallins.\\
+Cf Kittel (chap 7) + TD 1 Physique des Solides : mettre en prérequis pour les calculs.
+
+\subsection{Bandes d'énergie}
+Slide : schéma bande avec isolant+ tableau périodique 
+
+\subsection{Remplissage des bandes}
+
+Distinguer métaux, semi-conducteurs et isolant. Prévoir lesquels seront métalliques avec le demi-remplissage, lesquels seront isolants. Montrer que ça ne marche pas toujours.
 \subsection{Conductivité dans un semi-conducteur}
 Densité d'état varie en $\exp(-\Delta/k_BT)$ donc $\sigma$ aussi.\\
-\textcolor{green}{Mesure de la conductivité dans un semi-conducteur dopé pour déterminer le gap.}, cf TP semiconducteurs. Durée 30min environ, $\Delta_{exp}=0.6$eV alors que $\Delta_{th}=0.7$eV. Interprétation : matériel vieux, gap a pu changer. Matériau pas pur.\\
+
+\textcolor{blue}{Mesure de la conductivité dans un semi-conducteur dopé pour déterminer le gap.}, cf TP semiconducteurs. Durée 30min environ, $\Delta_{exp}=0.6$eV alors que $\Delta_{th}=0.7$eV. Interprétation : matériel vieux, gap a pu changer. Matériau pas pur.\\
 \section{Conclusion}
 Ouverture sur l'ingénierie des semi-conducteurs : micro-électronique, jonctions pn, transistors. Prix Nobel 2014 pour l'invention de la diode bleue (en 1992).\\
 Ouverture sur la supraconductivité.\\
