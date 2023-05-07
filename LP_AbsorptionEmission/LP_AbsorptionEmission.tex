@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Absorbtion et émission de la lumière}
+    \label{LP_Absorption}
+\end{headerBlock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+  Optique Physique & R. Taillet & de Boeck &   \\
+  \hline 
+  Physique Statistique & Landau et Lifshitz & Ellipses &  \\
+  \hline 
+   Poly laser & A. Maitre &  &  \\
+\hline
+ Sextant & & Hermann & \\
+ \hline 
+ Tout-en-un PC/PC* & M.-N. Sanz & Dunod & \\
+ \hline 
+ Physique en PC/PC* & Pascal Olive & Ellipses & \\
+ \hline
+\end{tabularx}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{reportBlock}{Plan détaillé}
+  \textbf{Niveau choisi pour la leçon :} Licence
+  \newline
+  \textbf{Prérequis : }Milieu LHI, distribution de Boltzmann
+  \newline
+  
+  \textbf{Déroulé détaillé de la leçon: }   \newline
+On verra deux modèles qui permettront d'expliquer le phénomène d'émission et absorption de la lumière dans les milieux.
+  \section{Modèle du corps noir}
+  
+  \subsection{Electron élastiquement lié}
+
+
+\section{Modèle d'Einstein}
+\subsection{Equation d'Einstein}
+Soit un système à deux niveaux d'énergie $E_a$ et $E_b$ associée aux états propres $\ket{a}$ et $\ket{b}$. On note $N_a$ et $N_b$ la population de ces niveaux telles que $N_a+N_b=N$. La proba d'occupation est $n_i=\frac{N_i}{N}$.\\
+La lumière que reçoit ce système est caractérisé par une densité spectrale $u(\nu)=\frac{dU}{d\nu}$ avec $U=\frac{\epsilon_0E^2}{2}+\frac{B^2}{2\mu_0}$.\\
+
+
+A l'équilibre : $\frac{dn_a}{dt}=-\frac{dn_b}{dt}$ et donc : 
+\begin{equation}
+    \frac{dn_a}{dt} = -An_b + B_{21}u(\nu_0)
+\end{equation}
+\subsection{Coefficients d'Einstein}
+
+En posant $h\nu_0 = E_b - E_a$, on a $\frac{n_a}{n_b}=\exp{-\frac{E_a+E_b}{k_BT}} = \exp{\frac{h\nu_0}{b_BT}}$. On en déduit que $B_{12} = B_{21} = B$ et $\frac{A}{B}=\frac{8\pi h\nu_0^3}{c^3}$. L'équation d'Einstein devient : 
+\begin{equation}
+    \frac{dn_b}{dt} = -\frac{dn_a}{dt} = -An_a + Bu(\nu_0)(n_a-n_b)
+\end{equation}
+
+\subsection{Processus de transfert d'énergie}
+La puissance transférée de l'atome vers le champ $P_{at\rightarrow ch}=-h\nu_0\frac{dn_b}{dt} = h\nu_0B(n_b-n_a)u(\nu_0)$. On distingue alors deux régimes : 
+\begin{itemize}
+    \item Si $n_a>n_b$, $P_{at\rightarrow ch}<0$ $\longrightarrow$ Absorbtion
+    \item Si $n_a<n_b$, $P_{at\rightarrow ch}>0$ $\longrightarrow$ Inversion de population
+\end{itemize}
+
+Initialement $n_a=1$,$n_b=0$ : 
+\begin{itemize}
+    \item $n_a(\infty) = \frac{A + Bu(\nu_0)}{A + 2Bu(\nu_0)}$
+    \item $n_b(\infty) = \frac{Bu(\nu_0)}{A + 2Bu(\nu_0)}$
+\end{itemize}
+\end{reportBlock}
+
+
+
