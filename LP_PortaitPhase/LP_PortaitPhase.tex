@@ -1,0 +1,76 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Oscillateurs ; portraits de phase et non-linéarités.}
+  \label{LP_PortaitPhase} 
+\end{headerBlock}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+   \url{https://uhincelin.pagesperso-orange.fr/LP49_BUP_portrait_phase_oscil.pdf} & H. Gié &  BUP n°744&    \\
+  \hline 
+   \url{https://www.lpens.ens.psl.eu/wp-content/uploads/2022/09/MecaniquePourChimistes-3.pdf} & Jules Fillette & &  \\
+  \hline 
+\end{tabularx}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Plan
+\begin{reportBlock}{Plan détaillé}
+
+  \textbf{Niveau choisi pour la leçon :} CPGE 2ème année
+  \newline
+  \textbf{Prérequis} : \begin{itemize}
+      \item TMC,
+      \item Electrocinétique : schéma électrique, loi des mailles, résistance, condensateur, inductance
+  \end{itemize}
+
+  \textbf{Déroulé détaillé de la leçon: }  
+  
+  \section*{Introduction}
+Messages à faire passer : définition d'un portait de phase, portait de phase amorti/non-amorti, stabilité des points fixes, centres attracteurs.\\
+
+Le notion de portait de phase est un outil très riche pour l'analyse de nombreux systèmes mécaniques, en particulier pour les oscillateurs. C'est que nous allons essayer de montrer dans cette leçon à travers quelques exemples.
+
+  \section{Oscillateurs non-amortis}
+  On va s'intéresser à des systèmes mécaniques ou électrocinétiques dont on va négliger les phénomènes de dissipation. On va commencer par prendre l'exemple très simple du pendule pesant.
+  \subsection{Equation du mouvement d'un pendule pesant}
+  Exemple de la physique : pendule simple à petites oscillations. On applique le théorème du moment cinétique appliqué à la masse $m$ dans le référentiel terrestre qu'on suppose galiléen :
+  \begin{equation}
+     \frac{d\mathbf{L_O}(M)}{dt} = mL^2\ddot{\theta}\mathbf{\hat{u_z}} = \mathbf{M_O}(\mathbf{P}) = -mgLsin(\theta)\mathbf{\hat{u_z}}
+  \end{equation}
+  On en déduit l'équation d'un oscillateur harmonique de pulsation propre $\omega_0=\sqrt{\frac{g}{L}}$ :
+  \begin{equation}
+      \ddot{\theta} + \omega_0^2\sin(\theta) = 0
+  \end{equation}
+  \textbf{Analogies :} courant dans un circuit LC suit la même équation.
+  \subsection{Portrait de phase}
+  Définition d'un portait de phase.
+  \subsection{Approche énergétique}
+  Parler de stabilité, conservation de l'énergie mécanique.
+
+  
+
+  \section{Effets non linéaires}
+  Formule de borda pendule.\\
+
+  \section*{Conclusion}
+  Ouvrir sur les oscillateurs entretenus ? Van der Pol, résistance négative,
+
+  \textcolor{blue}{Manip quanti :} mettre en évidence non linéarités, déterminer formule de Borda.
+  
+
+
+\end{reportBlock}
