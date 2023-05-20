@@ -1,0 +1,136 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Modèle de l'écoulement parfait d'un fluide}
+    \label{LP_EcoulementParfait}
+\end{headerBlock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+  Hydrodynamique & Guyon, Hulin, Petit &  & \\
+  \hline
+  Tout-en-un PC/PC* & M.-N. Sanz & Dunod (2019) & \\
+  \hline
+  Wikipédia & Il y a pas mal de choses cool & & \\
+  \hline
+  Mécanique 2ème année & H. Gié et J.-P. Sarmant & Tec\&Doc (1996) & \\
+  \hline
+\end{tabularx}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{reportBlock}{Plan détaillé}
+  \textbf{Niveau choisi pour la leçon :} CPGE 2ème année
+  \newline
+  \textbf{Prérequis : }
+  \begin{itemize}
+      \item Viscosité, équation de Naviers-Stokes, equation de l'hydrostatique
+      \item calcul de l'accélération convective dans un écoulement parallèle
+      \item Champ eulérien, lignes de champ, lignes de courant
+  \end{itemize}
+
+
+\section*{Introducion}
+Les équations de la mécanique des fluides décrivent l'évolution du champ eulérien de vitesse dans le référentiel d'un observateur fixe. Dans certains cas comme un écoulement d'eau sous un pont, ou un écoulement d'air sur une aile d'avion (\textcolor{green}{Montrer sur slide étude IFREMER sur l'effet d'un écoulement turbulent sur une hydrolienne}), il se créé des phénomènes de vorticité/turbulences lié aux effets de viscosité des fluides. Parler de ressaut hydrolique ? Dans le cadre de cette leçon, on va se placer loins de ces zones complexes c'est-à-dire en amont ou loin en aval de l'écoulement.
+
+\section{Modèle de l'écoulement parfait}
+
+\subsection{Equation d'Euler}
+\textcolor{green}{Slide : équation de Navier-Stokes}.\\
+
+\textcolor{red}{Modèle de l'écoulement parfait : $\eta=0$ dans Navier-Stokes.}\\
+\textbf{Remarques :}
+\begin{enumerate}
+    \item Si fluide au repos, on retrouve l'équation de l'hydrostatique,
+    \item Equation toujours non linéaire donc extrèmement difficile à résoudre (problème du Millénaire avec l'équation de Navier-Stokes),
+    \item Dans les cas pratiques que nous verrons plus loin, on peut considérer l'écoulement parfait si $\eta\mathbf{\Delta v}<<$ autres termes de l'équation. Par exemple, si $Re = `\frac{\lvert \mathbf{v}\cdot\grad \rvert}{\lvert \nu\mathbf{\Delta v}\rvert}>>1$
+\end{enumerate}
+
+
+\subsection{Conséquence : effet de la courbure des lignes de courant}
+Voir Dunod. Prendre une vitesse orthoradiale, montrer que $\partialD{P}{r}>0$. Faire le dessin d'une balle soumise à un flux d'air. L'air va adhérer à la surface par les intéractions moléculaires \textcolor{blue}{Manip qualitative : Montrer l'effet Coanda avec la balle de ping-pong. On peut aussi faire avec une cuillère et un filet d'eau, la cuillère est attirée vers le filet d'eau qui impose un gradient de pression de la surface de la cuillère vers l'extérieur.}
+
+\textcolor{red}{Transition : Puisqu'on a annulé les effets de frottements visqueux qui sont dissipatifs, on va voir qu'on a conservation de l'énergie;}
+
+\subsection{Théorème de Bernouilli}
+Hypothèses :
+\begin{itemize}
+    \item Ecoulement parfait et stationnaire
+    \item Ecoulement incompressible : $\rho=cste$,
+    \item que forces de pression et de pesanteur (dirigée suivant $-\mathbf{\hat{u_z}}$)
+\end{itemize}
+Pour des hypothèses plus générales, voir H. Gié p190.\\
+
+\textbf{Le long d'une ligne de courant (Daniel Bernouilli (1738):}
+\begin{equation}
+    \rho\frac{v^2}{2}+P+gz = cste
+\end{equation}
+Cela constitue une équation de conservation de l'énergie d'un fluide. Savoir qu'on peut le démontrer pour un écoulement compressible, ou potentiel $\grad\wedge\mathbf{v}=0$.\\
+
+\textcolor{red}{Transition : on va voir quelques applications de ce théorème.}
+
+\section{Applications}
+
+\subsection{Les sondes Pitot}
+Du nom d'Henri Pitot (1730) qui voulait mesurer le débit de la Seine.\\
+
+Faire le dessin. Attention, mettre point d'arrêt A à l'intérieur du tube. On a un écoulement parfait hors de la couche limite. Cf Guyon-Hulin-Petit p494.\\
+
+\underline{Application Bernouilli le long de la ligne de courant passant par A$_{\infty}$A :}
+\begin{equation}
+    P_A = P_0 + \frac{1}{2}\mu v_0^2
+\end{equation}
+\underline{Application Bernouilli le long de la ligne de courant passant par B$_{\infty}$B' :}
+\begin{equation}
+    P_{0} = P_{B'} = P_B
+\end{equation}
+comme les lignes de courant sont parallèles à l'axe BB' (cf équation d'Euler.\\
+
+On en déduit la conversion de la différence de pression à l'intérieur du tube et la vitesse de l'écoulement :
+\begin{equation}
+    v_0 = \sqrt{\frac{2(P_A-P_B}{\mu}}
+\end{equation}
+\textbf{Remarques :}
+\begin{enumerate}
+    \item On a négligé les variations d'altitude des points A et A$_{\infty}$, B$_{\infty}$ et B', B' et B par rapport aux variation de vitesse ou de pression : $g\Delta z\sim 0.01-0.1m^2.s^{-2}$ vs $0.5*v_0^2\sim 50m^2.s^{-2}$
+    \item On a supposé que le fluide ne rentrait pas dans l'ouverture au niveau de B ce qui n'est pas justifiable dans un modèle d'écoulement parfait. Du fait de la viscosité, il y a une couche limite (de très faible épaisseur $\delta(x)\propto\frac{1}{Re_x}$) qui donne une vitesse nulle au point B. Mais il y a continuité de la pression à la normale à la paroi ce qui permet d'utiliser Bernouilli loin de la couche limite.
+\end{enumerate}
+
+\textcolor{red}{Transition : on va vérifier expérimentalement le théorème de Bernouilli et voir qu'on peut en déduire la masse volumique de l'air.}
+
+\subsection{Mesure de la masse volumique de l'air}
+
+\textcolor{blue}{Manip quantitative :} utilise une soufflerie, un anémomètre à fil chaud et un tube de Pitot relié à un manomètre différenciel lui même relié à un voltmètre METRIX. Il faut une alimentation continue +12V pour le manomètre et bien mesurer la tension à pression atmosphérique ($\sim 2.266V$).\\
+
+Attention au sens de l'anémomètre à fil chaud, la flèche doit être dans le sens de l'écoulement.\\
+
+On représente $P_A-P_B = f(v^2/2)$ et on obtient une droite de coefficient $\mu_{air}(T)=1.43(14)$~kg.m$^{-3}$. A comparer à celle attendue à cette température (cf Wikipédia). Commenter les incertitudes, le Z-score, l'anémomètre (précision : $0.03m/s + 5\% valeur moyenne$ ce qui est important !).
+
+\subsection{Effet Venturi}
+Une autre application du théorème de Bernouilli est l'effet Venturi. Faire le schéma.\\
+
+Equation d'incompressibilité :
+`\begin{equation}
+    v_A = v_B\frac{s}{S} = v_C
+\end{equation}
+Théorème de Bernouilli le long de ABC :
+\begin{equation}
+    P_A - P_B = \frac{1}{2}\left(v_B^2-v_A^2\right) = \frac{1}{2}v_A^2\left(\frac{S^2}{s^2}-1\right)
+\end{equation}
+qui relie différence de pression et géométrie du dispositif par l'intermédiaire du débit. On peut donc mesurer le débit !
+Montrer qu'il y a des pertes de charges car le niveau en C n'est pas le même qu'en A, il faut prendre en compte les effets de viscosité pour être vraiment précis mais au premier abord ça marche bien.
+
+
+\section*{Conclusion}
+Conclure sur l'hélium liquide. \textcolor{green}{Photo sur slide ou vidéo youtube à partir de 1min :} \url{https://www.google.com/search?client=firefox-b-d&q=helium+superfluide#fpstate=ive&vld=cid:fcf88f2b,vid:2Z6UJbwxBZI}.\\
+
+Ouvrir sur le paradoxe de d'Alembert : si pas de viscosité, pas de résistance au mouvement d'une plaque ou d'une aile d'avion : une aile d'avion ne peut pas voler ? Hé non car viscosité induit un décollement des lignes de champs qui implique une force de trainée.
+
+\end{reportBlock}

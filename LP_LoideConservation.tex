@@ -26,29 +26,57 @@
   \textbf{Niveau choisi pour la leçon :} CPGE 2ème année
   \newline
   \textbf{Prérequis : }
-  \newline
+  \begin{itemize}
+      \item Lois de la mécanique classique,
+      \item Définition énergie mécanique, moment cinétique, moment d'une force, quantité de mouvement
+      \item Système fermé
+  \end{itemize}
 
 
-\section{Quantité de mouvement}
+\section*{Introduction}
+Les principes de conservation sont nombreux en physique : conservation de la charge en électromagnétisme, conservation de la masse ou de l'énergie pour un système thermodynamique fermé (1er principe). Nous allons ici nous restreindre aux principes de conservations en mécanique newtonienne.\\
 
-\subsection{PFD}
+En mécanique, nous connaissons trois lois d'évolution :
+\begin{enumerate}
+    \item le \underline{\textbf{théorème de la résultante cinétique :}} $\frac{d\mathbf{p}}{dt}=\sum_{i}\mathbf{F_i}=\mathbf{R}$,
+    \item le \underline{\textbf{théorème du moment cinétique :}} $\frac{d\mathbf{L_O}}{dt}=\sum_{i}\mathbf{M_{O,i}}$,
+    \item le \underline{\textbf{théorème de la puissance mécanique :}} $\frac{dE_m}{dt}=\sum_{i}P_i$.
+\end{enumerate}
+
+\textcolor{red}{Transition :}Les termes $\sum_{i}\mathbf{F_i}$, $\sum_{i}\mathbf{M_{O,i}}$ et $\sum_{i}P_i$ jouent le rôle de \textit{sources} pour les grandeurs $\mathbf{p}$. On va s'intéresser aux relations de conservation qui découlent de l'annulation de ces sources 
+
+\section{Conservation de la quantité de mouvement}
+
+\subsection{Système isolé}
+\textcolor{green}{Défiition :} Système fermé qui ne subit aucune action extérieure. \\
+En pratique cela n'arrive jamais car il y a toujours des forces gravitationnelles mais fondamental d'un point de vue conceptuel. L'Univers est par définition un système isolé donc tout sous-système A de l'Univers qui reçoit de la quantité de mouvement $\Delta \mathbf{P_A}$ d'un sous-système B avec lequel il intéragit, ce dernier a dû lui céder une quantité de mouvement $\Delta \mathbf{P_B}$ telle que :
+\begin{equation}
+    \Delta(\mathbf{P_A}+\mathbf{P_B}= 0 \Leftrightarrow \Delta\mathbf{P_A} = -\Delta\mathbf{P_B}
+\end{equation}
+Exemple de la diffusion de Rutherford où il y a un transfert de la quantité de mouvement.
 \subsection{Système pseudo-isolé}
+\textcolor{green}{Définition :} un système est dit pseudo-isolé s'il est soumis à des actions extérieures qui se compensent c'est-à-dire dont la résultante $\mathbf{R}$ est nulle.
 \subsection{Collision élastique}
 \textcolor{blue}{Expérience : }Conservation de $\mathbf{p}$ de mobiles autoporteurs.
 
-\section{Moment cinétique}
+\section{Conservation du moment cinétique}
 
 \subsection{TMC}
 \subsection{Système pseudo-isolé}
 \subsection{Cas d'une force centrale}
 
-\section{Energie}
+\section{Conservation de l'énergie}
 
 \subsection{TEC}
 \subsection{Forces conservatives}
 \subsection{Cas du pendule simple}
 
 \section*{Conclusion}
-Ouverture sur le théorème de N\oe ther.
+Ouverture sur les théorèmes de N\oe ther (Emmi N\oe ther, mathématicienne allemande (1882-1935):
+\begin{enumerate}
+    \item La conservation de la quantité de mouvement est une conséquence de \textbf{l'invariance des lois de la physique par translation spatiale}, c'est-à-dire de l'homogénéité de l'espace,
+    \item  La conservation du moment cinétique est une conséquence de \textbf{l'invariance des lois physiques par rotation}, c'est-à-dire de l'isotropie de l'espace,
+    \item La conservation de l'énergie est une conséquence de \textbf{l'invariance des lois physiques par translation temporelle}, c'est-à-dire de l'homogénéité du temps.
+\end{enumerate}
 
 \end{reportBlock}
