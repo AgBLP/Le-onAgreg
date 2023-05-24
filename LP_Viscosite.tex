@@ -19,9 +19,9 @@
   \hline
   Hydrodynamique physique & Guyon, Hulin, Petit & EDP Sciences & \\
   \hline 
-   Poly de cours & Marc Rabaud & &    \\
+  Poly de cours & Marc Rabaud & &    \\
   \hline 
-   &  & &    \\
+  Physique Spé PC/PC* & S. Olivier & Tec\&Doc (2000) &    \\
   \hline 
 \end{tabularx}
 \end{center}
@@ -32,27 +32,71 @@
 %%%% Plan
 \begin{reportBlock}{Plan détaillé}
 
-  \textbf{Niveau choisi pour la leçon :} Licence 3
+  \textbf{Niveau choisi pour la leçon :} CPGE 2ème année
   \newline
   \textbf{Prérequis} : \begin{itemize}
-      \item 
+  \item cinématiques des fluides
+      \item loi de l'hydrostatique, poussée d'Archimède
+      \item diffusion
+      
   \end{itemize}
 
   \textbf{Déroulé détaillé de la leçon: }  
   
   \section*{Introduction}
-\textcolor{blue}{Expérience qualitative :} Diffusion de la quantité de mouvement dans un cylindre \url{https://www.youtube.com/watch?v=i4wGWJdB7mg}.
+  On a décrit dans un cours précédent l'équation du mouvement pour un fluide parfait. Hors, il existe beaucoup de situation ou le modèle du fluide parfait ne permet pas d'expliquer le comportement de l'écoulement du fluide. \textcolor{blue}{Manip qualitative :} on voit bien que l'écoulement de l'eau et du miel ne se fait pas à la même vitesse. D'autre part, on peut observer avec le miel que les couches verticales du fluide se mettent successivement en mouvement (vitesse nulle au fond du bécher qui augmente progressivement). Il y a ce qu'on appelle une force de viscosité qui va diffuser la quantité de mouvement du fluide.
 
-  \section{Modèle macroscopique de la viscosité}
+  \section{Notion de viscosité}
 cf Chap 2 Guyon Hulin Petit.
-  \subsection{Ecoulement de Couette plan}
+\subsection{Viscosité de cisaillement}
+Voir Tec\&Doc p418. On considère un écoulement de la forme $\mathbf{v}=v_x(z)$ dans un fluide. On considère un élément de surface $\mathbf{dS}=dxdy\mathbf{\hat{u_z}}$ d'ordonnée z séparant le fluide situé au-dessus de z et en dessous de z. L'action de contact, appelée \textcolor{green}{force de viscosité}, exercée par le fluide situé au-dessus de z sur le fluide situé en-dessous de z est tangentielle à la vitesse de l'écoulement :
+\begin{equation}
+    d\mathbf{F_t} = \eta\partialD{v_x}{z}dS\mathbf{\hat{u_x}}
+\end{equation}
+où on introduit le coefficient de viscosité cinématique $\eta$ de dimension Pa.s$^{-1}$ comme on peut le voir avec la formule. \textcolor{green}{Donner quelques exemples de $\eta$ sur slide (miel et eau)}. 
+\textbf{Remarques :}
+\begin{itemize}
+    \item Plus $\eta$ est grand plus la force de viscosité de cisaillement est élevée (c'est pour ça qu'on dit que le miel est plus visqueux que l'eau),
+    \item force non nulle si champ de vitesse inhomogène
+    \item le sens de la force est tel qu'il tend à homogénéiser le champ des vitesses : la couche de fluide du dessus qui va plus vite met en mouvement la couche de dessous : \textbf{il y a une diffusion de la quantité de mouvement} des couches du fluide les plus rapides vers les couches les moins rapides.
+\end{itemize} 
 
-  \subsection{Tenseur des déformations}
-  Voir Guyon Hulin Petit Chap 3 p125.
+  \subsection{Equivalent volumique de la force de viscosité}
+Considérons un pavé élementaire de volume $d\tau=dxdydz$ en prenant le même champ de vitesse que précédemment. Un bilan des forces conduit à :
+\begin{itemize}
+    \item $d\mathbf{F}_{z+dz}=\eta\partialD{v_x}{z}(z+dz)\mathbf{u_x}$ car le fluide sur la couche de dessus va plus vite,
+    \item  $d\mathbf{F}_{z}=-\eta\partialD{v_x}{z}(z)\mathbf{u_x}$ car le fluide sur la couche de dessous va moins vite.
+\end{itemize}
+Un développement de Taylor à l'ordre 1 permet d'écrire la résultante comme :
+\begin{align}
+    d\mathbf{F} &= \eta\partialD{^2v_x}{d_z^2}d\tau\mathbf{u_x} \\
+    \mathbf{f}_{visc}&=\frac{d\mathbf{F}}{d\tau} = \eta\mathbf{\Delta v}
+\end{align}
+\textbf{La dernière formulation est valable pour les écoulements incompressibles !}. C'était une hypothèse dont on se passait pour les fluides parfaits.
 
 
-  \section{Dynamique des fluide visqueux}
+  %\subsection{Tenseur des déformations}
+  %Voir Guyon Hulin Petit Chap 3 p125.
   
+  \textcolor{red}{Transition :} Maintenant qu'on a vu la force volumique de viscosité pour un fluide visqueux, on peut l'injecter dans les équations du mouvement du champ de vitesse eulérien du fluide.
+
+  \section{Dynamique d'un fluide visqueux}
+
+  \subsection{Equation de Navier-Stokes}
+  Le principe fondamental de la dynamique appliquée à une particule fluide suivant le champ de vitesse eulérien $\mathbf{v}$ du fluide s'écrit désormais :
+  \begin{equation}
+      \rho\left(\partialD{\mathbf{v}}{t} + (\mathbf{v}\cdot\grad)\mathbf{v}\right) = -\grad P + \rho \mathbf{g} + \eta\Delta\mathbf{v} + \mathbf{f}_{vol}
+  \end{equation}
+  C'est l'équation de Navier-Stokes.\\
+  \textbf{Remarques :}
+  \begin{itemize}
+      \item comme l'équation d'Euler, cette équation est non-linéaire donc très difficile à résoudre numériquement ou analytiquement (problème du millénaire en maths),
+      \item 
+  \end{itemize}
+  Analysons ce qui se passe lorsqu'on suppose le terme convectif nul (ce qui est possible par exemple pour un écoulement parallèle tel que celui décrit précédemment
+
+
+  \subsection{Transport diffusif de la quantité de mouvement}
 \subsection{Tenseur des contraintes}
 
 \subsection{Equation de Navier-Stokes}

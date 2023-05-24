@@ -39,22 +39,71 @@
   \textbf{Niveau choisi pour la leçon :} 
   \newline
   \textbf{Prérequis} : \begin{itemize}
-      \item 
-      \item 
+      \item équations de la mécanique des fluides
+      \item coefficient de compressibilité isentropique
       \item 
   \end{itemize}
   
   \section*{Introduction}
-
-  \section{}
-
-  \subsection{}   
-
-  \section{}
-
-  \subsection{}
+  Nous allons décrire dans cette leçon la propagation des ondes acoustiques. Deux points sont importants dans cette description :
+  \begin{itemize}
+      \item La propagation nécessite un milieu matériel pour avoir lieu : expérience de la cloche sous vide (expérience de Otto von Guericke seconde moitié du XVIIème ou Robert Boyle plus performant) \url{https://www.youtube.com/watch?v=BC9Pod4cnpk},
+      \item La propagation est issue d'un couplage entre les variations de pression du fluide et les variations de vitesse des particules.
+  \end{itemize}
   
-  \section{}
+  \section{Description des ondes acoustiques}
+  Les équations de la mécanique des fluides sont des équations non linéaires et donc difficile voir impossible à résoudre. Pour décrire la propagation des ondes dans les fluides, on va devoir faire quelques hypothèses qu'on pourra justifier a posteriori.
+  
+  \subsection{Approximation acoustique}   
+  On va considéré un fluide parfait (i.e. sans prendre en compte les effets de viscosité, déformations réversibles du milieu) qui est caractérisé par :
+  \begin{itemize}
+      \item Une pression au repos $P_0$,
+      \item une masse volumique uniforme $\rho_0$,
+      \item une vitesse moyenne particulaire nulle
+  \end{itemize}
+  Une onde sonore est une perturbation par rapport à cet état d'équilibre. L'état du fluide est donc décrit par :
+  \begin{itemize}
+      \item la pression $P(M,t)=P_0+P_1(M,t)$ où $P_1$ est appelé \textcolor{green}{pression acoustique ou surpression},
+      \item la masse volumique (compression/dilatation du fluide) $\rho(M,t)=\rho_0 + \rho_1(M,t)$,
+      \item la vitesse particulaire $\mathbf{v}(M,t)=\mathbf{0}+\mathbf{v_{1}}(M,t)$.
+  \end{itemize}
+  \textcolor{red}{approximation acoustique :} on se place dans le cadre de faibles perturbations $\lvert P_1(M,t) \rvert << P_0$, $\lvert rho_1(M,t) \rvert << \rho_0$ et $\lvert \mathbf{v_1}(M,t) \rvert << V_0$ avec $V_0$ une vitesse qu'on déterminera, et on négligera les termes d'ordre 2.\\
+  
+  \textcolor{red}{Transition :} Maintenant qu'on a placé le cadre de notre étude, on va pouvoir étudier la propagation. Et pour cela on va utiliser les équations de la mécanique des fluides.
+  
+  \subsection{Equation de propagation du son}
+  On a à notre disposition deux équations en mécanique des fluides, l'équation locale de la conservation de la masse et l'équation d'Euler (fluide parfait) en négligeant la gravité :
+  \begin{align}
+      \partialD{\rho}{t} + div(\rho\mathbf{v})(M,t) &= 0 \\
+      \rho(M,t)\left(\partialD{\mathbf{v}}{t}(M,t) + (\mathbf{v}\cdot\mathbf{grad})\mathbf{v}(M,t) \right) &= -\mathbf{grad}P(M,t)
+  \end{align}
+  On va linéariser ces équations en ne gardant que les termes à l'ordre 1. Pour l'équations de conservation de la masse :
+  \begin{equation}
+      \partialD{\rho_1}{t} + \rho_0div(\mathbf{v_1})(M,t) = 0
+  \end{equation}
+  où on fait apparaître une relation entre $\rho_1$ et $v_1$ alors qu'on préfèrerait entre $v_1$ et $P_1$. Problème, on a 4 équations pour 5 inconnues. Il en faut donc une cinquième. On va supposer que le comportement du fluide est décrit par une équation du type $\rho =f(P)$. Si on suppose que la passage de l'onde se fait suffisament rapidement pour la transformation du milieu soit adiabatique (p872 Dunod + réversible comme écoulement parfait), on peut utiliser la définition du coefficient de compressibilité isentropique $\chi_S$ :
+  \begin{equation}
+      \chi_S = -\frac{1}{V}\left(\partialD{V}{P}\right)_S = \frac{1}{\rho}\left(\partialD{\rho}{P}\right)_S
+  \end{equation}
+  et un développement de Taylor permet d'obtenir $\rho_1 = \chi_S\rho_0P_1$ ce qui donne pour l'équation locale de la conservation de la masse :
+  \begin{equation}
+      \chi_S\partialD{P_1}{t} + div(\mathbf{v_1})(M,t) = 0
+  \end{equation}
+  L'hypothèse $\mathbf{v_1}$ petite consiste à négliger le terme $\mathbf{v}\cdot\mathbf{grad})\mathbf{v}(M,t)$ devant $\partialD{\mathbf{v}}{t}$ ce qui est possible si $v<<c=V_0$ qui est la vitesse introduite au début de cette partie. On trouve en linéarisant l'équation d'Euler :
+  \begin{equation}
+      \rho_0\partialD{\mathbf{v_1}}{t}(M,t) = -\mathbf{grad}P_1(M,t)
+  \end{equation}
+  En utilisant le théorème de Schwarz, on trouve les équations de propagation de la supression et de la vitesse :
+  \begin{align}
+    \partialD{^2P_1}{t^2} &= \frac{1}{c^2}\Delta P_1 \\
+    \partialD{^2\mathbf{v_1}}{t^2} &= \frac{1}{c^2}\mathbf{\Delta v_1}     
+  \end{align}
+  avec $c = \frac{1}{\sqrt{\chi_S\rho_0}}$ la vitesse du son dans l'air.
+  
+  \subsection{Mesure de la vitesse des ondes ultrasonores}
+  \textcolor{blue}{Expérience quantitative :} On prend deux piézo-électriques sur un banc optique. Un est relié à un GBF, l'autre à l'oscillo. On mesure un décalage de plusieurs longueurs d'ondes et on prend les positions relatives des capteurs. On détermine $c=\lambda f$.
+  
+  \section{Aspect énergétique}
   
 
 
