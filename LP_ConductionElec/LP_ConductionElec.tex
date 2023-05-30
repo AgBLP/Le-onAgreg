@@ -20,12 +20,37 @@ Physique des Solides (Chap 1 à 3)  & N. Ashcroft et D.Mermin   &  EDP Sciences 
   \hline 
   Physique des Solides & C. Kittel &  Dunod &  \\
 \hline
+Site ferrarithierri pour télécharger BUP 550 & A. Guinier, E. Guyon, J Matricon, C. Taupin & BUP & \\
+\hline 
 \end{tabularx}
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{reportBlock}{Commentaires des années précédentes :}
+    \begin{itemize}
+        \item \textbf{2017 :} Cette leçon ne concerne pas que la conduction dans les métaux,
+        \item \textbf{2014 :} Dans la présentation du modèle de Drude, les candidats doivent être attentifs à discuter des hypothèses du modèle, en particulier celle des électrons indépendants. Le jury se permet par ailleurs de rappeler aux candidats que les solides ne sont pas tous métalliques.
+    \end{itemize}
+\end{reportBlock}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Approche classique}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{reportBlock}{Plan détaillé}
+
+  \textbf{Niveau choisi pour la leçon :} 
+  \newline
+  \textbf{Prérequis} : \begin{itemize}
+  \item loi d'Ohm, mécanique newtonienne,
+      \item statistique de Maxwell-Boltzmann, modèle du gaz parfait,
+      \item statistique de Fermi-Dirac
+      \item 
+  \end{itemize}
+  
+\section*{Introduction}
+On connaît et on utilise trivialement l’électricité, ça fait partie de la culture générale scientifique de savoir qu’il existe des matériaux conducteurs et des matériaux isolants (c'est même quelque chose qu'on voit au collège avec des expériences permettant d'allumer une ampoule avec du caoutchouc, du bois, du cuivre, ...). On va voir dans cette leçon que cette notion naturelle n'est en réalité explicable que par la mécanique quantique et que les modèles classiques échouent à rendre compte expérimentalement ce qui se passe.
+
+\section{Approche microscopique classique}
 \subsection{Modèle de Drude (1902) 10min max}
 %Définition résistivité : $\rho=\frac{RS}{L}$.\\
 Contexte historique : découverte de l'électron par Thomson (1899), avant expérience de Rutherford.\\
@@ -41,9 +66,10 @@ Hypothèses :\begin{itemize}
 Ce modèle décrit relativement bien la conductivité dans un métal.
 Déduire équation du mouvement + 
 \subsection{Mise en défaut pratique du modèle de Drude}
+Bien fait dans le BUP.\\
 Voici ce que Drude prévoit en supposant que la vitesse des électrons obéit à la statistique de Boltzmann :
 \begin{itemize}
-    \item dans un modèle de gaz parfait, la vitesse moyenne des électrons est : $v^*=\sqrt{\frac{3k_BT}{m_e}}=\frac{l}{tau}$ (utiliser le théorème d'équipartition.
+    \item dans un modèle de gaz parfait, la vitesse moyenne des électrons est : $v^*=\sqrt{\frac{3k_BT}{m_e}}=\frac{l}{\tau}$ (utiliser le théorème d'équipartition.
     \item comme $\tau=\frac{\sigma m_e}{N_ee^2}$ avec le modèle de Drude, on obtient $\sigma\propto \frac{1}{\sqrt{T}}$
 \end{itemize}
 
@@ -79,5 +105,7 @@ Densité d'état varie en $\exp(-\Delta/k_BT)$ donc $\sigma$ aussi.\\
 \textcolor{blue}{Mesure de la conductivité dans un semi-conducteur dopé pour déterminer le gap.}, cf TP semiconducteurs. Durée 30min environ, $\Delta_{exp}=0.6$eV alors que $\Delta_{th}=0.7$eV. Interprétation : matériel vieux, gap a pu changer. Matériau pas pur.\\
 \section{Conclusion}
 Ouverture sur l'ingénierie des semi-conducteurs : micro-électronique, jonctions pn, transistors. Prix Nobel 2014 pour l'invention de la diode bleue (en 1992).\\
-Ouverture sur la supraconductivité.\\
+Ouverture sur la supraconductivité (slide supra mercure).\\
 Ouverture possible sur la conduction thermique, loi de Wiedemann-Franz.
+
+\end{reportBlock}

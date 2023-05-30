@@ -20,86 +20,107 @@
   \hline 
   Optique & J.-P. Pérez & Dunod & \\
   \hline 
-\hline
+  Optique Physique et électronique & D. Mauras & PUF (2011à) & \\
+  \hline
+  \url{http://ressources.univ-lemans.fr/AccesLibre/UM/Pedago/physique/02/optiondu/reseauphase.html} & Simulation réseau & Université du Mans & \\
 \end{tabularx}
 \end{center}
+
+\begin{reportBlock}{Commentaires des années précédentes :}
+    \begin{itemize}
+        \item \textbf{2017 :} Il faut traiter de diffraction par des structures périodiques et pas seulement d’interférences à N ondes,
+        \item \textbf{2015 :} Il est important de bien mettre en évidence les différentes longueurs caractéristiques en jeu,
+        \item \textbf{2014-2012 :} Cette leçon donne souvent l’occasion de présenter les travaux de Bragg ; malheureusement, les ordres de grandeur dans différents domaines ne sont pas toujours maîtrisés,
+        \item \textbf{2010-2009 :} La notion de facteur de forme peut être introduite sur un exemple simple. L’influence du nombre d’éléments diffractants doit être discutée.
+    \end{itemize}
+\end{reportBlock}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{reportBlock}{Plan détaillé}
   \textbf{Niveau choisi pour la leçon :} Licence
   \newline
-  \textbf{Prérequis : }Diffraction de Fraunhofer, trigonométrie, interférences, fente d'Young, théorème de Malus
-  \newline
+  \textbf{Prérequis : }
+  \begin{itemize}
+      \item Principe de retour inverse de la lumière, théorème de Malus
+      \item Diffraction de Fraunhofer, diffraction par une fente rectangulaire
+      \item notion de cohérence spatiale et temporelle
+  \end{itemize} 
+
   
   \textbf{Déroulé détaillé de la leçon: }   \newline
-On a pu voir des phénomènes de diffraction (ex : tâche d'airy). Cependant le papillon machin a des ailes bleues, la couleur disparaît lorsqu'on ajoute de l'eau.
-  \section{Diffraction à deux pupilles}
-  \subsection{Translation d'une pupille}
-  \begin{center}
-      \includegraphics[scale=0.1]{LP_DiffractionPeriodique/Translation_pupille.jpg}
-  \end{center}
-  En utilisant la diffraction de Fraunhofer :
-  \begin{itemize}
-      \item \underline{a}(M)$=CA(O)\exp{j\phi_0} \int_{p\in P} \exp{j\frac{2\pi}{\lambda_0}(\mathbf{u}-\mathbf{u_i})\cdot \mathbf{OP}} \, \mathrm{dS_p} $
-      \item \underline{a}(M)$=CA^{'}(O)\exp{j\phi_0} \int_{p\in P^{'}} \exp{j\frac{2\pi}{\lambda_0}(\mathbf{u}-\mathbf{u_i})\cdot \mathbf{OP^{'}}} \, \mathrm{dS_p^{'}} $
-  \end{itemize}
-  On en déduit le déphasage $\Delta \phi = \frac{2\pi}{\lambda_0}(\mathbf{u}-\mathbf{u_i})\cdot\mathbf{D}$. Comme l'éclairement $\epsilon\propto$\underline{a}\underline{a$^{'*}$} est proportionnel, cela va avoir des conséquences.
+La diffraction, en particulier dans les conditions de  Fraunhofer, permet de faire le lien entre les caractéristiques de l’objet diffractant et la figure de diffraction résultante. On va dans cette leçon s'intéresser aux propriétés d'objet diffractant possédant des structures périodiques et montrer en particulier deux choses : 1) si on connait les caractéristiques de l'objet diffractant, on peut connaitre les caractéristiques de la source, 2) on peut utiliser la figure de diffraction pour remonter à la structure interne de l'objet diffractant. On verra quelles limitations on obtient dans ces deux visions.\\
 
-  \subsection{Diffraction de deux fentes d'Young}
-  \textcolor{red}{Attention, erreur dans la formule (cf question)}.
+L'objet périodique par excellence est le réseau.
+
+  \section{Diffraction par un réseau}
+  Voir D. Mauras p194.
+  \subsection{Définition}
+  Il en existe de différents types (amplitude par transmission, phase par transmission, amplitude par réflexion (spectrographe) et phase par réflexion). On va s'intéresser pour l'instant aux réseaux d'amplitude par transmission. Faire un dessin en définissant le pas du réseau.
+
+  \subsection{Formule fondamentale du réseau}
+  On va considérer ici un montage de type Fraunhofer (source à l'infini, observation à l'infini) : faire le dessin (voir D. Mauras p195) en forçant le trait sur le réseau pour faire apparaitre l'angle $\theta_0$. Les ondes diffractées par les fentes donnent lieu à des interférences non localisées. On les observe à l'infini dans la direction $\theta$, réalité dans le plan focal de la lentille (L$_2$) au point M(x). Le principe de retour inverse (source fictive en M) et le théorème de Malus nous permet de montrer que \textcolor{red}{pour avoir interférences constructives} au point d'observation M :
   \begin{equation}
-      \epsilon = a_1 a_1^* + 2(1+cos(\Delta\phi))
+      \sin\left(\theta_p\right) - \sin\left(\theta_0\right) = \frac{p\lambda_0}{na}
   \end{equation}
-  Le premier terme vient de la diffraction, le second est un terme d'interférences.
+  qui est la formule fondamentale des réseaux. Remarque : pour un réseau blazé (cf \url{http://olivier.sigwarth.free.fr/CoursTS2/Ch5/Chap5.pdf}), on remplace $\sin(\theta_p)$ par $\sin(\theta_p+\alpha)$. $p$ est l'ordre d'interférence :
+  \begin{itemize}
+      \item $p=0$ : la lumière se propage en ligne droite selon les lois de l'optique géométrique,
+      \item l'ordre d'interférence est borné car $-1\leq sin(\theta_p)\leq 1 \rightarrow |p|\leq \frac{a}{\lambda}$ donc plus a est grand, plus on peut avoir des ordres d'interférences élevés. Plus la longueur d'onde est faible, plus il y a d'ordres d'interférences. Ex : pour un réseau à 500 traits/mm, si $\lambda=550$~nm, p=-3, -2, -1, 0, 1, 2 ,3 (7 ordres d'interférences).
+  \end{itemize}
+  Utilisation en lumière polychromatique : comme $\theta_p$ dépend de $\lambda$, le réseau est donc un disperseur de la lumière. D'autre part :
+  \begin{align*}
+      d\theta_p\cos(\theta_p) &= p\frac{d\lambda}{a} \\
+      \frac{d\theta_p}{d\lambda} &= \frac{p\lambda}{a\sqrt{1-(sin(\theta_0)+p\frac{\lambda}{a})^2}}
+  \end{align*}
+  On commente :
+  \begin{enumerate}
+      \item Pour un ordre donné, la dispersion augmente avec la longueur d'onde contrairement au prisme,
+      \item la dispersion augmente avec l'ordre d'interférence,
+  \end{enumerate}
+  On va voir visuellement tout ça à l'aide de l'expérience ci-après.
+  
+  \subsection{Mesure des raies spectrales de la lampe à vapeur de mercure}
+  On va ici faire une application de l'utilisation des réseaux.\\
+  Matériel :
+  \begin{itemize}
+      \item un réseau (prendre celui où on peut changer le pas du réseau ENSP 3637), choisir le 3000 traits/mm,
+      \item lampe à vapeur de mercure + condenseur de 8cm,
+      \item une lentille convergente de 15-20cm de focale + une autre de focale 10cm,
+      \item une fente réglable,
+      \item un écran blanc avec une feuille blanche et du scotch
+      \item un miroir, une règle de 1m (ou un mètre).
+  \end{itemize}
+  \textcolor{blue}{Expérience quantitative :} On dispose d'une source à vapeur de mercure. On fait passer la lumière par une fente source de largeur réglable. On met une lentille de focale 15-20cm pour faire une image sur un écran éloigné. On intercale un réseau entre les deux. On oriente le réseau pour obtenir le minimum de déviation. On mesure l'angle $\tan{D_{p,min}}=\frac{d_{ecran}}{L_{ecran-reseau}}$. On en déduit $\lambda$ (avec incertitudes) la formule des réseaux à l'angle de déviation minimum.\\
+  
+  Mettre sur slide l'angle de déviation minimum :
+  \begin{align*}
+      D_p &= \theta_p - \theta_0 \\
+      \sin{\theta_p} &= \sin(\theta_0) + p\frac{\lambda}{a} \\
+      \frac{dD_p}{d\theta_0} &= \frac{\cos(\theta_0)}{\cos(\theta_p)}-1 =0 \rightarrow \cos(\theta_p)=\cos(\theta_0) \\
+  \end{align*}
+  Dériver $D_p$ une seconde fois par rapport à $\theta_0$ pour montrer que c'est un angle de déviation minimum. En prenant $\theta_{p,min}=-\theta_{0,min}$, le rayon émergeant est symétrique du rayon incident par rapport au plan du réseau et l'angle de déviation vaut :
+  \begin{equation}
+      2\sin\left(\frac{D_{p,min}}{2}\right) = p\frac{\lambda}{a}
+  \end{equation}
 
-  \section{Diffraction sur un réseau}
-  \subsection{Caractéristiques}
-  On note $a$ le pas du réseau.
-  \subsection{Loi des réseaux}
-  \begin{center}
-      \includegraphics[scale=0.1]{LP_DiffractionPeriodique/Reseau.jpg}
-  \end{center}
-  La différence de marche vaut :
-\begin{align*}
-\delta &= O_{n+1}M-O_{n}M \\
-           &= a\sin{\theta} - a\sin{\theta_0}
-\end{align*}
-La formule des réseaux est donc :
-\begin{equation}
-    n\frac{\lambda}{a} = \sin{\theta_n} - a\sin{\theta_0}
-\end{equation}
-avec $n$ l'ordre de l'interférence.
+  \textcolor{red}{Transition :} Ce qu'on a vu pour l'instant c'est qu'on peut mesurer le spectre d'émission d'une source polychromatique. Quelles sont ses limitations ? Il faut étudier plus en détail l'intensité résultante à travers une struture périodique la structure des pics d'interférences.
 
-\subsection{Diffraction d'une source ponctuelle}
-Mise en application : \textcolor{green}{Montage de la mise en évidence de le diffraction d'un faisceau laser sur un réseau.} Mesure du pas du réseau par la mesure de l'écartement des tâches de diffraction et de la distance réseau-écran. 
+  \section{Facteur de structure et facteur de forme}
+  \subsection{Intensité de la diffraction}
 
-\section{Conclusion}
+  \section{Application : diffraction des solides cristallins}
+  Voir Kittel Chapitre 2.
+  \subsection{Conditions de diffraction de Bragg}
+  La condition des interférences contructives entre deux plans réticulaires séparés par la distance d s'écrit :
+  \begin{equation}
+      2d\sin{\theta} = n\lambda
+  \end{equation}
+  \textbf{Remarque :} pour qu'il y ait diffraction, on doit avoir $2d\sim 5\angstrom\leq\lambda$ ce qui montre qu'on ne peut pas utiliser la lumière pour résoudre la structure cristalline.
+
+
+\section*{Conclusion}
 Ouverture sur la diffraction des rayons X. Tâches de diffraction des papillons.
 \end{reportBlock}
 
 
-\begin{reportBlock}{Questions posées par l’enseignant (avec réponses)}
-  \textbf{C : Quelles sont les conditions d'observation de la manip ?}  \textcolor{purple}{Fraunhofer (image et objet à l'infini)}. Une source ponctuelle ça envoie des rayons parallèles à l'infini ? \textcolor{purple}{Dans le cas du laser, oui (presque à l'infini).} Dessine moi le montage de Fraunhofer. Est-on dans les conditions de Fraunhofer ? \textcolor{purple}{Non il manque une lentille à la sortie du réseau.}\\
-  \textbf{C : Choix du papier millimétré ?}  \textcolor{purple}{Cela me servait d'aide pour les mesures.}\\
-   \textbf{C : Si on avait utilisé une caméra CCD, qu'aurait-on obtenu ?}  \textcolor{purple}{On aurait obtenu un sinus cardinal en enveloppe avec un phénomène d'interférence à l'intérieur.} Comment influe une variation des paramètres sur cette figure ? \textcolor{purple}{L'espacement entre les maxima est inversement proportionnel au pas du réseau. La largeur à mi-hauteur du sinus cardinal est } \\
-   \textbf{C : Revenons à la formule de l'éclairement à travers deux fentes d'Young.}  \textcolor{purple}{Ce n'est pas une somme, c'est un produit...} C'est quoi le nom des deux termes ? \textcolor{purple}{Facteur de forme (le premier) et facteur de structure (le second)}\\
-   \textbf{C : C'est quoi l'éclairement $\epsilon$ ? Lien entre éclairement et intensité $I$ ?}  \textcolor{purple}{On a $\epsilon = KI = K<s^2(M,t)>$, où $<...>$ représente la valeur moyenne temporelle, K est une constante qui dépend du détecteur et $s(M,t)$ représente une composante du champ électrique de la lumière par rapport à un axe perpendiculaire à sa direction de propagation. L'éclairement est la puissance surfacique moyenne de l'onde lumineuse (autrement dit la valeur moyenne du vecteur de Poynting).}
-   \textbf{C : A quoi ça sert les rayons X ?}  \textcolor{purple}{A sonder la matière.} Où sont les pupilles qui diffractent dans la matière ? \textcolor{purple}{Atomes = n\oe uds du réseau. Distance entre les plans d'atomes = pas du réseau}
-\end{reportBlock}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Correction
-\begin{reportBlock}{Partie réservée au correcteur}
-  \textbf{Avis général sur la leçon (plan, contenu, etc.)}
-  
-  
-  \textbf{Notions fondamentales à aborder, secondaires, délicates :}
-  
-  
-  
-  \textbf{Expériences possibles (en particulier pour l'agrégation docteur) :}
-  
-  
-  \textbf{Bibliographie conseillée : }
-
-\end{reportBlock}

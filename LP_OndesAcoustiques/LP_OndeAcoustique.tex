@@ -27,8 +27,18 @@
   \hline
   Ondes acoustiques & A. Chaigne & Ecole Polytechnique (2011) & \\
   \hline
+  Optique Physique et électronique & D. Mauras & PUF (2001) & \\
+  \hline
 \end{tabularx}
 \end{center}
+
+\begin{reportBlock}{Commentaires des années précédentes :}
+    \begin{itemize}
+        \item \textbf{2017 :} La contextualisation et des applications de la vie courante ne doivent pas être oubliées dans cette leçon qui se résume souvent à une suite de calculs. De plus, les fluides ne sont pas les seuls milieux dans lesquels les ondes acoustiques peuvent être étudiées,
+        \item \textbf{2014 :} Cette leçon peut être l’occasion de traiter les ondes acoustiques dans les fluides ou dans les milieux périodiques, certes, mais elle peut aussi être l’occasion de traiter les deux cas qui donnent lieu à des phénoménologies très différentes,
+        \item \textbf{2013 :} Le candidat est libre d’étudier les ondes acoustiques dans un fluide ou dans un solide élastique.
+    \end{itemize}
+\end{reportBlock}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -72,6 +82,7 @@
   \textcolor{red}{Transition :} Maintenant qu'on a placé le cadre de notre étude, on va pouvoir étudier la propagation. Et pour cela on va utiliser les équations de la mécanique des fluides.
   
   \subsection{Equation de propagation du son}
+  Voir Mauras p5.\\
   On a à notre disposition deux équations en mécanique des fluides, l'équation locale de la conservation de la masse et l'équation d'Euler (fluide parfait) en négligeant la gravité :
   \begin{align}
       \partialD{\rho}{t} + div(\rho\mathbf{v})(M,t) &= 0 \\
@@ -98,10 +109,21 @@
     \partialD{^2P_1}{t^2} &= \frac{1}{c^2}\Delta P_1 \\
     \partialD{^2\mathbf{v_1}}{t^2} &= \frac{1}{c^2}\mathbf{\Delta v_1}     
   \end{align}
-  avec $c = \frac{1}{\sqrt{\chi_S\rho_0}}$ la vitesse du son dans l'air.
+  avec $c = \frac{1}{\sqrt{\chi_S\rho_0}}$ la vitesse du son dans l'air.\\
+
+  Comme on a une transformation isentropique, on peut utiliser la loi de Laplace :
+  \begin{align*}
+      PV^{\gamma} &= cste \\
+      dPV^{\gamma} + \gamma PV^{\gamma-1}dV &= 0 \\
+      \partialD{V}{P} &= -\frac{V}{\gamma P} \\
+      \chi_S = -\frac{1}{V}\left( \partialD{V}{P}\right) &= \frac{1}{\gamma P} = \frac{M}{\gamma\rho RT} \\
+      c &= \frac{1}{\sqrt{\chi_S\rho}}=\sqrt{\frac{\gamma RT}{M_{air}}}
+  \end{align*}
   
   \subsection{Mesure de la vitesse des ondes ultrasonores}
-  \textcolor{blue}{Expérience quantitative :} On prend deux piézo-électriques sur un banc optique. Un est relié à un GBF, l'autre à l'oscillo. On mesure un décalage de plusieurs longueurs d'ondes et on prend les positions relatives des capteurs. On détermine $c=\lambda f$.
+  \textcolor{blue}{Expérience quantitative :} On prend deux piézo-électriques sur un banc optique. Un est relié à un GBF, l'autre à l'oscillo. On mesure un décalage de plusieurs longueurs d'ondes (10$\lambda$) et on prend les positions relatives des capteurs. On détermine $c=\lambda f$. On mesure ici la vitesse de phase. Pour mesurer la vitesse de groupe, utiliser la fonction Burst du GBF, mesurer le temps de vol pour plusieurs positions.\\
+
+  D. Mauras p6, application : séparation isotopiques de l'uranium par diffusion gazeuse à partir d'hexafluorure d'uranium gazeux.
   
   \section{Aspect énergétique}
   

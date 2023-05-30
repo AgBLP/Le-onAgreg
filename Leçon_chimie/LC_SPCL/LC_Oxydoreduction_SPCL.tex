@@ -18,7 +18,7 @@ Titre & Auteur(s) & Editeur (année) & ISBN \\ \hline
  \hline
  \url{https://spcl.ac-montpellier.fr/moodle/course/view.php?id=61&section=4} & Académie Montpellier & & \\
  \hline
- \url{https://ww2.ac-poitiers.fr/sc_phys/sites/sc_phys/IMG/pdf/stl_bio_physique_chimie.pdf} & Sujet bac pour l'hydrolyse de l'eau dans l'ISS & & \\
+ BO Terminale STL/SPCL & Sujet bac pour l'hydrolyse de l'eau dans l'ISS & & \\
 \end{tabularx}
 \end{center}
 
@@ -30,12 +30,15 @@ Titre & Auteur(s) & Editeur (année) & ISBN \\ \hline
 
 \section*{Introduction pédagogique}
 
-
 \paragraph*{Prérequis}
 \begin{itemize}
-\item 
+\item titrages
+\item Réactions acide/base
+\item potentiel électrique
 \end{itemize}
+
 \paragraph*{Contexte :}
+Premier trimestre 
 
 
 \paragraph*{Notions importantes}
@@ -53,13 +56,70 @@ Titre & Auteur(s) & Editeur (année) & ISBN \\ \hline
 \paragraph*{Difficultés}
 
 \begin{itemize}
+\item formule de Nernst : mathématique
 \item 
+
 \end{itemize}
 
 \section*{Introduction }
+\textcolor{blue}{Manipulation introductive :} Pile Daniell. On observe une différence de potentiel, pourquoi ?
+\section{Oxydants et réducteurs (5min)}
 
-\section{Les biomolécules pour l'organisme}
+\subsection{Définitions}
+\textcolor{green}{Oxydant :} espèce capble de capturer un ou plusieurs électrons. Ex : Zn$^{2+}$ ou Cu$^{2+}$.\\
+\textcolor{green}{Réducteur :} espèce capable de capter un ou plusieurs électrons. Ex : Cu(s) ou Zn(s).
 
-\section{Conclusion} 
+\subsection{Couple oxydant-réducteur}
+A tout oxydant est associé un réducteur qui sont reliés par une demi-équation électronique.\\
+Exemple : Cu$^{2+}$ + 2e$^-$ = Cu(s).\\
+
+Remarque : on peut écrire de manière plus générale pou un couple oxydant (Ox)/réducteur (Red) :
+\begin{equation}
+    Ox + n\times e^- = Red
+\end{equation}
+\\
+Remarque : il faut équilibrer les réactions redox. Exemple du couple Mn$^{2+}$/MnO$_4^{2-}$.
+
+\section{Réaction d'oxydoréduction (5min)}
+\subsection{Définition}
+Dans une réaction d'oxydoréduction, les réactifs sont un oxydant et un réducteur de deux couples différents : il y a un transfert d'électrons.\\
+
+Exemple : \begin{itemize}
+    \item Al$^{3+}$/Al(s)
+    \item Zn$^{2+}$/Zn(s)
+\end{itemize}
+On écrit les deux demi-équations redox et on obtient les équations bilans :
+\begin{equation}
+    2Al^{3+}(aq) + 3Zn(s) = 2Al(s) + 3Zn^{2+}(aq)
+\end{equation}
+
+\subsection{Réactions en milieu acide/basique}
+\subsubsection{En milieu acide}
+Exemple de MnO$_4^-$/Mn$^{3+}$ avec O$_2$/H$_2$O$_2$. Cette réaction  nécessite des ions H$^+$ pour avoir lieu donc elle doit se passer en milieu acide.
+\subsubsection{En milieu basique}
+Exemple de MnO$_4^-$/Mn$^{3+}$ avec CNO$^-$/CN$^-$. Elle nécessite des ions HO$^-$ pour se faire donc un milieu basique.
+
+\section{Potentiel d'un couple redox (5-10min)}
+\subsection{Principe de la mesure : retour sur la pile}
+\begin{itemize}
+    \item Une pile est constitué de deux demi-piles reliées par un pont salin,
+    \item Chacune d'entre elle est constituée d'un couple redox auquel est associé un potentiel E (en V),
+    \item Ce potentiel s'obtient en mesurant la différence de potentiel entre une demi-pile que l'on souhaite étudier et une autre demi-pile au potentile fixé/connu : l'électrode standard à hydrogène (théorique, E=0V) ou l'Electrode au Calomel Saturé (pratique, E=0.24V)
+\end{itemize}
+\subsection{Potentiel standard d'un couple rédox}
+Potentiel d'un couple dans les conditions standard telles que : P=1bar et T=25$\degree$C.
+\subsection{Relation de Nernst}
+Relation qui permet de calculer le potentiel d'un couple redox. Pour une équation redox $\alpha$Ox +ne$^-$ = $\beta$Red, la relation de Nerst s'écrit :
+\begin{equation}
+    E(Ox/red) = E^0(Ox/red) + \frac{RT}{nF}ln\left( \frac{[Ox]_{eq}^\alpha}{[Red]_{eq}^\beta}\right)
+\end{equation}
+
+\section{Titrage d'oxydo-réduction}
+Titrage dont la réaction de support est une réaction d'oxydo-réduction.
+
+\textcolor{blue}{Expérience quantitative :}Titrage des ions Fe$^{2+}$ par les ions Ce$^{4+}$. Ca sert pour le vin.
+
+\section*{Conclusion} 
 
 \end{reportBlock}
+

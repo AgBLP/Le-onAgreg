@@ -22,12 +22,20 @@
 \hline
  Sextant & & Hermann & \\
  \hline 
- Tout-en-un PC/PC* & M.-N. Sanz & Dunod & \\
+ Tout-en-un PC/PC* & M.-N. Sanz & Dunod (2022) & \\
  \hline 
  Physique en PC/PC* & Pascal Olive & Ellipses & \\
  \hline
 \end{tabularx}
 \end{center}
+
+\begin{reportBlock}{Commentaires des années précédentes :}
+    \begin{itemize}
+        \item \textbf{2017 :} Cette leçon ne peut se résumer à une présentation des relations d’Einstein,
+        \item \textbf{2015 :} Cette leçon peut être traitée de façons très variées, mais il est bon que les candidats aient réfléchi aux propriétés des diverses formes de rayonnements émis, aux dispositifs exploitant ces propriétés et au cadre théorique permettant de les comprendre,
+        \item \textbf{2014-2011 : }Trop souvent, il y a confusion entre les processus élémentaires pour un atome et un ensemble d’atomes. De même le candidat doit préciser au cours de sa leçon le caractère monochromatique ou non du champ de rayonnement qu’il considère et plus généralement les caractéristiques du rayonnement stimulé.
+    \end{itemize}
+\end{reportBlock}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{reportBlock}{Plan détaillé}
@@ -38,12 +46,26 @@
   
   \textbf{Déroulé détaillé de la leçon: }   \newline
 On verra deux modèles qui permettront d'expliquer le phénomène d'émission et absorption de la lumière dans les milieux.
-  \section{Modèle du corps noir}
-  
-  \subsection{Electron élastiquement lié}
+  \section{Absorption et émission spontanée}
 
-
-\section{Modèle d'Einstein}
+  \subsection{Modèle de Bohr de l'atome}
+  Parler du modèle de Bohr (modèle obsolète), quantification des niveaux d'énergie des atomes (raies de l'hydrogène mais aussi d'autres espèces) en utilisant les relations de Planck-Einstein. Présenter spectre d'émission et d'absorption d'éléments chimiques. Utilité : composition de l'atmosphère d'une planète.
+  \subsection{Mesure spectroscopique du spectre d'émission du mercure Hg}
+  \textcolor{blue}{Expérience quantitative :} On se propose ici de mesurer quelques raies d'émission du spectre de la lampe à vapeur de mercure. Pour cela on a besoin de :
+  \begin{itemize}
+      \item un réseau (prendre celui où on peut changer le pas du réseau ENSP 3637), choisir le 3000 traits/mm mais on peut montrer ce que ça change en changeant le pas,
+      \item lampe à vapeur de mercure + condenseur de 8cm,
+      \item une lentille convergente de 15-20cm de focale,
+      \item une fente réglable,
+      \item un écran blanc avec une feuille blanche et du scotch.
+  \end{itemize}
+On fait l'image de la fente sur l'écran à une distance assez éloignée. On intercale le réseau juste après la lentille. On mesure la distance $L\pm u(L)$ entre le réseau et l'écran. On cherche le minimum de déviation en tournant le réseau. On mesure la distance à l'écran entre l'ordre 0 et l'ordre 1 (ou 2 si on peut). On en déduit $\lambda_p$ :
+\begin{equation}
+    \lambda_p = \frac{2a}{p}\sin\left(\frac{d_{ecran}}{2L}\right)
+\end{equation}
+Comparer aux longueurs d'onde attendues pour le spectre du mercure.
+\subsection{Absorption par un groupe d'atome}
+\section{Emission stimulée}
 \subsection{Equation d'Einstein}
 Soit un système à deux niveaux d'énergie $E_a$ et $E_b$ associée aux états propres $\ket{a}$ et $\ket{b}$. On note $N_a$ et $N_b$ la population de ces niveaux telles que $N_a+N_b=N$. La proba d'occupation est $n_i=\frac{N_i}{N}$.\\
 La lumière que reçoit ce système est caractérisé par une densité spectrale $u(\nu)=\frac{dU}{d\nu}$ avec $U=\frac{\epsilon_0E^2}{2}+\frac{B^2}{2\mu_0}$.\\
@@ -72,6 +94,9 @@ Initialement $n_a=1$,$n_b=0$ :
     \item $n_a(\infty) = \frac{A + Bu(\nu_0)}{A + 2Bu(\nu_0)}$
     \item $n_b(\infty) = \frac{Bu(\nu_0)}{A + 2Bu(\nu_0)}$
 \end{itemize}
+
+\section*{Conclusion}
+Modèle de l'électron élastiquement lié qui prédit l'absorption électromagnétique de la matière et le rayonnement dipolaire ?
 \end{reportBlock}
 
 
