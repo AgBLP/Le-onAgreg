@@ -21,7 +21,7 @@
   \hline 
  Thermodynamique 1ère année MPSI-PCSI-PTSI & Jean-Marie Brébec  & H Prépa (Hachette Supérieur)  &    \\
   \hline 
- &   &   &    \\
+ Thermodynamique & B. Diu & Hermann (2007) &  \\
   \hline 
  &   &   &    \\
   \hline
@@ -48,7 +48,7 @@
   
   \section*{Introduction (3min)}
  La thermodynamique classique est une branche de la physique qui s'intéresse aux propriétés macroscopiques d'un système, et qui étudie les transformations de la matière et les échanges d'énergie sous différentes formes entre ce système et son environnement sans chercher à comprendre ce qui se passe au niveau microscopique. C'est une théorie axiomatique basée sur principalement sur deux principes.\\
-  Animation : https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes\_en.html. Pour un système isolé, l'énergie ne se créé pas et ne disparaît pas, mais elle se transforme d'une forme à une autre : Ex animation : conversion énergie mécanique-électrique, électrique-thermique. \\
+  Animation : https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes\_en.html. Pour un système isolé (ni échange d'énergie, ni échange de matière avec l'extérieur), l'énergie ne se créé pas et ne disparaît pas, mais elle se transforme d'une forme à une autre : Ex animation : conversion énergie mécanique-électrique, électrique-thermique. \\
   Si le système est isolé, il y a conservation de l'énergie.  \\
   Leçon placée en 1re année CPGE. Review des prérequis.
   
@@ -74,19 +74,22 @@
   \textcolor{red}{Version infinitésimale : } $dE_c + dE_p + dU = \delta W + \delta Q$.
   
   \subsection{Travaux des forces de pression (11min30)}
-  Schéma fluide contenu dans une paroi. Pression extérieure $P_e$ uniforme et constante. Système = {fluide + paroi}. Variation du volume total de $dV$ entre entre $t$ et $t+dt$. En $M$ déplacement de $\mathbf{dM}$. \\
-  Force apppliquée au système en un point $M$ : $\mathbf{dF}=-P_e\mathbf{dS}$. Travail asssocié $\delta^2 W = \mathbf{dS}\cdot\mathbf{dM} = -P_e \mathbf{dS}\cdot\mathbf{dM} = - P_e d^2 V$. Travail totale $\delta W$ s'obtient en sommant les travaux : $\delta^2 W$ $\delta W = -P_e dV$\\
+  Voir Diu p80. Schéma fluide contenu dans une paroi. Pression extérieure $P_e$ uniforme et constante. Système = {fluide + paroi}. Variation du volume total de $dV$ entre entre $t$ et $t+dt$. En $M$ déplacement de $\mathbf{dM}$. \\
+  Force apppliquée au système en un point $M$ : $\mathbf{dF}=-P_e\mathbf{dS}$. Travail asssocié $\delta^2 W = \mathbf{dF}\cdot\mathbf{dM} = -P_e \mathbf{dS}\cdot\mathbf{dM} = - P_e d^3 V$. Travail totale $\delta W$ s'obtient en sommant les travaux : $\delta^2 W$ $\delta W = -P_e dV$\\
+  
   \underline{Si transformation quasi-statique et équilibre mécanique avec l'extérieur $P=P_e$} $\delta W = - p \ud V$ et $W = - \int_A^B p \ud V$ entre deux états $A$ et $B$.
   
  \subsection{Exemples de bilan d'énergie}
- \subsubsection{Trasformation isochore}
- $dV=0$ d'où $W=0$ donc $\Delta U = Q$.
+ \subsubsection{Transformation isochore}
+ $dV=0$ d'où $W=0$ donc $\Delta U = Q$. Pour toute transformation isochore, la variation de l'énergie interne est dûe aux transferts thermiques avec l'extérieur.
  
  \subsubsection{Transformation monobare et enthalpie}
  $P_e=cste$ donc $W=-P_e(V_f-V_i)$ donc $\Delta U = Q + W$ donc $Q = \Delta U - W = [U_f +P_f V_f]-[U_i+P_iV_i] = H_f - H_i$.\\
  On définit l'enthalpie $H=U+PV$.\\
  
- \textcolor{red}{Premier Principe (transormation monobare):} $\Delta H = Q + W_{autre}$.
+ \textcolor{red}{Premier Principe (transformation monobare):} $\Delta H = Q + W_{autre}$.
+
+ \textcolor{red}{Trasition :} Maintenant qu'on a décrit les outils permettant de décrire les transformations, on va voir quelques applications du premier principe. 
  
   \section{Applications du premier principe (20min)}
   \subsection{Définitions préliminaires}
@@ -94,8 +97,15 @@
   \textcolor{red}{Capacité thermique à pression constante : } $C_P = (\frac{\partial{H}}{\partial{T}})_V \rightarrow c_P = \frac{C_P}{m}$. \\
   
   \subsection{Calorimétrie (24min)}
-  \textcolor{red}{Expérience} Vase Dewar avec agitateur permettant d'homogénéiser le contenu. On peut remonter à la capacité calorifique.  La pression extérieure est fixée : transformation monobare. On suppose la transformation adiabatique : $\Delta H = Q = 0$.\\
-  Pour le système \{eau+calorimètre+fer\} : $\Delta H = \Delta H_{eau} + \Delta H_{calo} + \Delta H_{fer} = c_{eau}\times m_{eau}\times \Delta T_{eau} + c_{eau}\times \mu \times \Delta T_{cal} + c_{fer}\times m_{fer}\times \Delta T_{fer}$.\\
+  \textcolor{blue}{Manip quantitative : mesure de la capacité thermique d'un solide (fer, cuivre, laiton...)}. Pour cela, on a besoin de :
+  \begin{itemize}
+      \item deux vase dewar avec agitateur permettant d'homogénéiser le contenu,
+      \item de l'eau, une bouilloire,
+      \item un morceau de laiton/fer/cuivre de masse importante (m>100g),
+      \item deux thermocouples,
+      \item une balance
+  \end{itemize}
+  On peut remonter à la capacité calorifique. Pour le système \{eau+calorimètre+fer\}, on suppose la transformation monobare et adiabatique : $\Delta H = Q = 0$. Donc : $\Delta H = \Delta H_{eau} + \Delta H_{calo} + \Delta H_{fer} = c_{eau}\times m_{eau}\times \Delta T_{eau} + c_{eau}\times \mu \times \Delta T_{cal} + c_{fer}\times m_{fer}\times \Delta T_{fer}$.\\
   $\mu =29(3)$ déterminé en préparation. Mesure des masses à la balance : $m_{eau}$ et $m_{fer}$ ; et mesure des températures au thermocouple : $T_{eau+cal}$ et $T_{fer}$ à l'état initial et  $T_f$ à l'état final.\\
   On en déduit : $c_{fer}=\frac{c_{eau}(m_{eau}+\mu)(T_{eau+cal}-T_f)}{m_{fer}(T_f-T_i)}=1016\pm 184$~J.kg$^{-1}$.K$^{-1}$ à comparer à $c_{fer}=449$~J.kg$^{-1}$.K$^{-1}$.\\
   

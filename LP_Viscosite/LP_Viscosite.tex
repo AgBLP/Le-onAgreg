@@ -1,0 +1,152 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Notions de viscosité d'un fluide. Ecoulement visqueux.}
+  \label{LP_Viscosite} 
+\end{headerBlock}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+  Hydrodynamique physique & Guyon, Hulin, Petit & EDP Sciences & \\
+  \hline 
+  Poly de cours & Marc Rabaud & &    \\
+  \hline 
+  Physique Spé PC/PC* & S. Olivier & Tec\&Doc (2000) &    \\
+  \hline 
+\end{tabularx}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Plan
+\begin{reportBlock}{Plan détaillé}
+
+  \textbf{Niveau choisi pour la leçon :} CPGE 2ème année
+  \newline
+  \textbf{Prérequis} : \begin{itemize}
+  \item cinématiques des fluides
+      \item loi de l'hydrostatique, poussée d'Archimède
+      \item diffusion
+  \end{itemize}
+
+  \begin{reportBlock}{Commentaires des années précédentes :}
+    \begin{itemize}
+        \item \textbf{2017 :} Il peut être judicieux de présenter le fonctionnement d’un viscosimètre dans cette leçon,
+        \item \textbf{2016 :} Le jury invite les candidats à réfléchir d’avantage à l’origine des actions de contact mises en jeu entre un fluide et un solide,
+        \item \textbf{2014, 2013, 2012, 2011 :} L’exemple de l’écoulement de Poiseuille cylindrique n’est pas celui dont les conclusions sont les plus riches. Les candidats doivent avoir réfléchi aux différents mécanismes de dissipation qui peuvent avoir lieu dans un fluide. L’essentiel de l’exposé doit porter sur les fluides newtoniens : le cas des fluides non newtoniens, s’il peut être brièvement mentionné ou résenté, ne doit pas prendre trop de temps et faire perdre de vue le message principal.
+    \end{itemize}
+\end{reportBlock}
+
+  \textbf{Déroulé détaillé de la leçon: }  
+  
+  \section*{Introduction}
+  On a décrit dans un cours précédent l'équation du mouvement pour un fluide parfait. Hors, il existe beaucoup de situation ou le modèle du fluide parfait ne permet pas d'expliquer le comportement de l'écoulement du fluide. \textcolor{blue}{Manip qualitative : cylindre pour l'expérience de Taylor-Couette.} Brancher une alim stabilisée +12V-12V au moteur. Serrer la vis en bas du cylindre pour libérer le mouvement du cylindre extérieur. On voit la diffusion de la quantité de mouvement qui est impossible à expliquer dans le cadre du modèle du fluide parfait. Il y a ce qu'on appelle une force de viscosité qui va diffuser la quantité de mouvement du fluide. C'est ce qu'on va voir dans cette leçon.
+
+  \section{Notion de viscosité}
+cf Chap 2 Guyon Hulin Petit.
+\subsection{Viscosité de cisaillement}
+Voir Tec\&Doc p418. On considère un écoulement de la forme $\mathbf{v}=v_x(z)$ dans un fluide. On considère un élément de surface $\mathbf{dS}=dxdy\mathbf{\hat{u_z}}$ d'ordonnée z séparant le fluide situé au-dessus de z et en dessous de z. L'action de contact, appelée \textcolor{green}{force de viscosité}, exercée par le fluide situé au-dessus de z sur le fluide situé en-dessous de z est tangentielle à la vitesse de l'écoulement :
+\begin{equation}
+    d\mathbf{F_t} = \eta\partialD{v_x}{z}dS\mathbf{\hat{u_x}}
+\end{equation}
+où on introduit le coefficient de viscosité cinématique $\eta$ de dimension Pa.s$^{-1}$ comme on peut le voir avec la formule. \textcolor{green}{Donner quelques exemples de $\eta$ sur slide (miel et eau)}. 
+\textbf{Remarques :}
+\begin{itemize}
+    \item Plus $\eta$ est grand plus la force de viscosité de cisaillement est élevée (c'est pour ça qu'on dit que le miel est plus visqueux que l'eau),
+    \item force non nulle si champ de vitesse inhomogène
+    \item le sens de la force est tel qu'il tend à homogénéiser le champ des vitesses : la couche de fluide du dessus qui va plus vite met en mouvement la couche de dessous : \textbf{il y a une diffusion de la quantité de mouvement} des couches du fluide les plus rapides vers les couches les moins rapides.
+\end{itemize} 
+
+  \subsection{Equivalent volumique de la force de viscosité}
+Considérons un pavé élementaire de volume $d\tau=dxdydz$ en prenant le même champ de vitesse que précédemment. Un bilan des forces (sans la force de pression normale aux surfaces) conduit à :
+\begin{itemize}
+    \item $d\mathbf{F}_{z+dz}=\eta\partialD{v_x}{z}(z+dz)dxdy\mathbf{u_x}$ car le fluide sur la couche de dessus va plus vite,
+    \item  $d\mathbf{F}_{z}=-\eta\partialD{v_x}{z}(z)dxdy
+    \mathbf{u_x}$ car le fluide sur la couche de dessous va moins vite.
+\end{itemize}
+Un développement de Taylor à l'ordre 1 permet d'écrire la résultante comme :
+\begin{align}
+    d\mathbf{F} &= \eta\partialD{^2v_x}{d_z^2}d\tau\mathbf{u_x} \\
+    \mathbf{f}_{visc}&=\frac{d\mathbf{F}}{d\tau} = \eta\mathbf{\Delta v}
+\end{align}
+\textbf{La dernière formulation est valable pour les écoulements incompressibles !} C'était une hypothèse dont on se passait pour les fluides parfaits.\\
+\textbf{Remrque :} On a l'analogie avec les phénomènes de transport diffusif de la chaleur $\lambda\Delta T$ et de la quantité de matière $D\Delta n$. 
+
+
+  %\subsection{Tenseur des déformations}
+  %Voir Guyon Hulin Petit Chap 3 p125.
+  
+  \textcolor{red}{Transition :} Maintenant qu'on a vu la force volumique de viscosité pour un fluide visqueux, on peut l'injecter dans les équations du mouvement du champ de vitesse eulérien du fluide.
+
+  \section{Dynamique d'un fluide visqueux}
+
+  \subsection{Equation de Navier-Stokes et nombre de Reynolds}
+  Le principe fondamental de la dynamique dans un référentiel galiléen appliquée à une particule fluide suivant le champ de vitesse eulérien $\mathbf{v}$ du fluide s'écrit désormais :
+  \begin{equation}
+      \left(\partialD{\mathbf{v}}{t} + (\mathbf{v}\cdot\grad)\mathbf{v}\right) = -\grad P + \rho \mathbf{g} + \nu\Delta\mathbf{v} + \mathbf{f}_{vol}
+  \end{equation}
+  où on a introduit ici la viscosité cinématique $\nu=\frac{\eta}{\rho}$. C'est l'équation de Navier-Stokes.\\
+  Donner les coefficients de viscosité cinématique de fluides (eau-air-silicone-poix(?)) homogène à un coefficient de diffusion. voir Tec\&Doc p423. Parler de l'expérience de la goutte de poix (cf Wikipédia) ?\\
+  
+  \textbf{Remarques :}comme l'équation d'Euler, cette équation est non-linéaire donc très difficile à résoudre numériquement ou analytiquement (problème du millénaire en maths). Il faut donc comparer les termes entre eux pour pouvoir simplifier possiblement les équations.\\
+  
+  C'est possible par exemple (les autres sont dans le cours de Marc Rabaud) en introduisant le nombre de Reynolds qui compare l'accélération convective au terme de viscosité :
+  \begin{equation}
+      Re = \frac{\lVert (\mathbf{v}\cdot\grad)\mathbf{v}\rVert}{\lVert\nu\Delta\mathbf{v}\rVert}
+  \end{equation}
+  Dans un problème possédant une échelle spatiale unique L, une vitesse d'écoulement typique U, le nombre de Reynolds devient :
+  \begin{equation}
+      Re = \frac{UL}{\nu}
+  \end{equation}
+  On décrit les limites $Re>>1$ et $Re<<1$. On va voir qu'il est possible de mesurer la viscosité dans le cas ou le nombre de Reynolds est très petit devant 1 et qu'on a un écoulement stationnaire.
+  
+  \subsection{Viscosimètre à chute de bille : force de Stokes}
+  Lorsquon fait tomber une bille de rayon r dans un fluide, on constate phénoménologiquement (on eut la retrouver par une analyse dimensionnelle) qu'il existe une force dites \textcolor{green}{force de traînée} s'opposant à la vitesse dont l'expression pour les vitesses faibles est donnée par (voir HPrépa p153 exercice 6) :
+  \begin{equation}
+      \mathbf{F} = -6\pi\eta r\mathbf{v}
+  \end{equation}
+  
+\textcolor{blue}{Manip quantitative : mesure de la viscosité du silicone} :
+\begin{itemize}
+    \item écran lumineux,
+    \item cylindre contenant une huile de silicone $\nu=500$~cst = $5.00\times10^{-4}$~m$^2$/s,
+    \item une caméra ultra-rapide,
+    \item un ordi avec le logiciel Tracker,
+    \item des billes de métal de différents diamètres
+\end{itemize}
+Incertitude : faire varier un peu la longueur et fitter x=f(t) pour avoir différentes vitesses + incertitude sur le pointage : prendre quelques pixels (moitié de la sphère).\\
+Bilan des forces : poids, poussée d'Achimède, force de traînée :
+\begin{align*}
+    \mathbf{\Pi} + \mathbf{F_t} + \mathbf{P} &= 0 \\
+    6\pi\eta R v_{\infty} +\frac{4}{3}\pi R^3\left(\rho_{silicone}-\rho_{acier}\right)g &= 0 \\
+    v_{\infty} &= \frac{2}{9}\frac{\left(\rho_{acier}-\rho_{silicone}\right)g}{\eta}R^2
+\end{align*}
+On trace $v_{\infty}=f(R^2)$, on trace également le Reynolds. On montre que la loi de Stokes n'est valable que pour les petites sphères et qu'effectivement on tend vers la valeur de $\nu=500$~m$^2$/s\\
+
+Introduire le coeffcient de traînée $C=\frac{F_t}{\frac{1}{2}\rho Sv^2}$ (dépend de la géométrie) et montrer la courbe C=f(Re) p325 Dunod 2019.\\
+
+Réversibilité cinématique : 16min01\url{https://www.youtube.com/watch?v=51-6QCJTAjU&list=PL0EC6527BE871ABA3&index=8}
+
+\subsection{Notion de couche limite}
+  \subsection{Transport diffusif de la quantité de mouvement}
+
+
+\subsection{Aspect énergétique}
+Fluide visqueux = dissipation d'énergie. Démo p265 Guyon Hulin Petit.
+\subsection{Conditions aux limites cinématiques et dynamiques}
+Tableau de comparaison fluides parfaits fluide réels.
+
+
+
+\end{reportBlock}

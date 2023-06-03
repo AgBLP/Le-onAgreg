@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Références
 \begin{center}
-\begin{tabularx}{\textwidth}{| X | X | c | c |}
+\begin{tabularx}{\textwidth}{| X | X | X | c |}
   \hline
   \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
   \hline 
@@ -21,8 +21,12 @@
   \hline 
   Thermodynamique & Diu &  &    \\
   \hline 
-   &  & &    \\
+  Physique Spé PC/PC* & S. Ollivier, H. Gié, J-P Sarmant & tec\&Doc (2000) &   \\
   \hline 
+  \url{https://www.lkb.upmc.fr/boseeinsteincondensates/wp-content/uploads/sites/10/2017/10/CoursThermo2017.pdf} & Jérôme Beugnon & & \\
+  \hline
+  Dictionnaire de Physique & R. Taillet & deBoeck (2018) & \\
+  \hline
 \end{tabularx}
 \end{center}
 
@@ -42,30 +46,84 @@
   \textbf{Niveau choisi pour la leçon :} Licence 3
   \newline
   \textbf{Prérequis} : \begin{itemize}
-      \item 
+      \item Potentiels thermodynamiques, coefficients calorimétriques,
+      \item Variance, règle des moments
+      \item aimantation, susceptibilité magnétique
   \end{itemize}
 
   \textbf{Déroulé détaillé de la leçon: }  
   
   \section*{Introduction}
-Faire une accroche phénoménologique. Comment décrire l'eau qui bout ? Pourquoi la température reste constante ? Pourquoi c'est la même chose pour l'eau qui gèle ? Est-ce que c'est la même chose pour toutes les transitions de phase ? Définir une phase.
-
-  \section{Règle des phases}
-
-  \subsection{Diagramme (P,T) de l'eau}
+%Faire une accroche phénoménologique. Comment décrire l'eau qui bout ? Pourquoi la température reste constante ? Pourquoi c'est la même chose pour l'eau qui gèle ? Est-ce que c'est la même chose pour toutes les transitions de phase ? Définir une phase.
+La notion de phase paraît assez naturelle si on prend l'exemple de l'eau. La glace, la vapeur et l'eau liquide sont toutes trois des phases dans lequel l'arrangement des molécules d'eau n'est pas du tout la même d'une phase à une autre.\\
+\textcolor{green}{Sur slide : } on peut prendre la définition de Taillet p559 : arrangement des constituants d'un milieu dans lequel les propriétés mécaniques, thermodynamiques, électriques et magnétiques varient continûment. \\
+On va dans cette leçon essayer de décrire ce qu'il se passe thermodynamiquement lorsqu'on passe d'une phase à une autre en prenant appui pour commencer sur la transition liquide-vapeur de l'eau.
+  %\section{Diagramme de phase de l'eau}
   
-  \subsection{Description du phénomène}
+  %\subsection{Description qualitative}
+  
+  \section{Description de la transition liquide-vapeur}
+  \subsection{Diagrammes de phase (P,T) et (P,V)}
+  Construire comme les diagrames (P,T) et (P,V).  Diu p297 : transformation à température constante. On a une enceinte avec un piston mobile. On considère une transformation quasi-statique et isotherme. On voit apparaître à une certaine pression $P_S$ du liquide qu'on définit comme la pression de vapeur saturante. Si on continue à appuyer, la pression reste constante jusqu'à ce que tout le gaz se soit transformer en liquide. Si on répète la même expérience à une température différente, la pression $P_S$ va changer. \\
+  \textcolor{blue}{Manip qualitative : Tracer des isothermes de SF$_6$.}\\
+  
+  On constate un pallier de liquéfaction qui permet de remonter à la composition du système en liquide ou en vapeur par la règle des moments. Définir les courbes de rosée et d'ébullition.\\
+
+  Il existe une certaine température pour laquelle on n'aura plus de pallier de liquéfaction : c'est la température critique. (T$_c$, P$_c$) définit le point critique du fluide pour lequel le fluide reste homogène pour toute variation du volume .\\
+
+  Pour passer d'un point à un autre sur le diagramme (P,T), on peut utiliser le bouillant de Franklin \url{https://www.youtube.com/watch?v=nxAdQ_8tC1U}. 1-2) on évapore à P$_{atm}$  jusqu'à 100$\degree$, 2-3) on bouche le bouilleur P augmente, on se déplace sur $P_s(T)$, 3-4) plus d'ébullition T diminue à pression cste, 4-5), on verse de l'eau froide qui diminue P (et T aussi sans doute), le système peut retrouver $P_s(T)$ et on voit l'eau bouillir.\\
+
+  Parler de la surfusion ou surébullition ?\\
+  
+  \textcolor{red}{Transition : } Comment décrire thermodynamiquement ce qui se passe au niveau de ce changement d'état ? Comme on travaille à P ou T variable, on va utiliser l'enthalpie libre $G = U+PV-TS$.
+  
+  \subsection{Enthalpie libre d'un corps pur sous deux phases}
+  Suivre Tec\&Doc à partir de p294. On considère deux phases différentes d'un même corps pur dans un récipient maintenu à T et P par contact avec l'atmosphère extérieure et un thermostat.\\
+  
+  Condition d'équilibre et d'évolution sur slide.\\
+  
+  $V = V_1 +V_2$, $U=U_1+U_2$, $S=S_1+S_2$ on a donc $G=U+PV-TS = G_1+G_2 = n_1g_{1}+n_2g_{2}$.\\
+  Comme on travaille à $n=n_1+n_2$ fixé, on peut réécrire l'enthalpie comme une fonction dépendant de $n_2$ T, P : $G(T,P,n_2) = (n-n_2)g_1(T,P)$.
+  Montrer dans le cas 
   
   
-  \section{Etude du diagramme (P,V) de l'eau/azote}
+  \subsection{Chaleur latente liquide-gaz}
+  Définition Diu p324. \textcolor{blue}{Manip quantitative : mesure de la chaleur latente de vaporisation de l'eau.} On a besoin : 
+  \begin{itemize}
+      \item alternostat,
+      \item deux multimètres METRIX pour mesures de V et I,
+      \item balance électronique,
+      \item thermoplongeur,
+      \item potence + noix 
+      \item fils électriques,
+      \item récipient DEWAR,
+      \item chronomètre,
+      \item thermomètre,
+  \end{itemize} 
+  Brancher l'alternostat par des fils à l'alimentation du thermoplongeur. \\
+  Démontrer la formule de Clapeyron et ses conséquences Tec\&Doc p298-300.
+
+  \textcolor{red}{Transition :} Faire le lien entre le passage au point critique de l'eau où l'enthalpie de changement d'état est nul et la transition du second ordre.
+
+  \section{Modèle de Landau pour la transition ferro-paramagnétique}
+  Voir Diu p213.
+
+  \subsection{Description de la transition}
+  Vidéo pour la température de Curie : \url{https://www.youtube.com/watch?v=haVX24hOwQI}\\
+  A T>$T_c$ (température de Curie), on a <M>=0. Mais à $T\leq T_c$, on a $M\ne 0$. Odg : Fer : $T_c=1043$~K, cobalt : $T_c=1388$~K. \\
+  $M$ est une fonction continue de la température et est un paramètre qui mesure l'ordre (magnétique) du système : on l'appelle par ailleurs le paramètre d'ordre. Landau associe à toutes les transitions de phases du second ordre un paramètre d'ordre continu.
   
-  
-  \subsection{Enthalpie de changement d'état} 
+  \subsection{Enthalpie libre associée}
+  Déterminer $G(T)$ avec le modèle de Landau \textbf{u voisinage de la transition !!} Si pas le temps, donner directement les arguments :
+  \begin{align}
+      \partialD{G}{M}_T &= 0 \\
+      \partialD{^2G}{^2M}_T &>0
+  \end{align}
+  Puis donner la forme de G obtenue et représenter graphiquement pour $T>T_c$, $T=T_c$ et $T<T_c$.
+  \subsection{Evolution de grandeurs thermodynamiques}
+  Montrer que $S(T)$ est continue mais que $C_V(T)$ et/ou $\chi(T)$ sont discontinues au voisinage de la transition. C'est une caractéristique des transitions de phase du second ordre : les dérivées secondes de l'énergie du système sont discontinues au voisinages de la transtion.\\
 
-
-  \section{La transition ferro-para}
-  Coexistence entre deux phases. 
-\subsection{Transition paramagnétisme-ferromagnétisme}
-
-
+  Problème : l'accord $\chi\propto (T-T_c)^{-1}$ avec l'expérience n'est pas la : cela vient du fait 
+  \section*{Conclusion}
+  Exposants critiques à la transition : notion d'universalité. Classification des transitions de phases : ehrenfest et Landau (voir Diu p649)
 \end{reportBlock}

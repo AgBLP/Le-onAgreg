@@ -23,9 +23,13 @@
   \hline
   \url{https://www.nikonsmallworld.com/} & Nikon & &    \\
   \hline 
-  Optique & Eugène Hecht & Pearson &   \\
+  Les nouvelles microscopies & L. Aigouy & Belin &   \\
   \hline 
   Optique & Sylvain Houard & de Boeck & \\
+  \hline
+  Optique & Eugène Hecht & Pearson & \\
+  \hline
+  OPtique Physique & R. Taillet & de Boeck (2006) & \\
   \hline
 \end{tabularx}
 \end{center}
@@ -56,16 +60,16 @@
   L'homme a voulu voler, voir loin dans l'Univers mais aussi voir l'infiniment petit.\\
   On appelle micrsocopie l'ensemble des techniques permettant de rendre discernables et visuels des objets indiscernables à l'\oe il nu (environ 1 minute d'arc = $0.017\degree$ pour une vision 10/10 soit environ 100km de la surface de la Lune). 
 
-  \section{Le microscope \og d'autrefois \fg }
+  \section{Le principe du microscope}
 
   \subsection{Présentation du dispositif}
   Faire le schéma du microscope.\\
   \textcolor{green}{L'objectif} : lentille convergente de courte focale qui fait une image intermédiaire $A_1B_1$ de l'objet $AB$ à aggrandir. \textcolor{green}{L'oculaire} : lentille convergente faisant une image à l'infini de $A_1B_1$ pour que l'\oe il qui s'y accole n'accomode pas. On doit donc avoir $\bar{O_2A_1}=-f_2'$.
 
   \subsection{Grossissement commercial}
-  \textcolor{green}{Grossissement oculaire }: $G_{c,oc}$, rapport entre l'angle sous lequel est vu l'objet ($A_1B_1$) à travers l'oculaire et l'angle sous lequel est vu le même objet à travers $G_{c,oc}=\frac{\alpha'}{\alpha_1}=\frac{A_1B_1/f_2'}{A_1B_1/d_m}=\frac{d_m}{f_2'}$.\\
+  \textcolor{green}{Grossissement oculaire }: $G_{c,oc}$, rapport entre l'angle sous lequel est vu l'objet ($A_1B_1$) à travers l'oculaire et l'angle sous lequel est vu le même objet à travers $G_{c,oc}=\frac{\alpha'}{\alpha_1}=\frac{A_1B_1/f_2'}{A_1B_1/PP}=\frac{PP}{f_2'}$.\\
   \textcolor{green}{Grandissement objectif} : $`\gamma_{obj}=\frac{\bar{A_1B_1}}{AB}=-\frac{\Delta}{f_1'}$ par le théorème de Thalès+formule de conjugaison de Descartes.\\
-  \textcolor{green}{Grandissement commercial} : $G_{c}=\frac{\alpha'}{\alpha}=\frac{A_1B_1/f_2'}{AB/d_m}=\lvert \gamma_{obj} \rvert G_{c,oc}$\\  
+  \textcolor{green}{Grandissement commercial} : $G_{c}=\frac{\alpha'}{\alpha}=\frac{A_1B_1/f_2'}{AB/PP}=\lvert \gamma_{obj} \rvert G_{c,oc} = \frac{PP\Delta}{f_1'f_2'}$\\  
   Le grossissement commercial d'un microscope est donné par :
   \begin{equation}
      G_{com} = \lvert \gamma_{ob}\rvert G_{oc} = \frac{\alpha'}{\alpha}
@@ -78,31 +82,47 @@
       \item fixer l'écran à la distance focale de la lentille,
       \item ajuster le microscope pour avoir une image nette sur l'écran
   \end{itemize} 
- On mesure $\alpha'= \frac{Taille-objet-sur-l'écran}{distance-objet-écran}$ ainsi que les incertitudes associées. 
- \importantbox{On doit faire des traits bien droits pour la mesure de la distance à l'écran. Pour cela, prendre une feuille et la coller à l'écran, reproduire les traits sur la feuille. Faire la mesure à la règle proprement sur la feuille en traçant des angles droits.} En préparation, j'ai trouvé $G_{com}=40.5(3)$ à comparer à 40. Bon ordre de grandeur, la valeur peut-être différente de 40, le microscope ne coûte pas cher et pas d'incertitudes sur la valeur du constructeur.\\
+ On mesure $\alpha'= \frac{Taille-objet-sur-l'ecran}{distance-objet-ecran}$ ainsi que les incertitudes associées. 
+ \importantbox{On doit faire des traits bien droits pour la mesure de la distance à l'écran. Pour cela, prendre une feuille et la coller à l'écran, reproduire les traits sur la feuille. Faire la mesure à la règle proprement sur la feuille en traçant des angles droits.}
+ En préparation, j'ai trouvé $G_{com}=40.5(3)$ à comparer à 40. Bon ordre de grandeur, la valeur peut-être différente de 40, le microscope ne coûte pas cher et pas d'incertitudes sur la valeur du constructeur.\\
   
-  Parler de : 
-  \begin{itemize}
-      \item conditions d'éclairement (éclairage Köhler
-      \item résolution optique (ouverture numérique, diffraction, aberrations) 
-      \item contraste
-      \item microscopie plein champ/ point par point
-  \end{itemize}
+  %Parler de : 
+  %\begin{itemize}
+   %   \item conditions d'éclairement (éclairage Köhler
+    %  \item résolution optique (ouverture numérique, diffraction, aberrations) 
+     % \item contraste
+      %\item microscopie plein champ/ point par point
+  %\end{itemize}
 
+  \textcolor{green}{Slide :}Montrer le nouveau microscope par rapport à celui de 1930 sur slide.
+  
   \subsection{Eclairage de Köhler}
+  Voir Wastiaux p130. En parler rapidement sur slide, montrer qu'on fait l'image du filament de la source à l'infini pour ne pas être gêné par celui-ci. Parler du diaphragme de champ et d'ouverture.
   
-  \textbf{Transition :} on va voir comment améliorer le microscope classique
+  \textcolor{red}{Transition :} Est-ce que si je prends des focales f' ou infinement petites, je peux observer des choses infinement petites ? On va voir que non car il y a des limitations.
 
 
-  \section{Contraste et résolution}
+  \section{Limitations (trouver mieux pour le nom)}
 
-  \subsection{Résolution verticale : profondeur de champ}
+  \subsection{Résolution latérale : critère de Rayleigh}
+  p136 Aigouy et Taillet p.227. Présenter l'ouverture numérique. Plus on augmente en $\Delta k$ plus on est résolu en $\Delta x$. Faire des applications numériques voir Detwiller p110. Parler des objectifs à immersion en faisant un dessin.
   
-  \subsection{Résolution latéral : critère de Rayleigh}
+  \subsection{Profondeur de champ}
+  Faire le dessin avec trois points sources. Il faut diaphragmer pour améliorer la profondeur de champ.
 
+  \subsection{Aberrations (partie qui peut sauter)}
+  Sur slide ? Parler des lentilles achromatiques, apochromatique.
+
+  \textcolor{red}{Transition :} Comment rendre visible des choses que ne le sont pas ?
+  
 \section{Microscopie à contraste de phase}
 Cette technique s'intéresse en particulier à des échantillons transparents dont les épaisseurs sont faibles \textcolor{green}{Slide photos avec ou sans contraste de phase + photos microscopies Nikon}. Elle a valu le prix Nobel à Frederik Zernike en 1953.
 \subsection{Principe}
+Voir Hecht p635. On envoie de la lumière sur un objet dit de phase qui va modifier localement la phase de la lumière incidente :
+\begin{equation}
+    E_i = E_0e^{i\phi} = E_0 + E_0\times(e^{i\phi}-1) \sim 
+\end{equation}
+On fait passer la lumière à travers une lentille qui va donner la figure de diffraction dans fait l'image de cette 
 
 
 \section*{Ouverture}
