@@ -19,6 +19,14 @@
   \hline
   Tout-en-un PC/PC* & M.-N. Sanz & Dunod (2022) & \\
   \hline
+  Optique - Fondements et applications & J.P. Pérez & Dunod (2011) & \\
+  \hline
+  \url{https://www.lkb.upmc.fr/cqed/teaching/teachingsayrin/} & C. Sayrin & & \\
+  \hline
+  Optique Physique & R. Taillet & de boeck (2015) & \\
+  \hline
+  Optique Physique & D. Mauras & PUF (2001) & \\
+  \hline
 \end{tabularx}
 \end{center}
 
@@ -33,37 +41,74 @@
 %%%% Plan
 \begin{reportBlock}{Plan détaillé}
 
-  \textbf{Niveau choisi pour la leçon :} 
+  \textbf{Niveau choisi pour la leçon :} Licence 3
   \newline
-  \textbf{Prérequis} : \begin{itemize}
-      \item 
-      \item 
-      \item 
+  \textbf{Prérequis} : 
+  \begin{itemize}
+      \item optique géométrique,
+      \item modèle scalaire des ondes lumineuses,
+      \item transformées de Fourier,
+      \item microscopie optique ?
+  \end{itemize}
+  \importantbox{Le message essentiel de la leçon est que la figure de diffraction de Fraunhofer se trouve dans le plan image de la source qui éclaire l’objet diffractant}
+  \section*{Introduction}
+  
+  \section{Conditions de Fraunhofer de la diffraction}
+
+  \subsection{Principe d'Huygens-Fresnel} 
+  Voir Pérez p263. Enoncé, faire le dessins. Introduire le facteur d'obiquité et dire qu'il est constant si on considère des rayons proches de l'axe optique.\\
+  La démo de Huygens-Fresnel est sur Wikipédia \url{https://fr.wikipedia.org/wiki/Th\%C3\%A9orie_de_Kirchhoff}.\\
+  Donner l'amplitude scalaire de l'onde $s(M)$ (prendre les notations de C. Sayrin).
+
+  \subsection{Amplitude d'une onde à travers un diaphragme plan}
+  Cf TD Clément Sayrin Diffraction (1).\\
+
+  \importantbox{On peut garder $\frac{e^{ikr}}{r}\sim\frac{e^{ikr}}{D}$ mais pour évaluer la phase $\mathbf{k}\cdot \mathbf{PM}$, il faut tenir compte des variations de PM=r à l’échelle de $\lambda$ et l’on garde donc les ordres plus élevés du développement.}
+
+  \subsection{Conditions et approximations de Fraunhofer}
+  On néglige le terme quadratique en $r^2$ dans la phase de l'onde. Enoncer les conditions pour avoir le terme de Fraunhofer nul voir Sextant p139 :
+  \begin{itemize}
+      \item onde plane ($d=0$) à l'infini ($D=0$), il suffit de placer une source lumineuse dans le plan focal objet d'une lentille convergente et observer la figure dans le plan focal image d'une autre lentille convergente,
+      \item en pratique, condition pas très restrictive car : onde plane (source à l'infini) mais $kr^2<<2D\Leftrightarrow D>>\frac{r^2}{4\lambda}$. Application numérique : pour un laser de longueur d'onde $\lambda=648nm$, on trouve $D>>500m$ et si $r=1cm$, $D>>5m$ si $r=1mm$, $D>>5\mu m$ si $r=1\mu m$. Il est très facile d'être dans les conditions de Fraunhofer pour les petits objets diffractants ! Pour les objets plus grand, il faut faire l'image de la source lumineuse par une lentille,
+      \item cas particulier de la source sur l'écran (d=-D) (à omettre, garder pour les questions ?)
+  \end{itemize}
+  On voit quand même que l'amplitude de l'onde résultante est la transformée de Fourier de la fonction $t(x,y)$ de l'objet diffractant. Il y a une relation de réciprocité entre les distances angulaires de la figure de diffraction et les distances dans le plan d'ouverture de l'objet diffractant.
+
+  \textcolor{red}{Transition :} on va mettre en application ce qu'on vient de détailler en observant la figure de diffraction d'objets simples.
+  \section{Exemples de systèmes diffractants}
+  
+  \subsection{Diffraction par une fente}
+  Faire le calcul + la manip. Il faut juste prendre $t(x,y)=rect_x(-a/2,a/2)$.\\
+  \textcolor{blue}{Manip qualitative : mesure d'une largeur de fente}. Voir Poly TP Montrouge Diffraction. On a besoin 
+  \begin{itemize}
+      \item barette CCD + logiciel MIGHTEX,
+      \item laser + boys + lentille f=50mm,
+      \item ordinateur avec Spectra Suite + câble connexion caméra,
+      \item fentes sources de différentes taille + fente de taille variable,
   \end{itemize}
   
-  \section*{Introduction}
-
-  \section{Conditions de diffraction}
-
-  \subsection{Théorème de Huygens-Fresnel} 
-  Enoncé, faire les dessins.
-  \subsection{Diffraction par une structure}
-  Voir TD Optique Pauline - Diffraction. Arriver à Fraunhofer vs Fresnel. 
-
-  \subsection{Conditions de Fraunhofer}
-  Bien distinguer les conditions + exemples
-  Parler de théorème de Van Citter-Zernike ? Peut être utile par la suite et ça fait transition.
-  \section{? Exemples de systèmes diffractants ?}
-  
-  \subsection{Diffraction par une fente d'Young}
-  \textcolor{blue}{Manip qualitative : caméra CCD, éclairement par une source à l'infini, image à l'infini }
 
   \subsection{Diffraction par un trou d'Young}
-  Arriver à la formule
+  Le faire rapidement sur slide ou en estimant à l'aide de la formule précédente : un trou de rayon $a$ est contenu entre deux carrés de côté $\sqrt{2}a$ donc :
+  \begin{equation}
+      \frac{\lambda}{a} < \theta < \frac{\sqrt{2}\lambda}{a}\sim 1.4\frac{\lambda}{a}
+  \end{equation}
+  En prenant la moyenne : $\theta \sim (1.2\pm0.2)\frac{\lambda}{a}$. Le calcul se fait dans le Taillet p154.\\
+  Conséquence voir Perez p276-277 : 
+  \begin{itemize}
+      \item parler du critère de Rayleigh donnant la résolution latérale maximale d'un microscope optique standard,
+      \item \textcolor{red}{Attention, nécessite le théorème de Babinet} : tâches de diffraction circulaire autour de la Lune attribuées aux goutellettes d'eau/glace dans l'atmosphère. Calcul du diamètre des gouttes d'eau : $\theta=\frac{1.22\lambda}{D}$, si on prend $\theta\sim6\theta_{L}=0.5\degree$, on trouve en prenant $\lambda=600nm$ : $D=\frac{}{}$
+  \end{itemize}
+  Apodisation voir Mauras p258: pour observer les exoplanètes de faible intensité lumineuse proche des étoiles qui ont une très grande intensité lumineuse, on peut choisir de mettre un masque dont la fonction de transmission de la lentille décroît de l'unitéen son milieu à zéro à son bord : réduit l'intensité de des lobes secondaires de diffraction d'un objet très lumineux.
   
-  \section{Application au filtrage spatial}
+  \subsection{Ensemble de structure diffractante (peut sauter si besoin, ou en ouverture)}
+  Si on prend pleins de trous d'Young et qu'on connait leur répartition spatiale, 
 
-  \subsection{Expérience d'Abbe}
+  \section{Applications de la diffraction}
+  Au choix : expérience d'Abbe avec le filtrage spatiale, microscopie à contraste de phase,
+  \section{}
 
+  \section*{Conclusion}
+  Ouverture sur la diffraction des rayons X. Conditions de Laue.
 
 \end{reportBlock}

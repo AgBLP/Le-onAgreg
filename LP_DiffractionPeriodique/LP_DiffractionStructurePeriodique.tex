@@ -18,11 +18,14 @@
   \hline 
    Tout-en-un MP & M.-N. Sanz & Dunod (2009) &  \\
   \hline 
-  Optique & J.-P. Pérez & Dunod & \\
+  Optique Physique & R. Taillet & de boeck (2006) & \\
   \hline 
   Optique Physique et électronique & D. Mauras & PUF (2011) & \\
   \hline
   \url{http://ressources.univ-lemans.fr/AccesLibre/UM/Pedago/physique/02/optiondu/reseauphase.html} & Simulation réseau & Université du Mans & \\
+  \hline
+  \url{https://www.lkb.upmc.fr/cqed/wp-content/uploads/sites/14/2020/09/optique_TD_diffraction_1.pdf} & C. Sayrin & & \\
+  \hline
 \end{tabularx}
 \end{center}
 
@@ -55,7 +58,7 @@ L'objet périodique par excellence est le réseau.
   \section{Diffraction par un réseau}
   Voir D. Mauras p194.
   \subsection{Définition}
-  Il en existe de différents types (amplitude par transmission, phase par transmission, amplitude par réflexion (spectrographe) et phase par réflexion). On va s'intéresser pour l'instant aux réseaux d'amplitude par transmission. Faire un dessin en définissant le pas du réseau.
+  Il en existe de différents types (amplitude par transmission, phase par transmission, amplitude par réflexion (voir la dernière partie) et phase par réflexion). On va s'intéresser pour l'instant aux réseaux d'amplitude par transmission. Faire un dessin en définissant le pas du réseau.
 
   \subsection{Formule fondamentale du réseau}
   On va considérer ici un montage de type Fraunhofer (source à l'infini, observation à l'infini) : faire le dessin (voir D. Mauras p195) en forçant le trait sur le réseau pour faire apparaitre l'angle $\theta_0$. Les ondes diffractées par les fentes donnent lieu à des interférences non localisées. On les observe à l'infini dans la direction $\theta$, réalité dans le plan focal de la lentille (L$_2$) au point M(x). Le principe de retour inverse (source fictive en M) et le théorème de Malus nous permet de montrer que \textcolor{red}{pour avoir interférences constructives} au point d'observation M :
@@ -103,11 +106,17 @@ L'objet périodique par excellence est le réseau.
       2\sin\left(\frac{D_{p,min}}{2}\right) = p\frac{\lambda}{a}
   \end{equation}
 
-  \textcolor{red}{Transition :} Ce qu'on a vu pour l'instant c'est qu'on peut mesurer le spectre d'émission d'une source polychromatique. Quelles sont ses limitations ? Il faut étudier plus en détail l'intensité résultante à travers une struture périodique la structure des pics d'interférences.
+  \textcolor{red}{Transition :} Ce qu'on a vu pour l'instant c'est qu'on peut analyser le spectre d'émission d'une source polychromatique à partir des ordres d'interférences. Pour l'instant on a considéré une interférence entre deux ondes du réseau. On va voir ci-après ce qui se passe lorsqu'on a interférences avec toutes les fentes. On va voir que cela fait intervenir deux nouvelles notions : le facteur de forme et le facteur de structure.
 
-  \section{Facteur de structure et facteur de forme}
-  
-  \subsection{Intensité de la diffraction}
+  \section{Facteur de structure et facteur de forme d'un réseau}
+  Voir Polycopié Diffration (1) exo 2 qu3 de Clément Sayrin.
+  \subsection{Interférences à N ondes}
+  Voir Dunod p 757-759. Faire le calcul pour les interférences à N ondes, parler du contrase, de la finesse, etc... Montrer que l'intensité résultante donne le facteur de structure qui est la transformée de Fourier de la structure du réseau. Cela donne des informations sur les symétries du réseau !\\
+
+  \textcolor{red}{Transition : et si on prend des fentes larges ?}
+
+  \subsection{Facteur de forme}
+  Voir Taillet p141. L'intensité est modulée par un terme provenant de la forme elle-même de la structure diffractante. C'est le facteur de forme qui dépend donc de la nature de l'objet diffractant : cela renseigne sur la nature interne de l'objet !
 
   \section{Application : diffraction des solides cristallins}
   Voir Kittel Chapitre 2.
@@ -116,11 +125,11 @@ L'objet périodique par excellence est le réseau.
   \begin{equation}
       2d\sin{\theta} = n\lambda
   \end{equation}
-  \textbf{Remarque :} pour qu'il y ait diffraction, on doit avoir $2d\sim 5\angstrom\leq\lambda$ ce qui montre qu'on ne peut pas utiliser la lumière pour résoudre la structure cristalline.
+  \textbf{Remarque :} pour qu'il y ait diffraction, on doit avoir $2d\sim 5\angstrom\leq\lambda$ ce qui montre qu'on ne peut pas utiliser la lumière pour résoudre la structure cristalline.\\
 
-
+  Dire que le facteur de structure dépend de la densité électronique autour des atomes et donc qu'il sonde la nature des atomes à l'intérieur du cristal et que le facteur de forme va être modifié suivant la maille du cristal.
 \section*{Conclusion}
-Ouverture sur la diffraction des rayons X. Tâches de diffraction des papillons.
+Ouverture sur la diffraction des rayons X. Méthode de Laue. Tâches de diffraction des papillons \url{https://planet-vie.ens.fr/thematiques/cellules-et-molecules/biophysique/la-coloration-des-ailes-de-morpho-menelaus}?
 \end{reportBlock}
 
 
