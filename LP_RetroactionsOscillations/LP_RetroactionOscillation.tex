@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Rétroactions et oscillations.}
+  \label{LP_RetroactionOscillation} 
+\end{headerBlock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline 
+  Tout-en-un PSI/PSI* & Cardini & Dunod &    \\
+  \hline 
+  Physique Spé. PSI/PSI* & Olivier, More, Gié & Tec\&Doc & \\
+  \hline 
+  Cours & Jérémy Neveu & & \\
+  \hline
+  Physique PSI/PSI* & S. Cardini & Dunod (2020) & \\
+  \hline
+\end{tabularx}
+\end{center}
+
+\begin{reportBlock}{Commentaires des années précédentes :}
+    \begin{itemize}
+        \item \textbf{2015 :} Dans le cas des oscillateurs auto-entretenus, les conditions d’apparition des oscillations et la limitation de leur amplitude doivent être discutées. Le jury souhaiterait que le terme de résonance soit dûment justifié sans oublier une discussion du facteur de qualité. Il n’est pas indispensable de se restreindre à l’électronique,
+        \item \textbf{2013 :} Le jury n’attend pas une présentation générale et abstraite de la notion de système bouclé.
+    \end{itemize}
+\end{reportBlock}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Plan
+\begin{reportBlock}{Plan détaillé}
+
+  \textbf{Niveau choisi pour la leçon :} PSI
+  \newline
+  \textbf{Prérequis} : 
+  \begin{itemize}
+    \item Electrocinétique : filtres du 1er et 2nd ordre, diagramme de Bode
+    \item Mathématique : équations différentielles linéaires d'ordre 1 et 2,
+    \item ALI en régime linéaire, montage non inverseur, soustracteur, additionneur,
+    \item induction (pour MCC)
+    \item transformée de Laplace ?
+    
+  \end{itemize}
+
+  \textbf{Déroulé détaillé de la leçon: }  
+  
+  \section*{Introduction}
+\textcolor{blue}{Manip qualitative introductive :} MCC asservi (maquette régulation de vitesse) + Oscilloscope + GBF + N fils bananes + N fils BNC. Prendre l'exemple de l'escalator. Discuter : 
+\begin{itemize}
+    \item asservissement idéal : vitesse = celle de l'entrée = constante même avec des gens dessus (tension de consigne = tension d'entrée, critère de précision),
+    \item réponse rapide lorsqu'il y a une personne qui se met sur le tapis (temps de réponse du système, critère temporel),
+    \item réponse ne dépasse pas la vitesse de commande pour ne pas avoir dà coup,
+    \item critère d'énergie à fournir, etc.
+\end{itemize}
+Faire varier les corrections et le cas frottements/pas frottements.\\
+
+Finalement on se retrouve dans la plupart des cas à devoir répondre à un cahier des charges plus où moins strict. La problèmatique de l'asservissement est un des critère du cahier des charges qui fait intervenir une notion importante : la notion de système bouclé. Cette notion peut être défini ailleurs qu'en physique voir Tec\&Doc p65 (économie avec les prix, biologie avec le corps humain) mais on va rester en électronique :).
+
+  \section{Notion de rétroaction : commande d'un système}
+   \textcolor{green}{Définition :} une rétroaction est la réintroduction du signal de sortie d'un système à l'entrée de ce système.
+  \subsection{Système bouclé}
+  Présenter sur slide le schéma fonctionnel.\\
+  On définit :
+  \begin{itemize}
+      \item la fonction de transfert de la chaîne direct $\underline{A}$ : dans le cas de la manip introductive correspond à l'ensemble correcteurs+amplificateur+suiveur de puissance (voir notice),
+      \item la fonction de transfert de la chaîne de retour $\underline{\beta}$ qui dans le cas de la manip introductive était un tachymètre. C'est souvent justement un capteur (photodiode pour asservir la lumière, sonde à effet hall pour le champ, etc),
+      \item un comparateur (le plus souvent un soustracteur pour l'asservissement) qui renvoit une erreur $\epsilon = \underline{e}-\underline{\beta}\underline{s}$ est appelé signal d'erreur.
+  \end{itemize}
+  Le signal d'entrée $e$ et le signal de sortie $s$ sont reliés entre eux par une fonction de transfert. Si le système est ouvert en sortie de la rétroaction, alors on appelle FTBO :
+  \begin{equation}
+      FTBO = \frac{\underline{r}}{\underline{e}} = \underline{A}\underline{\beta}
+  \end{equation}
+  Si le système est fermé sur la sortie (un dipôle par exemple), alors on définit la FTBF :
+  \begin{equation}
+      FTBF = \frac{\underline{s}}{\underline{e}} = \frac{\underline{A}}{1+\underline{A}\underline{\beta}}
+  \end{equation}
+
+  \subsection{Exemple : ALI non inverseur}
+  Voir P. Olive p120 ou Dunod p47. Mettre sur slide le schéma-bloc. Faire les calculs (bien fait dans le Dunod p46). Mettre la fonction de transfert sous forme canonique. Un montage à amplificateur opérationnel se met sous la forme d'un système bouclé, avec comparateur. Tracer son diagramme de Bode. Parler du produit gain-bande passante :
+  \begin{equation}
+      (1+\frac{R_2}{R_1})\frac{1}{\tau_{BF}}=\frac{A_0}{\tau}=cste
+  \end{equation}
+  Autrement dit, plus on amplifie, moins la bande passante est importante et réciproquement. Il y a donc un compromis à trouver selon les utilisations !
+  \subsection{Caractéristiques d'un asservissement} 
+  On peut parler de :
+  \begin{itemize}
+      \item précision : différence entre l'entrée et la sortie en $t\rightarrow\infty$ (erreur statique), ou erreur avec laquelle la sortie suit la consigne imposée au système (erreur dynamique)
+      \item rapidité : temps au bout duquel le système atteint son régime permanent (pour lexemple de l'ALI non inverseur, c'était $\tau_{BF}$ donc plus la bande passante est large, plus le système réagit rapidement,
+      \item stabilité du système : la réponse reste bornée
+  \end{itemize}
+  \textcolor{red}{Propriété :} de manière générale, il ya une compétition entre rapidité et stabilité. Explication avec les mains : plus un système va vite, plus il a de chance de dépasser la consigne, le système va suréagir et l'entraîner encore plus loin.\\
+
+  Le critère de stabilité nécessite qu'on le détail dans la partie suivante.
+  
+  \section{Stabilité des systèmes}
+  Tec\&Doc p75. \textcolor{red}{Critère de stabilité :} Un système bouclé évoluant en régime libre (entrée nulle), au voisinage de son équilibre (sortie nulle) sera dit \textcolor{green}{stable} si l'évolution de la sortie tend spontanément vers l'équilibre $s\rightarrow0$, \textcolor{green}{instable} dans le cas contraire.\\
+  \subsection{Cas des systèmes d'ordre 1 et 2}
+  Voir Tec\&Doc p71 ou J. Neveu. Poser l'équation différentielle à la sortie en régime libre (entrée nulle) pour $A=\frac{A_0}{1+jt/\tau_0}$  (fonction de transfert 1er ordre) et $\beta=\beta_0$ (gain simple). La solution générale est 
+  \begin{equation}
+      s(t) = S_0e^{-t/\tau'}
+  \end{equation}
+  avec $\tau'=\frac{\tau_0}{1+A_0\beta_0}$. L'appliquer à un ALI en montage non inverseur (au programme PSI) et expliquer pourquoi ce n'est pas stable si on inverse les bornes + et - (devient un comparateur à hystérésis), cela revient à inverser le signe de $\mu_0$.\\
+  On peut montrer la même chose avec un système d'équation différentielle d'ordre 2 (à voir si redémonstration au tableau ou sur slide). On retient :
+  \begin{itemize}
+      \item les systèmes d'ordre 1 et 2 sont stables si tous les coefficients de l'équation différentielle régissant s(t) sont de même signes
+  \end{itemize}
+
+  \subsection{Cas des systèmes bouclés}
+  Voir J. Neveu. (oscillateurs). Montrer le tableau transformée de Laplace, évolution temporelle du signal. Reprendre la fonction de transfert, établir que si :
+  \begin{itemize}
+      \item $A\beta$ possède des parties réelles négatives alors le système est stable.
+      \item $A\beta$ possède des parties réelles nulles alors le système est oscillant.
+      \item $A\beta$ possède des parties réelles positives alors le système est instable.
+  \end{itemize}
+  
+  \textcolor{red}{Transition :} on va voir justement une application de ces conditions de stabilité en étudiant des systèmes qu'on appelle des oscillateurs. 
+  \section{Oscillateurs électroniques}
+  P. Olive p203. \textcolor{green}{Définition :} un oscillateur électronique est un circuit alimenté (actif), bouclé, dans lequel des instabilités donnent naissance à un signal périodique.\\
+  Intérêts : 
+  \begin{itemize}
+      \item généré des signaux T-périodiques de tous types qu'on peut émettre avec des antennes ou générer des ultrasons avec un transducteur adapté,
+      \item mesurer le temps (montre = résonnateur à quartz, chronomètre, etc.),
+      \item molécule sur une surface vibrante va modifier légèrement sa fréquence de vibration : détecteurs de molécules à des très faibles concentrations,
+  \end{itemize}
+  Il en existe deux types : les quasi-sinusoïdaux et les oscillateurs à relaxation. On va se concentrer d'abord sur les oscillateurs quasi-sinusoïdaux en prenant l'exemple de l'oscillateur à Pont de Wien.
+\subsection{Oscillateur à Pont de Wien}
+Voir Dunod p1130-1134 ou Pacal Olive p.204 Prendre $R_1\sim 1k\Omega$ pour l'amplification et $R=1k\Omega$ dans le filtre. Déterminer : 
+\begin{itemize}
+    \item la valeur minimale de R1 ou R2 tel qu'il y a démarrage des oscillations,
+    \item Déterminer la fréquence des oscillations (mesure de N périodes au point de croisement de l'annulation de la tension)
+\end{itemize} 
+On peut aussi mesurer le temps des oscillations pour remonter à R2/R1 : mettre $t-t_0$ pour le fit et enregistrer le régime transitoire des oscillations par clé USB directement sur l'oscillo (faire un single). Fitter par 
+\begin{equation}
+    A\exp\left(-a\omega_0(t+t_0)\right)\times\sin\left(\sqrt{1-\alpha^2}\omega_0(t+t_0)\right)
+\end{equation}
+
+\section*{Conclusion}
+Ouverture : oscillateur à relaxation : comparateur à hystérésis horloge atomique dont la précision est de l'ordre de 1s sur l'age de l'univers.
+\end{reportBlock}

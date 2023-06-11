@@ -22,11 +22,13 @@
  \hline
   Sextant & & Hermann & \\
  \hline 
- Tout-en-un PC/PC* & M.-N. Sanz & Dunod (2022) & \\
+ Tout-en-un PC/PC* & M.-N. Sanz & Dunod (2019-2022) & \\
  \hline 
  Physique en PC/PC* & Pascal Olive & Ellipses & \\
  \hline
  Laser & CAGNAC & & \\
+ \hline
+ Optique & S. Houard & de boeck (2011) & \\
  \hline
 \end{tabularx}
 \end{center}
@@ -41,17 +43,30 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{reportBlock}{Plan détaillé}
-  \textbf{Niveau choisi pour la leçon :} Licence
+  \textbf{Niveau choisi pour la leçon :} Licence 3
   \newline
-  \textbf{Prérequis : }Milieu LHI, distribution de Boltzmann
-  \newline
+  \textbf{Prérequis : }
+  \begin{itemize}
+      \item diffraction par un réseau,
+      \item modèle du corps noir, loi de Planck,
+      \item physique statistique : loi de Boltzmann
+  \end{itemize}
+
   
   \textbf{Déroulé détaillé de la leçon: }   \newline
-Spectre émission discret vs spectre d'émission continu : 
-  \section{Absorption et émission spontanées}
-
-  \subsection{Description du milieu matériel}
-  Quantification des niveaux d'énergie des atomes (raies de l'hydrogène mais aussi d'autres espèces) en utilisant les relations de Planck-Einstein. Présenter spectre d'émission et d'absorption d'éléments chimiques. Utilité : composition de l'atmosphère d'une planète.
+Spectre émission discret (lumière spectrale) vs spectre d'émission continu (lumière corps noir).\\
+L'approche classique : modèle de Drude-Lorentz qui prédisait relativement bien des fréquences d'absorption lumineuse dans les isolants. Mais il restait deux problèmes :
+\begin{itemize}
+    \item structure discontinue des spectres atomiques,
+    \item divergence de la répartition spectrale du rayonnement thermique dans le domaine ultraviolet ("catastrophe ultravolette")
+\end{itemize}
+Il faut attendre que Planck et Einstein propose la quantification des niveaux d'énergie des atomes/ions/molécules.\\
+On va dans un premier temps faire une étude phénoménologique de l'absorption et de l'émission spontanée.
+  \section{Absorption et émission spontanée}
+  Etudions d'abord ce qu'il se passe pour une collection d'atomes.
+  \subsection{Spectre d'émission d'un atome}
+  Faire un dessin. Einstein : quantification des niveaux d'énergie des atomes (raies de l'hydrogène mais aussi d'autres espèces) en utilisant les relations de Planck-Einstein. Présenter spectre d'émission et d'absorption d'éléments chimiques. \\
+  Utilité : composition de l'atmosphère d'une planète par exemple \url{https://planet-terre.ens-lyon.fr/ressource/atmospheres-systeme-solaire.xml#analyse}
   \subsection{Mesure spectroscopique du spectre d'émission du mercure Hg}
   \textcolor{blue}{Expérience quantitative :} On se propose ici de mesurer quelques raies d'émission du spectre de la lampe à vapeur de mercure. Pour cela on a besoin de :
   \begin{itemize}
@@ -61,41 +76,60 @@ Spectre émission discret vs spectre d'émission continu :
       \item une fente réglable,
       \item un écran blanc avec une feuille blanche et du scotch.
   \end{itemize}
-On fait l'image de la fente sur l'écran à une distance assez éloignée. On intercale le réseau juste après la lentille. On mesure la distance $L\pm u(L)$ entre le réseau et l'écran. On cherche le minimum de déviation en tournant le réseau. On mesure la distance à l'écran entre l'ordre 0 et l'ordre 1 (ou 2 si on peut). On en déduit $\lambda_p$ :
+On fait l'image de la fente sur l'écran à une distance assez éloignée. On intercale le réseau juste après la lentille. On mesure la distance $L\pm u(L)$ entre le réseau et l'écran. On cherche le minimum de déviation en tournant le réseau. Au minimum de déviation, $\tan{D_{pm}}=\frac{d_{ecran}}{L}$. On mesure la distance à l'écran entre l'ordre 0 et l'ordre 1 (ou 2 si on peut). On en déduit $\lambda_p$ :
 \begin{equation}
-    \lambda_p = \frac{2a}{p}\sin\left(\frac{d_{ecran}}{2L}\right)
+    \lambda_p = \frac{2a}{p}\sin\left(\frac{\arctan{\frac{d_{ecran}}{L}}}{2}\right)
 \end{equation}
-Comparer aux longueurs d'onde attendues pour le spectre du mercure.
-\subsection{Absorption par un groupe d'atome}
-\section{Emission stimulée}
-\subsection{Equation d'Einstein}
-Soit un système à deux niveaux d'énergie $E_a$ et $E_b$ associée aux états propres $\ket{a}$ et $\ket{b}$. On note $N_a$ et $N_b$ la population de ces niveaux telles que $N_a+N_b=N$. La proba d'occupation est $n_i=\frac{N_i}{N}$.\\
-La lumière que reçoit ce système est caractérisé par une densité spectrale $u(\nu)=\frac{dU}{d\nu}$ avec $U=\frac{\epsilon_0E^2}{2}+\frac{B^2}{2\mu_0}$.\\
+Comparer aux longueurs d'onde attendues pour le spectre du mercure (voir slide et \url{https://fr.wikipedia.org/wiki/Raie_spectrale}).\\
+On a bien une quantification des niveaux d'énergie !
 
+\subsection{Mise en évidence expérimentale de l'absorption}
+Faire le spectre d'absorption/transmission de la rhodamine. On prend une lampe quartz-iode, et on éclaire la rhodamine avec un condenseur. On regarde avec une fibre optique connectée à spectra-suite sur l'ordi. On fait le blanc et le noir. On regarde le spectre d'absortion. Youhou.\\
 
-A l'équilibre : $\frac{dn_a}{dt}=-\frac{dn_b}{dt}$ et donc : 
-\begin{equation}
-    \frac{dn_a}{dt} = -An_b + B_{21}u(\nu_0)
-\end{equation}
-\subsection{Coefficients d'Einstein}
+\textcolor{red}{Transition :} On va maintenant donner l'approche d'Einstein pour modéliser l'émission et l'aborption. 
 
-En posant $h\nu_0 = E_b - E_a$, on a $\frac{n_a}{n_b}=\exp{-\frac{E_a+E_b}{k_BT}} = \exp{\frac{h\nu_0}{b_BT}}$. On en déduit que $B_{12} = B_{21} = B$ et $\frac{A}{B}=\frac{8\pi h\nu_0^3}{c^3}$. L'équation d'Einstein devient : 
-\begin{equation}
-    \frac{dn_b}{dt} = -\frac{dn_a}{dt} = -An_a + Bu(\nu_0)(n_a-n_b)
-\end{equation}
+\section{Modèle d'Einstein}
+En plus de l'absorption et l'émission qu'on a mis en évidence dans la partie précédente, Einstein a l'idée de rajouter un terme d'émission stimulée pour rendre compte des propriétés microscopiques du rayonnement thermique. 
+\subsection{Probabilités de transition}
+Voir Pascal Olive p786 ou Dunod p1118.\\
+Soit un système à deux niveaux d'énergie $E_1$ et $E_2$ associée aux états propres $\ket{1}$ et $\ket{2}$. On note $N_1$ et $N_2$ la population de ces niveaux telles que $N_1+N_2=N=cste$.\\
+
+La lumière que reçoit ce système est caractérisée par une densité spectrale $u(\nu)=\frac{du_{em}}{d\nu}$ (en J.s.m$^{-3}$) avec la densité volumique d'énergie EM contenue dans l'intervalle $[\nu-\frac{\Delta\nu}{2},nu+\frac{\Delta\nu}{2}]$ $du_{em}=d\left(\frac{\epsilon_0E^2}{2}+\frac{B^2}{2\mu_0}\right)=u_{\nu}d\nu$.\\
+
+Comme N se conserve : $\frac{dn_1}{dt}=-\frac{dn_2}{dt}$ et donc : 
+\begin{align}
+    \frac{dn_2}{dt} &= \left(\frac{dN_2}{dt}\right)_{em.st}+\left(\frac{dN_2}{dt}\right)_{em.sp} + \left(\frac{dN_2}{dt}\right)_{abs} \\
+    \frac{dn_2}{dt} &= -B_{21}N_2u(\nu_{12})-A_{21}N_2 + B_{12}N_1u(\nu_{12})
+\end{align}
+\subsection{Relations entre les coefficients d'Einstein}
+
+Voir P. Olive p786. Dire deux choses :
+\begin{itemize}
+    \item on se place en régime stationnaire,
+    \item le système \{N atomes\} est placé dans un milieu thermostaté à T quelconque baignant dans le rayonnement d'équilibre à cette température.
+\end{itemize}
+La proba d'occupation des deux niveaux à l'équilibre est donnée par la loi de Boltzmann $n_i=\frac{N_i}{N}=e^{\frac{E_i}{k_BT}}$. Le rapport $\frac{N_1}{N_2}=e^{\frac{E_2-E_1}{k_BT}}=e^{\frac{h\nu_{12}}{k_BT}}$.\\
+En prenant un rayonnement électromagnétique de type corps noir : $u(\nu_{12})=\frac{8\pi h\nu_{12}^3}{c^3}$
 
 \subsection{Processus de transfert d'énergie}
-La puissance transférée de l'atome vers le champ $P_{at\rightarrow ch}=-h\nu_0\frac{dn_b}{dt} = h\nu_0B(n_b-n_a)u(\nu_0)$. On distingue alors deux régimes : 
+La puissance transférée de l'atome vers le champ $P_{at\rightarrow ch}=-h\nu_0\frac{dn_2}{dt} = h\nu_0B(n_2-n_1)u(\nu_0)$. On distingue alors deux régimes : 
 \begin{itemize}
-    \item Si $n_a>n_b$, $P_{at\rightarrow ch}<0$ $\longrightarrow$ Absorbtion
-    \item Si $n_a<n_b$, $P_{at\rightarrow ch}>0$ $\longrightarrow$ Inversion de population
+    \item Si $n_1>n_2$, $P_{at\rightarrow ch}<0$ $\longrightarrow$ Absorbtion
+    \item Si $n_1<n_2$, $P_{at\rightarrow ch}>0$ $\longrightarrow$ Inversion de population
 \end{itemize}
 
-Initialement $n_a=1$,$n_b=0$ : 
+Initialement $n_1=1$,$n_2=0$ : 
 \begin{itemize}
-    \item $n_a(\infty) = \frac{A + Bu(\nu_0)}{A + 2Bu(\nu_0)}$
-    \item $n_b(\infty) = \frac{Bu(\nu_0)}{A + 2Bu(\nu_0)}$
+    \item $n_1(\infty) = \frac{A + Bu(\nu_0)}{A + 2Bu(\nu_0)}$
+    \item $n_2(\infty) = \frac{Bu(\nu_0)}{A + 2Bu(\nu_0)}$
 \end{itemize}
+
+\section{Application au laser}
+\subsection{Principe}
+Parler de 
+
+\subsection{Modèle à 4 niveaux d'énergie : le laser de TP He-Ne}
+
 
 \section*{Conclusion}
 Modèle de l'électron élastiquement lié qui prédit l'absorption électromagnétique de la matière et le rayonnement dipolaire ?

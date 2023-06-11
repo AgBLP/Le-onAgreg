@@ -1,0 +1,126 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Cinématique relativiste. Expérience de Michelson et Morlay}
+    \label{LP_CinematiqueRelativiste}
+\end{headerBlock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+  Relativité & C. Semay & Dunod & \\
+  \hline
+  La relativité & A. Einstein & Payot & \\
+  \hline
+  Relativité et Invariance - Fondements et applications & J.-P. Pérez & Dunod & \\
+  \hline
+  Relativité Restreinte (exos) & Y. Simon & Armand Colin & \\
+  \hline
+  Mécanique 1 (Chap 1) & BFR & Dunod (1984) & \\
+  \hline
+  \url{http://blog.ac-versailles.fr/profbcasanova/public/TS4_phychim/P8_muons-2014.pdf} & & & \\
+  \hline
+  Mécanique 1 (Chap 15) & H. Gié et J.-P. Sarmant & Tec\&Doc (1984) & \\
+\end{tabularx}
+\end{center}
+
+\begin{reportBlock}{Commentaires des années précédentes :}
+    \begin{itemize}
+        \item \textbf{2016 :} Les notions d’événement et d’invariant sont incontournables dans cette leçon,
+        \item \textbf{2015 :} Le jury rappelle qu’il n’est pas forcément nécessaire de mettre en \oe uvre des vitesses relativistes pour être capable de détecter et de mesurer des effets relativistes,
+        \item \textbf{2014 :} Cette leçon exige une grande rigueur dans l’exposé tant sur les notions fondamentales de relativité restreinte que sur les référentiels en jeu. Elle invite les candidats à faire preuve d’une grande pédagogie pour présenter des notions a priori non intuitives et faire ressortir les limites de l’approche classique. Un exposé clair des notions d’invariant relativiste est attendu.
+    \end{itemize}
+\end{reportBlock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{reportBlock}{Plan détaillé}
+  \textbf{Niveau choisi pour la leçon :} Licence 3
+  \newline
+  \textbf{Prérequis : }
+  \begin{itemize}
+      \item référentiel galiléen, équations de la mécanique classique
+      \item Equations de Maxwell,
+      \item algèbre matriciel,
+      \item interféromètre de Michelson
+  \end{itemize}
+
+\section*{Introduction}
+
+\section{Emergence de la relativité restreinte}
+
+\subsection{Retour sur le postulat de la mécanique classique}
+Voir Semay p8. \textcolor{red}{Postulat fondamental :} les lois de la mécanique sont identiques dans tous les référentiels galiléens (ou d'inertie, ou inertiels).\\
+Pour qu'on puisse dire des choses sur un même évènement physique se plaçant dans deux référentiels galiléens différents, il y a des règles qui doivent satisfaire ce postulat qu'on appelle transformations de galilée. Faire le schéma de deux référentiels en translation, puis si on prends les horloges des deux référentiels qui marquent l'instant 0 au moment où les axes des deux référeniels sont confondus :
+\begin{align}
+    x &= x'+Vt' \\
+    y &= y' \\
+    z &= z' \\
+    t &= t'
+\end{align}
+Ces relations s'inversent en remplaçant v par -v. Le temps est considéré comme absolu : il s'écoule de la même manière quelque soit les observateurs et leur état de mouvement. Si deux évènements séparés par $\Delta r$ dans l'espace et $\Delta t$ dans le temps, sont simultanés (t$_1$=t$_2$), alors $\Delta r =\Delta r'$ donc $\Delta r$ est \textcolor{green}{un invariant}.\\
+On obtient la loi de composition des vitesses en dérivant (1) par rapport au temps (si dt=dt') :
+\begin{equation}
+    v_{R} = v_{R'} + V
+\end{equation}
+
+\textcolor{red}{Transition :} De même, la lumière est une onde électromagnétique qui se déplace à la vitesse $c=\frac{1}{\sqrt{\mu_0\epsilon_0}}$ et donc normalement doit satisfaire les règles de compositions des vitesses d'après la mécanique. On va voir justement que ce n'est pas vérifié expérimentalement.
+
+\subsection{Expérience de Michelson et Morlay}
+Voir Semay p10. Au XIXème siècle, les physiciens (Fresnel en particulier, savaient que les ondes devaient de propager dans un support matériel. Ils pensaient que les ondes lumineuses se propageaient dans un support appelé éther. Les équations de Maxwell ne sont donc que valables dans un référentiel de l'éther (voir démo p11-12 Pérez). \\
+En 1881, Albert Michelson (français) et Edward Morley (américain) contruisent un interféromètre pour mesurer la vitesse de l'éther. Ils vont supposer que la Terre est en mouvement de translation à la vitesse $V_{Terre/ether}=V=30km/s$ et que la vitesse de la lumière est constante par rapport à l'éther. La mesure de la vitesse de la lumière dans le référentiel terrestre doit donner des valeurs différentes suivant l'orientation de la vitesse de la Terre par rapport à l'éther qu'on peut mesurer par interférométrie : construction de l'interféromètre de Michelson.\\
+
+Faire schéma dans un bras puis dans l'autre sur slide. Faire les calculs (voir Semay p12-13). \\
+
+
+Montrer les résultats de l'expérience de Michelson et Morlay (Michelson et Morlay, 1887). Voir site L. Le Guillou. Les traits en pointillés = 1/8 du déplacement théoriques attendu, la courbe du haut = observation à midi et la courbe du bas les observations pendant la nuit.
+
+\subsection{Postulat d'Einstein}
+Voir Semay p14. \begin{enumerate}
+    \item Tous les référentiels galiléens sont équivalents, la formulation des lois de la physique doit être la même dans tous ces référentiels,
+    \item le module de la vitesse de la lumière dans le vide est indépendant de l'état du mouvement de la source,
+\end{enumerate}
+Conséquence sur l'expérience de Michelson et Morlay : si la vitesse de la lumière reste constante, $t_1=t_3$ et $t_2=t_4$ donc $\Delta T=0$, les franges ne se décalent pas.\\
+
+\textcolor{red}{Transition :} quelles sont les nouvelles transformations pour passer d'un référentiel à un autre si celles de galilée ne sont pas les bonnes ? C'est ce que nous allons voir dans la suite.
+
+\section{Changement de référentiel relativiste}
+
+\subsection{Evènements}
+Voir Semay p22. 
+
+\subsection{Transformation de Lorentz}
+oir Pérez p21. Balancer directement la transformation de lorentz entre deux référentiels se translatant à la vitesse $V=V\mathbf{u_x}$ :
+\begin{align}
+    ct &= \gamma(ct'+\beta x') \\
+    x &= \gamma(x' +\beta ct') \\
+    y &= y' \\
+    z &= z' \\
+\end{align}
+où on a introduit le facteur $\gamma = \frac{1}{\sqrt{1-(v^2/c^2)}}$. Tracer $\gamma$ en fonction de v par exemple sur Python. 
+Plusieurs remarques : 
+\begin{itemize}
+    \item on voit que le temps est relatif ! On définit le temps propre d'un objet le temps qui s'écoule dans le référentiel dans lequel cet objet est au repos,
+    \item On peut retrouver dans la limite non relativiste $\beta<<1$ que $\gamma\sim1$ qu'on retrouve bien les transformations de Galilée.
+\end{itemize}
+
+\textcolor{red}{Transition :} on a vu que $\Delta r$ était un invariant pour les transfortions de Galilée, or $dt\ne dt'$ maintenant avec Einstein. Quel est donc le nouvel invariant pour les transfromations de Lorentz ?
+
+\subsection{Intervalle d'espace-temps}
+Voir Pérez p27-28 ou poly L. Le Guillou.\\
+
+Faire une approche graphique voir Semay p34-35. 
+
+\section{Conséquences physiques}
+
+\subsection{Dilatation du temps}
+Faire une approche 
+\textcolor{blue}{Expérience :} utilisaion du programme Gum\_C pour la détermination de $\gamma$ des muons d'après l'expérience de Frish et Smith.
+\subsection{Contraction des longueurs}
+
+\end{reportBlock}

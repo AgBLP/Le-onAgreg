@@ -21,6 +21,11 @@
   \hline 
    \url{https://www.lpens.ens.psl.eu/wp-content/uploads/2022/09/MecaniquePourChimistes-3.pdf} & Jules Fillette & &  \\
   \hline 
+  Physique PSI/PSI* & Pascal Olive & Ellipses (2022) & \\
+  \hline
+  Mécanique : Fondement et applications & J.P. Pérez & Dunod (2014) & \\
+  \hline
+  
 \end{tabularx}
 \end{center}
 
@@ -39,8 +44,10 @@
   \textbf{Niveau choisi pour la leçon :} CPGE 2ème année
   \newline
   \textbf{Prérequis} : \begin{itemize}
-      \item TMC,
-      \item Electrocinétique : schéma électrique, loi des mailles, résistance, condensateur, inductance
+      \item Mécanique newtonienne : TMC, énergie mécanique,
+      \item Electrocinétique : schéma électrique, loi des mailles, résistance, condensateur, inductance,
+      \item calcul fonction de transfert du filtre de Wien
+      \item équation du second ordre avec amortissement, facteur de qualité, régime apériodique, critique, pseudo-périodique
   \end{itemize}
 
   \textbf{Déroulé détaillé de la leçon: }  
@@ -48,36 +55,61 @@
   \section*{Introduction}
 Messages à faire passer : définition d'un portait de phase, portait de phase amorti/non-amorti, stabilité des points fixes, centres attracteurs.\\
 
-Le notion de portait de phase est un outil très riche pour l'analyse de nombreux systèmes mécaniques, en particulier pour les oscillateurs. C'est que nous allons essayer de montrer dans cette leçon à travers quelques exemples.
+Le notion de portait de phase est un outil très riche pour l'analyse de nombreux systèmes mécaniques, en particulier pour les oscillateurs. C'est que nous allons essayer de montrer dans cette leçon à travers quelques exemples. On va commencer par un exemple très simple.
 
-  \section{Oscillateurs non-amortis}
+  \section{Oscillateurs harmoniques}
   On va s'intéresser à des systèmes mécaniques ou électrocinétiques dont on va dans un premier temps négliger les phénomènes de dissipation. On va commencer par prendre l'exemple très simple du pendule pesant.
   \subsection{Equation du mouvement d'un pendule pesant}
   Exemple de la physique : pendule simple à petites oscillations. On applique le théorème du moment cinétique appliqué à la masse $m$ dans le référentiel terrestre qu'on suppose galiléen :
   \begin{equation}
      \frac{d\mathbf{L_O}(M)}{dt} = mL^2\ddot{\theta}\mathbf{\hat{u_z}} = \mathbf{M_O}(\mathbf{P}) = -mgLsin(\theta)\mathbf{\hat{u_z}}
   \end{equation}
-  On en déduit l'équation d'un oscillateur harmonique de pulsation propre $\omega_0=\sqrt{\frac{g}{L}}$ :
+  On en déduit l'équation d'un oscillateur de pulsation propre $\omega_0=\sqrt{\frac{g}{L}}$ :
   \begin{equation}
       \ddot{\theta} + \omega_0^2\sin(\theta) = 0
   \end{equation}
-  \textbf{Analogies :} courant dans un circuit LC suit la même équation.
+  Pour des petites oscillations ($\theta<<1=60\degree$), on a :
+  \begin{equation}
+      \ddot{\theta} + \omega_0^2\theta = 0
+  \end{equation}
+  On trouve l'équation d'un oscillateur harmonique. Tout oscillateur harmonique est régi par la même équation. \textbf{Analogies :} masse accrochée à un ressort sans frottements, l'évolution temporelle de la charge d'un condensateur d'un circuit LC. 
   \subsection{Portrait de phase}
-  Définition d'un portait de phase pour le pendule pesant.
-  \subsection{Approche énergétique}
-  Parler de stabilité, conservation de l'énergie mécanique.  
+  Voir BUP. \textcolor{green}{Définition :} pour un système dont l’évolution au cours du temps t est décrit par la fonction à valeurs réelles x(t), on appelle trajectoire de phase une représentation géométrique cartésienne dans laquelle on reporte les positions au cours du temps t d’un point représentatif M d’abscisse x et d’ordonnée $\frac{dx}{dt}$.\\
+  Portrait de phase pour l'oscillateur harmonique : 
+  \begin{align}
+      \theta(t) &= \theta_0\cos(\omega_0t) \\
+      \dot{\theta}(t) &= -\theta_0\omega_0\sin(\omega_0t) \\
+      \left(\frac{\dot{\theta}(t)}{\omega_0}\right)^2 + \theta(t)^2 &= \theta_0^2
+  \end{align}
+  Toutes les trajectoires dans le portait de phase ($(\frac{\dot{\theta}(t)}{\omega_0},\theta(t))$) du pendule pesant (et en général d'un oscillateur harmonique dont la variable est x(t)) sont des cercles concentriques de rayon $\theta_0$ qui dépendent des donc conditions initiales. A une CI correspond une trajectoire de phase.
+  
+  \textcolor{red}{Transition :} Que se passe-t'il si on n'est plus dans l'approximation des petits angles ? On va voir qu'il y a des effets non linéaires qui apparaissent et que cela change le portait de phase du système.
 
   \section{Effets non linéaires}
-  Formule de borda pendule.\\
   \subsection{Etude des effets non linéaires du pendule pesant}
-  Faire une acquisition à grand angle. Parler pendant l'acquisition du programme bordaThomas.ipynb
+  Voir Pérez p170 pour un calcul simple. Montrer que la période dépend de l'amplitude des oscillations.\\
+  \textcolor{blue}{Manip quantitative :} mettre en évidence non linéarités. Faire une acquisition à grand angle. Parler pendant l'acquisition du programme bordaThomas.ipynb (ou alors faire simple et prendre les points à la main et puis Qutiplot, mais réfléchir aux incertitudes).\\
+  Il y a un enrichissement spectral (voir Duffait/livre d'expérience agreg).
 
-  \section{Bifurcation}
-  \subsection{}
+  \subsection{Portait de phase de l'oscillateur anharmonique}
+  Montrer sur Python la simulation puis sur slide si on trace pleins de portait de phase.\\
+  En vérifiant sur un document graphique le caractère cyclique d’une trajectoire de phase, on dispose d’un test du caractère périodique de l’évolution beaucoup plus précis que l’observation de l’allure de la représentation x(t).
+  
+  \subsection{Approche énergétique (peut sauter)}
+  Montrer qu'il y a conservation de l'énergie mécanique, toutes les trajectoires fermées ou cycliques dans un portait de phase expriment la conservation de l'énergie mécanique du système !\\
+
+  \textcolor{red}{Transition :} on a vu dans l'expérience qu'il y a avait un amortissement dû principalement aux frottements de l'air sur le pendule. On va modéliser cela dans la partie suivante et montrer le portrait de phase associé.
+  
+  \section{Oscillateurs amortis et amplifié}
+  
+  \subsection{Oscillateurs amortis}
+  Donner l'équation. Montrer le portait de phase associé sous python ou sur slide (voir BUP). Définir un centre attracteur.\\
+  
+  \subsection{Oscillateurs entretenus : exemple du pont de Wien}
+  Voir Pascal Olive p204.
   \section*{Conclusion}
-  Ouvrir sur les oscillateurs entretenus ? Van der Pol, résistance négative,
+  Ouvrir sur les oscillateurs paramétriques ? Van der Pol, résistance négative, transition vers le chaos ?
 
-  \textcolor{blue}{Manip quanti :} mettre en évidence non linéarités, déterminer formule de Borda.
   
 
 

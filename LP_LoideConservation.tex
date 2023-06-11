@@ -18,6 +18,8 @@
   \hline
   Mécanique 2ème année & H. Gié et J.-P. Sarmant & Tec\&Doc (1996) & \\
   \hline
+  Mécanique PCSI-MPSI & P. Brasselet & PUF (2000) & \\
+  \hline
 \end{tabularx}
 \end{center}
 
@@ -51,33 +53,41 @@ En mécanique, nous connaissons trois lois d'évolution :
     \item le \underline{\textbf{théorème de la puissance mécanique :}} $\frac{dE_m}{dt}=\sum_{i}P_i$.
 \end{enumerate}
 
-\textcolor{red}{Transition :}Les termes $\sum_{i}\mathbf{F_i}$, $\sum_{i}\mathbf{M_{O,i}}$ et $\sum_{i}P_i$ jouent le rôle de \textit{sources} pour les grandeurs $\mathbf{p}$. On va s'intéresser aux relations de conservation qui découlent de l'annulation de ces sources 
+\textcolor{red}{Transition :}Les termes $\sum_{i}\mathbf{F_i}$, $\sum_{i}\mathbf{M_{O,i}}$ et $\sum_{i}P_i$ jouent le rôle de \textit{sources} pour les grandeurs $\mathbf{p}$, $L_O$ et $E_m$ . On va s'intéresser aux relations de conservation qui découlent de l'annulation de ces termes de sources 
 
 \section{Conservation de la quantité de mouvement}
 
 \subsection{Système isolé}
-\textcolor{green}{Définition :} Système fermé qui ne subit aucune action extérieure. \\
-En pratique cela n'arrive jamais car il y a toujours des forces gravitationnelles mais fondamental d'un point de vue conceptuel. L'Univers est par définition un système isolé donc tout sous-système A de l'Univers qui reçoit de la quantité de mouvement $\Delta \mathbf{P_A}$ d'un sous-système B avec lequel il intéragit, ce dernier a dû lui céder une quantité de mouvement $\Delta \mathbf{P_B}$ telle que :
+\textcolor{green}{Définition :} Système fermé qui ne subit aucune action extérieure donc $\forall i, \mathbf{F_i}=0$. \\
+
+En pratique cela n'arrive jamais car il y a toujours des forces gravitationnelles. Prenons un système isolé constitué de deux sous-système A et B. Si A intéragit avec B et reçoit de la quantité de mouvement $\Delta \mathbf{P_A}$ alors ce dernier a dû lui céder une quantité de mouvement $\Delta \mathbf{P_B}$ telle que :
 \begin{equation}
-    \Delta(\mathbf{P_A}+\mathbf{P_B}= 0 \Leftrightarrow \Delta\mathbf{P_A} = -\Delta\mathbf{P_B}
+    \Delta(\mathbf{P_A}+\mathbf{P_B})= 0 \Leftrightarrow \Delta\mathbf{P_A} = -\Delta\mathbf{P_B}
 \end{equation}
-Exemple de la diffusion de Rutherford où il y a un transfert de la quantité de mouvement.
+Voir Tec\&Doc 2ème année p110. Exemple de la diffusion de Rutherford où il y a un transfert de la quantité de mouvement. Déduire la norme de la vitesse de recul d'un atome.\\
+Ca se voit aussi avec le recul d'une arme à feu.
 \subsection{Système pseudo-isolé}
-\textcolor{green}{Définition :} un système est dit pseudo-isolé s'il est soumis à des actions extérieures qui se compensent c'est-à-dire dont la résultante $\mathbf{R}$ est nulle.
+\textcolor{green}{Définition :} un système est dit pseudo-isolé s'il est soumis à des actions extérieures qui se compensent c'est-à-dire dont la résultante $\mathbf{R}=\sum_i\mathbf{F_i}$ est nulle.\\
+
+Exemple : mobile placé sur coussin d'air.
 \subsection{Collision élastique}
 \textcolor{blue}{Expérience : }Conservation de $\mathbf{p}$ de mobiles autoporteurs.
 
+\section{Conservation de l'énergie}
+
+\subsection{Forces conservatives}
+Brasselet p71. \textcolor{green}{Définition :} une force est conservative si son travail entre deux positions quelconques ne dépend que de celles-ci et pas du chemin que le système a suivi entre ces deux points.\\
+L'exemple le plus parlant est la force de pensanteur dont le travail entre deux points d'altitude $z_1$ et $z_2$ s'écrit :
+\begin{equation}
+    W_{1\rightarrow2}=-mg(z_2-z_1) = E_{p2}-E_{p1}
+\end{equation}
+Brasselet p73. Par définition du gradient : $dE_p=\nabla E_p dr = -\delta W = -\mathbf{F}\cdot\mathbf{dr}$ donc $\mathbf{F}=-\nabla E_p$.
 \section{Conservation du moment cinétique}
 
 \subsection{TMC}
 \subsection{Système pseudo-isolé}
 \subsection{Cas d'une force centrale}
 
-\section{Conservation de l'énergie}
-
-\subsection{TEC}
-\subsection{Forces conservatives}
-\subsection{Cas du pendule simple}
 
 \section*{Conclusion}
 Ouverture sur les théorèmes de N\oe ther (Emmi N\oe ther, mathématicienne allemande (1882-1935):
