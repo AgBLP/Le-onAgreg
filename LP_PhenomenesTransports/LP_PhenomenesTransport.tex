@@ -1,0 +1,127 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Phénomènes de transport}
+    \label{LP_Transport}
+\end{headerBlock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+  Thermodynamique & BFR & Dunod (1989) & \\
+  \hline
+  Thermodynamique & Diu & & \\
+  \hline 
+  Tout-en-un PC/PC* & M.-N. Sanz & Dunod (2022) & \\
+  \hline 
+  Ondes mécaniques et diffusion & Christian Garing & Ellipses (1998) & \\
+  \hline
+\end{tabularx}
+\end{center}
+
+\begin{reportBlock}{Commentaires des années précédentes :}
+    \begin{itemize}
+        \item \textbf{2017 :} La leçon ne peut se limiter à la présentation d’un unique phénomène de transport
+        \item \textbf{2016 :} Les analogies et différences entre les phénomènes de transport doivent être soulignées tout en évitant de dresser un simple catalogue,
+        \item \textbf{2015 :} Les liens et les limites des analogies entre divers domaines doivent être connus
+    \end{itemize}
+\end{reportBlock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{reportBlock}{Plan détaillé}
+  \textbf{Niveau choisi pour la leçon :} Prépa deuxième année
+  \newline
+  \textbf{Prérequis : }
+  \newline
+
+\section*{Introduction}
+Les principes de la thermodynamique utilisent la notion de fonction d'état qui permettent de décrire les transformations entre deux états d'équilibre sans se soucier du chemin qu'emprunte le système au cours de cette transformation. On va ici lever l'hypothèse de l'équilibre thermodynamique et on va s'intéresser à décrire le transport de quantité physiques comme la quantité de matière ou la température par exemple avant que le système atteigne macroscopiquement son équilibre ou qu'on lui impose des conditions aux limites.\\
+
+\textcolor{blue}{Manip qualitative :} Mettre une goutte de sirop coloré dans de l'eau.\\
+
+\textcolor{blue}{Expérience qualitative :} Barreau  chauffé + caméra thermique.
+
+\section{Equilibre thermodynamique local (max 10min)}
+
+\subsection{Système hors équilibre}
+Cf Sanz Dunod p120. En première année, on définit 3 échelles de longueur :
+\begin{itemize}
+    \item échelle microscopique : taille caractéristique $\delta$ = distance moyenne entre deux particules pour liquide/solide, libre parcours moyen pour un gaz
+    \item échelle macroscopique : taille L typique de système étudié
+    \item échelle mésoscopique : échelle intermédiaire de taille $d$ telle que $\delta<<d<<L$.
+\end{itemize}
+Interpréter les expériences avec ces 3 trois échelles. La température de l'eau fait chauffer les barreaux, il y a un gradient de température qui se fait de la zone la plus chaude à la zone la plus froide. De même, il y a une propagation des molécules de sirop des zones de forte à faible concentration de ces molécules. \\
+
+La température n'est pas la même sur toute la longueur des barreaux comme la densité de molécules dans le verre d'eau. Cependant on peut quand même définir sur des zones de faibles épaisseurs (faibles devant l'échelle de variation caractéristique de la température du barreau, ici par exemple une ligne horizontale de pixels) les variables d'états de la thermodynamique (température, pression, densité de particule, ...).
+
+\subsection{Equilibre thermodynamique local}
+Décrire des volumes mésoscopiques dans un volume macroscopique. D'après Diu p464 : \textcolor{green}{slide :} "lors d'un processus hors équilibre, il y a équilibre thermodynamique local si tout sous-système macroscopique infinitésimal (ou volume mésoscopique) peut-être regardé comme ayant atteint l'équilibre thermodynamique ". Une variable d'état $Y$ peut donc être définie localement $Y(M,t)$ en un point M du système macro, à l'instant t. Hypothèse valable si le déséquilibre \og n'est pas trop \fg c'est-à-dire :
+\begin{itemize}
+    \item l'équilibre thermo local règne partout dans le système,
+    \item les écarts à l'équilibre sont suffisament faible pour qu'on puisse les traiter au premier ordre : \textcolor{red}{approximation linéaire}
+\end{itemize}
+
+Comment peux-t'on décrire physiquement la variation des variables d'états ? 
+
+\subsection{Flux et courants}
+\textcolor{green}{Définition :} Le flux, noté $\Phi(t)$, il s'agit d'un débit (de particules, d'énergie, de charges, ...) à travers une surface $\mathcal{S}$ à l'instant t. Il est relié au vecteur densité de courant $\mathbf{j}$ dont le flux (au sens mathématique) à travers cette surface est :
+\begin{equation}
+    \Phi = \iint_{M\in\mathcal{S}}\mathbf{j}\cdot d\mathbf{S_M}
+\end{equation}
+Note : c'est une grandeur algébrique, positive si le courant rentre dans le système, négative s'il sort.\\
+
+\textbf{Transition :} Maintenant qu'on a décrit le cadre physique pour décrire un phénomène de transport, on va l'appliquer dans un cas précis. J'ai choisi dans cette leçon de traiter le phénomène de diffusion de particules (le sirop dans l'eau).
+
+\section{Diffusion de particules}
+
+\subsection{Loi de conservation}
+Sans production ou disparition de particules, faire un bilan :
+\begin{itemize}
+    \item soit global p94 Dunod 2016 et utiliser le théorème de Green-Ostrogradsky pour avoir la loi locale
+    \item soit local à une dimension proprement (de préférence)
+\end{itemize}
+Expliquer qu'on décrit le transport de grandeurs \textbf{extensives et conservées}.
+
+\subsection{Loi de Fick (1855)}
+On a (comme pour le courant de charge en électromag) :
+\begin{equation}
+    \mathbf{j}(M,t) = n(M,t)\mathbf{v}(M,t)
+\end{equation}
+Problème, on retrouve avec une équation pour 4 inconnues (n, $j_x$, $j_y$ et $j_z$). Il manque une équation vectorielle. Enoncer la loi phénoménologique de Fick qui se constate expérimentalement :
+\begin{equation}
+    \mathbf{j}(M,t) = -D\grad{n(M,t)}
+\end{equation}
+avec $D$ le coefficient de diffusion (en m$^2$.s$^{-1}$). On note le signe \og - \fg~ devant le gradient qui s'explique naturellement par les expériences du début.\\
+
+Donner le tableau odg (\textcolor{blue}{slide}) cf Dunod p96.\\
+
+
+\subsection{Equation de diffusion}
+(Démo possible p533 Diu)
+On trouve : 
+\begin{equation}
+    \partialD{n}{t} = D\partialD{^2n}{x^2}
+\end{equation}
+$t\longleftrightarrow -t$ change l'équation : irréversibilité du phénomène de diffusion (déjà présent dans la loi de Fick).\\
+Analogie : effet de peau dans un conducteur (équation de Maxwell-Ampère dans un plasma), diffusion de la quantité de mouvement et de vorticité au sein des fluides visqueux (faible nombre de Reynold).
+
+\subsection{Mesures du coefficient de diffusion eau-glycérol}
+Cf calcul compo 2002 agrégation standard partie D p14.
+
+\subsection{Interprétation microscopique de la diffusion de particule (bonus)}
+Cf Christian Garing p228-229 + code Python pour la diffusion p101 Dunod.
+
+\section{Correspondance avec d'autres phénomènes de diffusion}
+
+Faire un tableau. Critiquer loi d'Ohm qui provient d'une interaction des charges à longue portée, pas d'un mouvement brownien.
+
+\section*{Conclusion}
+Ouvrir sur le transport de plusieurs grandeurs couplées (effets thermoélectriques mais c'est chaud voir p515-521 Diu)
+\end{reportBlock}

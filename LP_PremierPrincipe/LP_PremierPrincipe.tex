@@ -1,0 +1,194 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+    \chapter{Premier principe de la thermodynamique}
+    \label{LP_PremierPrincipe}
+\end{headerBlock}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+ Physique Tout en 1 MPSI PTSI & Bernard Salamito et al.  & Dunod &    \\
+  \hline 
+ Thermodynamique 1ère année MPSI-PCSI-PTSI & Jean-Marie Brébec  & H Prépa (Hachette Supérieur)  &    \\
+  \hline 
+ Thermodynamique & B. Diu & Hermann (2007) &  \\
+  \hline 
+ &   &   &    \\
+  \hline
+\end{tabularx}
+\end{center}
+
+\begin{reportBlock}{Commentaires des années précédentes :}
+    \begin{itemize}
+        \item \textbf{2017 :} Des exemples concrets d’utilisation du premier principe de la thermodynamique sont attendus,
+        \item \textbf{2016 :} La notion d’équilibre thermodynamique n’est pas toujours bien comprise. Des exemples pertinents doivent être utilisés pour mettre en exergue l’intérêt du premier principe, y compris pour l’introduire
+        \item \textbf{2015 :} Cette leçon peut être traitée à des niveaux très divers. L’intérêt fondamental des lois de conservation et leur origine doivent être connus et la leçon ne doit pas se limiter à une succession d’applications au cours desquelles les lois de conservation se résument à une propriété anecdotique du problème considéré.
+    \end{itemize}
+\end{reportBlock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Plan
+\begin{reportBlock}{Plan détaillé}
+  \textbf{Niveau choisi pour la leçon :} 1ère année de CPGE
+  \newline
+  \textbf{Prérequis :} Système thermodynamique fermé ; Transformation thermodynamique quasi-statique ; Fonctions d'état ; Equilibre thermodynamique ; Energies cinétique et potentielles, Travail d'une force 
+  \newline
+  
+  \textbf{Déroulé détaillé de la leçon: }   \newline
+  
+  \section*{Introduction (3min)}
+ La thermodynamique classique est une branche de la physique qui s'intéresse aux propriétés macroscopiques d'un système, et qui étudie les transformations de la matière et les échanges d'énergie sous différentes formes entre ce système et son environnement sans chercher à comprendre ce qui se passe au niveau microscopique. C'est une théorie axiomatique basée sur principalement sur deux principes.\\
+  Animation : https://phet.colorado.edu/sims/html/energy-forms-and-changes/latest/energy-forms-and-changes\_en.html. Pour un système isolé (ni échange d'énergie, ni échange de matière avec l'extérieur), l'énergie ne se créé pas et ne disparaît pas, mais elle se transforme d'une forme à une autre : Ex animation : conversion énergie mécanique-électrique, électrique-thermique. \\
+  Si le système est isolé, il y a conservation de l'énergie.  \\
+  Leçon placée en 1re année CPGE. Review des prérequis.
+  
+  \section{Premier principe de la thermodynamique}
+  Système ($\Sigma$) fermé.
+  
+  \subsection{Enoncé} Il existe une fonction d'état extensive \textbf{U} appelée énergie interne, telle que : 
+  \begin{equation}
+      \Delta E = \Delta E_c + \Delta E_p + \Delta U = W + Q
+  \end{equation}
+  \textcolor{red}{Interprétation :}
+  \begin{itemize}
+  \item U : $\sum_{i} E_{c,micro} + E_{p,micro}$
+  \item $E_c$ : énergie cinétique macroscopique
+  \item $E_p$ : énergie potentielle macroscopique (ex : $E_p=mgz$)
+  \item $W$ : travail des forces macroscopiques extérieures non conservatives
+  \item $Q$ : transfert thermique (chaleur) dû à l'agitation thermique aléatoire des particules
+  \end{itemize}
+  $Q$ et $W$ deux modes de transferts d'énergie. Ils sont algébriques (comptés positivement si reçus par le système. \\
+  
+  \textcolor{red}{Conséquences : } Si système isolé : $\Delta E = 0$ (conservation de l'énergie). \\
+  
+  \textcolor{red}{Version infinitésimale : } $dE_c + dE_p + dU = \delta W + \delta Q$.
+  
+  \subsection{Travaux des forces de pression (11min30)}
+  Voir Diu p80. Schéma fluide contenu dans une paroi. Pression extérieure $P_e$ uniforme et constante. Système = {fluide + paroi}. Variation du volume total de $dV$ entre entre $t$ et $t+dt$. En $M$ déplacement de $\mathbf{dM}$. \\
+  Force apppliquée au système en un point $M$ : $\mathbf{dF}=-P_e\mathbf{dS}$. Travail asssocié $\delta^2 W = \mathbf{dF}\cdot\mathbf{dM} = -P_e \mathbf{dS}\cdot\mathbf{dM} = - P_e d^3 V$. Travail totale $\delta W$ s'obtient en sommant les travaux : $\delta^2 W$ $\delta W = -P_e dV$\\
+  
+  \underline{Si transformation quasi-statique et équilibre mécanique avec l'extérieur $P=P_e$} $\delta W = - p \ud V$ et $W = - \int_A^B p \ud V$ entre deux états $A$ et $B$.
+  
+ \subsection{Exemples de bilan d'énergie}
+ \subsubsection{Transformation isochore}
+ $dV=0$ d'où $W=0$ donc $\Delta U = Q$. Pour toute transformation isochore, la variation de l'énergie interne est dûe aux transferts thermiques avec l'extérieur.
+ 
+ \subsubsection{Transformation monobare et enthalpie}
+ $P_e=cste$ donc $W=-P_e(V_f-V_i)$ donc $\Delta U = Q + W$ donc $Q = \Delta U - W = [U_f +P_f V_f]-[U_i+P_iV_i] = H_f - H_i$.\\
+ On définit l'enthalpie $H=U+PV$.\\
+ 
+ \textcolor{red}{Premier Principe (transformation monobare):} $\Delta H = Q + W_{autre}$.
+
+ \textcolor{red}{Trasition :} Maintenant qu'on a décrit les outils permettant de décrire les transformations, on va voir quelques applications du premier principe. 
+ 
+  \section{Applications du premier principe (20min)}
+  \subsection{Définitions préliminaires}
+  \textcolor{red}{Capacité thermique à volume constant : } $C_V = (\frac{\partial{U}}{\partial{T}})_V \rightarrow c_V = \frac{C_V}{m}$. \\
+  \textcolor{red}{Capacité thermique à pression constante : } $C_P = (\frac{\partial{H}}{\partial{T}})_V \rightarrow c_P = \frac{C_P}{m}$. \\
+  
+  \subsection{Calorimétrie (24min)}
+  \textcolor{blue}{Manip quantitative : mesure de la capacité thermique d'un solide (fer, cuivre, laiton...)}. Pour cela, on a besoin de :
+  \begin{itemize}
+      \item deux vase dewar avec agitateur permettant d'homogénéiser le contenu,
+      \item de l'eau, une bouilloire,
+      \item un morceau de laiton/fer/cuivre de masse importante (m>100g),
+      \item deux thermocouples,
+      \item une balance
+  \end{itemize}
+  On peut remonter à la capacité calorifique. Pour le système \{eau+calorimètre+fer\}, on suppose la transformation monobare et adiabatique : $\Delta H = Q = 0$. Donc : $\Delta H = \Delta H_{eau} + \Delta H_{calo} + \Delta H_{fer} = c_{eau}\times m_{eau}\times \Delta T_{eau} + c_{eau}\times \mu \times \Delta T_{cal} + c_{fer}\times m_{fer}\times \Delta T_{fer}$.\\
+  $\mu =29(3)$ déterminé en préparation. Mesure des masses à la balance : $m_{eau}$ et $m_{fer}$ ; et mesure des températures au thermocouple : $T_{eau+cal}$ et $T_{fer}$ à l'état initial et  $T_f$ à l'état final.\\
+  On en déduit : $c_{fer}=\frac{c_{eau}(m_{eau}+\mu)(T_{eau+cal}-T_f)}{m_{fer}(T_f-T_i)}=1016\pm 184$~J.kg$^{-1}$.K$^{-1}$ à comparer à $c_{fer}=449$~J.kg$^{-1}$.K$^{-1}$.\\
+  
+  \subsection{Détente de Joule - Gay Lussac (38min)}
+  Deux enceintes séparées par un robinet. Une enceinte est remplie par un gaz, l'autre par un fluide. Ces enceintes sont calorifugées et avec des parois rigides. On ouvre le robinet. \\
+  Système = {gaz+vide+enceintes}. On a $\Delta U=0$. Si $U(T)$ (première loi de Joule) : $\Delta U = C_{V}\Delta T = 0$ donc transformation isotherme. \\
+  Cette expérience permet de vérifier si un gaz vérifie la première loi de Joule en mesurant la variation de température.
+  
+  \section*{Conclusion (40min)}
+  Dans cette leçon, on a parlé du premier principe qui est un principe de conservation de conservation. Ce principe est complété par le second principe, qui lui, est plutôt un principe d'évolution et qui porte sur le caractère réversible ou irréversible d'une transformation. Pour finir, ces principes et la thermodynamique classique en général a été formalisée plus tard par la mécanique statistique qui permet d'expliquer les résultats de la thermodynamiques en faisant le lien entre l'échelle microscopique et macroscopique.
+
+
+
+\end{reportBlock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Questions
+\begin{reportBlock}{Questions posées par l’enseignant (avec réponses)}
+  \textbf{C : Sur la vidéo, comment on fait conversion énergie mécanique et électrique ?}  \textcolor{purple}{Avec un alternateur : un aimant est entrainé par l'énergie mécanique qui créé un courant variable dans une bobine par induction. Exemple : une dynamo de bicyclette. Si pas de champs magnétiques préexistant, induction électromagnétique.} \newline
+  
+  \textbf{C : Dans l'énoncé du premier principe, quelles sont les particularités de A et B ?}  \textcolor{purple}{Ils sont à l'équilibre thermodynamique pour qu'on puisse leur défiir une énergie .} \newline
+  
+  \textbf{C : W est le travail des forces non conservatives ? Si je prends un piston qui est bloqué par un poids, il y a le poids dans W ? Si j'ajoute une force, ça agit sur E$_p$ par sur U (par exemple la force de Lorentz qui agit sur chaque particule ?}  \textcolor{purple}{Il est bien présent dans la partie gauche de l'équation. Si on le met à doite ça agit sur $E_p$ et on met un signe \og - \fg. C'est un peu indifférent de le mettre à droite où à gauche mais il ne faut pas le compter deux fois et mettre le bon signe. } \newline
+  
+  \textbf{C : De façon non ambigüe, peut-on mesurer une quantité de chaleur ou savor ce que c'est ?}  \textcolor{purple}{La chaleur ça sera toute la variation d'énergie sauf le travail des forces macroscopiques. On peut mesurer la variation d'énergie interne dans certaines conditions.} \newline
+  
+  \textbf{C :Si transfo quasi-statique, on peut faire $-P_edV$. Peut-on juste dire que la transformation est réversible ?}  \textcolor{purple}{Oui ça fonctionne mais dans la vie il n'existe pas de transformation réversible.} \newline
+  
+  \textbf{C : Définition de réversible ?}  \textcolor{purple}{On peut changer le sens et changeant infiniment peu les contraintes extérieures. On peut prendre l'exemple d'un piston où il y a des frottements pour la différence entre réversible et quasi-statique.} \newline
+  
+  \textbf{C : Dans la détente Joule Gay Lussac, est-ce que c'est important que l'enceinte soit vide ou remplie d'un gaz à pression plus faible par exemple ?}  \textcolor{purple}{Il faut juste faire attention à la définition du système. } \newline
+  
+  \textbf{C :Si on veut une variation de chaleur $\delta Q$ pour un fluide, quels sont les coefficients importants ?}  \textcolor{purple}{Il y a 6 variables calorimétriques importantes. Suivant le système, il faut prendre la dépendance en volume etc... On peut montrer qu'il n'y en a que deux d'indépendantes.} \newline
+  
+  \textbf{C :Différentes façon d'exprimer $\delta Q$ : $\delta Q = c_vdT + ldV = c_pdT + hdP = \lambda dP + \mu dV$. On peut montrer la relation entre pente adiabatique et pente isotherme. Quelle est la pente la plus importante entre une adiabatique ou une isotherme dans le diagramme (P,V) ? Calculer la pente pour une adiabatique et une isotherme ? }  \textcolor{purple}{Isotherme : $dT=0$ donc $\delta Q= ldV = hdP$. Adiabatique : $dV = -\frac{c_v}{l}dT$ et $dP = -\frac{c_p}{h}dT= \frac{c_pl}{hc_v}dV$.} \newline
+  
+  \textbf{C :Comment exprimer de manière générale $dP$ en fonction de $dT$ et $dV$ à partir d'une équation d'état ?}  \textcolor{purple}{$dT = (\frac{\partial{T}}{\partial{P}})_VdP + (\frac{\partial{d}T}{\partial{d}V})_VdV$. On en déduit } \newline
+  
+  \textbf{C :Dans le diagramme (P,V), on considère des transformations infinitésimales entre A et D (entre A et B : isochore, B et C : isobare, C et D : isotherme et entre D et A : isobare). Calculer la variation infinitésimale $\delta Q$ sur le cycle en commençant d'abord par les chemins A-B-C et A-D-C.}  \textcolor{purple}{Sur A-B-C : $\delta Q = \lambda dP + \mu dV$. Sur A-D-C, $\delta Q = c_pdT + hdP$. Donc sur le cycle : $\delta Q = -\delta W = \lambda dP + \mu dV - c_pdT - hdP$. } \newline
+  
+  
+\end{reportBlock}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Commentaires
+\begin{reportBlock}{Commentaires lors de la correction de la leçon}
+Très bonne leçon. Basile : je n'aurai pas du tout évoquer le terme chaleur.\\
+Pour l'expérience, on aurait pu faire l'inverse en faisant chauffer la barreau de fer et mettre de l'eau à température ambiante. Il y aurait peut-être moins de pertes.\\
+Tu as parlé moins vite et c'était mieux par rapport à la dernière fois.\\
+Pas de forces à longue portée pour que U soit extensive.
+
+
+\end{reportBlock}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Correction
+\begin{reportBlock}{Partie réservée au correcteur}
+  \textbf{Avis général sur la leçon (plan, contenu, etc.) :}
+  
+  
+  \textbf{Notions fondamentales à aborder, secondaires, délicates :}
+  
+  
+  \textbf{Expériences possibles (en particulier pour l'agrégation docteur) :}
+  
+  
+  \textbf{Bibliographie conseillée :}
+\end{reportBlock}
+
+
+\begin{reportBlock}{Partie réservée au correcteur}
+  \textbf{Avis général sur la leçon (plan, contenu, etc.) :}
+  
+  
+  \textbf{Notions fondamentales à aborder, secondaires, délicates :}
+  
+  
+  \textbf{Expériences possibles (en particulier pour l'agrégation docteur) :}
+  
+  
+  \textbf{Bibliographie conseillée :}
+\end{reportBlock}

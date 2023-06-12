@@ -1,0 +1,119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Effet tunnel. Application à la radioactivité alpha.}
+    \label{LP_EffetTunnel}
+\end{headerBlock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+  Tout-en-un PC/PC* & M.-N. Sanz & Dunod & \\
+  \hline
+  Leçons de Physique & Patrick Charmont & Dunod (2000) & \\
+  \hline
+  \url{https://cahier-de-prepa.fr/pc*-poincare/download?id=1007} & & & \\
+  \hline
+  \url{https://phet.colorado.edu/sims/cheerpj/quantum-tunneling/latest/quantum-tunneling.html?simulation=quantum-tunneling} & colorado.edu & Université du Colorado & \\
+  \hline
+  Les nouvelles microscopies & L. Aigouy & Belin & \\
+  \hline
+\end{tabularx}
+\end{center}
+
+\begin{reportBlock}{Commentaires des années précédentes :}
+    \begin{itemize}
+        \item \textbf{2017 :} Encore une fois, il ne s’agit pas de se limiter à des calculs. L’exposé doit présenter l’analyse d’applications pertinentes,
+        \item \textbf{2015 :} Trop de candidats pensent que l’effet tunnel est spécifique à la physique quantique,
+        \item \textbf{2013-2011 :} Dans le traitement de l’effet tunnel, les candidats perdent souvent trop de temps dans les calculs. Le jury invite les candidats à réfléchir à une présentation à la fois complète et concise sans oublier les commentaires physiques relatifs à la dérivation de la probabilité de transmission. Certains candidats choisissent d’aborder le cas de la désintégration alpha mais ne détaillent malheureusement pas le lien entre la probabilité de traversée d’une barrière et la durée de demi-vie de l’élément considéré. La justification des conditions aux limites est essentielle ! Le microscope à effet tunnel peut être un bon exemple d’application s’il est analysé avec soin (hauteur de la barrière, origine de la résolution transverse, ...).
+    \end{itemize}
+\end{reportBlock}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{reportBlock}{Plan détaillé}
+  \textbf{Niveau choisi pour la leçon :} 
+  \newline
+  \textbf{Prérequis : }
+  \begin{itemize}
+      \item Postulats de la mécanique quantique
+      \item Particule dans un puit de potentiel harmonique
+  \end{itemize}
+
+\section*{Introducion}
+Les lois de la mécanique quantique sont très différentes de la physique classique. Par exemple, du point de vue classique : si une particule voit un puit de potentiel, elle rebondit si elle n'a pas assez d'énergie. En revanche, la dualité onde-particule de la matière (introduite par de Broglie) va montrer quelques effets intéressants : l'aspect ondulatoire de la matière va permettre la transmission de la particule même si celle-ci possède une énergie inférieure au potentiel : c'est l'effet tunnel.
+
+\textcolor{red}{Décrire le modèle en disant ce qu'on}
+\section{Etats liés vs états de diffusion}
+\subsection{Fonction d'onde et équation de Schrodinger}
+
+Probabilité : $|\psi(x,t)|^2dx$ = probabilité de trouver la particule entre x et x+dx. Interprétation possible que si $\int_{-\infty}^{+\infty}|\psi(x,t)|^2dx=1$.\\
+
+Equation de Schrodinger : $i\hbar\partialD{\psi(x,t)}{t}=-\frac{\hbar^2}{2m}\partialD{^2\psi(x,t)}{x^2}+V(x)\psi(x,t)$\\
+
+Equation linéaire, on peut choisir $\psi = \chi(x)\exp\left(-\frac{iE}{h}t\right)$ avec le signe - dans l'exponentiel pour faire correspondre l'énergie de la particule.\\
+
+Energie = valeur propre de H, c'est ce qu'on cherche à résoudre tout le temps en mécanique quantique. 
+\begin{itemize}
+    \item Si V confinement $V\sim x^2$, alors E est quantifié. on a des \textbf{états liés}
+    \item Si V non confinement, E est continue et on a des \textbf{états de diffusion (ou libres)}
+\end{itemize}
+
+Etats de diffusion : ce sont les états qui vont nous intéresser pour l'effet tunnel. Comment les interpréter ?
+
+\subsection{Courant de probabilité}
+Introduire le courant de probabilité et la densité de proba : 
+\begin{itemize}
+    \item $\rho(x,t)=|\psi(x,t)|^2$ densité de proba
+    \item $\mathbf{j}(x,t)=\frac{\hbar}{2m}\left(\psi^*\partialD{\psi}{x}-(\partialD{\psi^*}{x})\psi\right)$, courant de probabilité
+\end{itemize}
+
+Dans le cas d'une onde plane (non intégrable): 
+\begin{itemize}
+    \item onde progressive : $\chi(x)=A\exp\left(ikx\right)$ et $\mathbf{j}(x,t)=\frac{\hbar k}{m}|A|^2\mathbf{e_x}$ courant de proba dans le sens $+\mathbf{e_x}$
+    \item onde régressive : $\chi(x)=A\exp\left(-ikx\right)$ et $\mathbf{j}(x,t)=\frac{\hbar k}{m}|A|^2\mathbf{e_x}$ courant de proba dans le sens $-\mathbf{e_x}$
+\end{itemize}
+Schrödinger : $\partialD{\rho}{t}+\nabla\cdot\mathbf{j}=0$ loi de conservation (démo p34 poly Jean Hare).
+
+\section{Effet tunnel : transmission}
+
+\subsection{Le puit carré modèle intégrable de la barrière de potentiel}
+Schéma du problème.\\
+\begin{itemize}
+    \item $E>V_0$ : état de diffusion, pas forcément super intéressant
+    \item $E<V_0$ : état de diffusion possible avec une certaine probabilité : c'est l'effet tunnel !
+\end{itemize}
+Calcul des fonctions d'ondes dans les zones 1, 2 et 3. Dire que $B_3$ s'annule car pas d'onde provenant de $+\infty$.\\
+
+Donner les conditions aux limites $x=0$ et $x=a$. On obtient 4 équations avec 5 inconnues.
+
+\subsection{Coefficients de réflexion et transmission}
+Cf Dunod p1252.
+
+\importantbox{Ne pas faire la résolution complète, ça prend beaucoup trop de temps et ce n'est pas intéressant}
+
+On trouve R et T, on verifie qu'on a bien R+T=1 (conservation de l'énergie). \\
+
+\textcolor{blue}{Manip qualitative : montrer logiciel colorado qu'il y a transmission.}
+
+\subsection{Approximation de la barrière épaisse}
+Trouver $\delta$, l'interpréter. Garder l'analogie avec réflexion totale frustrée (voir Aigouy p140) pour les questions.
+
+\section{Application à la radioactivité alpha}
+
+\subsection{Désintégration alpha}
+Découverte de la radioactivité. Montrer carte de la stabilité des noyaux. Radioactivité $\alpha$ = noyaux lourds.
+\subsection{Modèle de Gamow}
+\textcolor{blue}{Expérience :} Code python simulant Gamow (cf Alexandre).
+
+\subsection{Loi de Geiger-Nutall}
+\textcolor{blue}{Manip quanti/quali : faire regression $log(T_{1/2}) = \frac{A}{\sqrt{E}}+B$ en utilisant un tableau de données préconstruit.}
+
+\section*{Conclusion}
+
+
+\end{reportBlock}

@@ -1,0 +1,200 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% En-tête leçon
+\begin{headerBlock}
+  \chapter{Propagation guidée des ondes.}
+  \label{LP_PropagationGuidee} 
+\end{headerBlock}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Références
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | c | c |}
+  \hline
+  \rowcolor{gray!20}\multicolumn{4}{c}{Bibliographie de la leçon : } \\
+  \hline 
+  Titre & Auteurs & Editeur (année) & ISBN \\
+  \hline
+   Electromagnétisme & Pérez & Dunod & \\
+  \hline 
+   \url{http://www.etienne-thibierge.fr/agreg/ondes_poly_2015.pdf} & Etienne Thibierge & &    \\
+  \hline 
+   &  & &    \\
+  \hline 
+\end{tabularx}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{reportBlock}{Commentaires des années précédentes :}
+    \begin{itemize}
+        \item \textbf{2014 :} Les candidats doivent avoir réfléchi à la notion de vitesse de groupe et à son cadre d’utilisation,
+        \item \textbf{2013 :} Les notions de modes et de fréquence de coupure doivent être exposées. On peut envisager d’autres ondes que les ondes électromagnétiques,
+        \item \textbf{2010 :} La propagation guidée ne concerne pas les seules ondes électromagnétiques ou optiques. Il faut insister sur les conditions aux limites introduites par le dispositif de guidage.
+    \end{itemize}
+\end{reportBlock}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Plan
+\begin{reportBlock}{Plan détaillé}
+
+  \textbf{Niveau choisi pour la leçon :}
+  \newline
+  \textbf{Prérequis} : \begin{itemize}
+      \item propagation des ondes EM dans le vide, équations de Maxwell,
+      %\item Impédance d'un milieu
+      \item optique ondulatoire (conditions d'interférences)
+      \item optique géométrique : théorème de Malus, principe du retour inverse de la lumière
+  \end{itemize}
+
+  \textbf{Déroulé détaillé de la leçon: }  
+  
+  \section*{Introduction}
+  Pour transmettre une onde sphérique (sonore ou électromagnétique) à partir d'une source, on voit qu'il y a un problème car l'amplitude de l'onde varie en $1/r$ et la densité locale d'énergie de l'onde varie en $1/r^2$ par conservation de l'énergie. Si on veut transmettre une information, il faut donc soit une très grande puissance à l'entrée (dangereux et pas spécialement possible techniquement), soit être plus malin et guider l'onde jusqu'au récepteur. On va cependant voir qu'il existe quelques contraintes.
+  \textcolor{blue}{Expérience qualitative : deux émetteurs piézo avec ou sans tube.}
+
+  %\section{Propagation (partie qui peut sauter}
+  %\subsection{Champs couplés}
+  %\subsection{Impédance caractéristique}
+  %Montrer ce qui se passe si $Z=+\infty$, $Z=0$ et $Z=Z_c$.
+
+  %\section{Ondes TEM dans un câble coaxial}
+  
+  %\subsection{Equation des télégraphistes}
+  \section{Phénoménologie du guidage}
+  Ne pas passer trop de temps sur cette partie ($\sim$10min). Faire le dessin. On prend l'approche phénoménlogique du guidage d'ondes lumineuses dans la fibre optique.
+  
+  \subsection{Modèle de la fibre optique}
+  
+  Faire le schéma de la fibre optique tel que dans le poly de Thibierge. On regarde la propagation d'une onde plane monochromatique de longeur d'onde dans le vide $\lambda$\\
+  \textcolor{red}{Condition de guidage :} interférences constructives entre deux réflexions sucessives \textit{i.e.} que leur déphasage soit un multiple de $2\pi$.\\
+  
+  \subsection{Caractéristiques du guidage}
+  Après construction de $S_0$, $S_1$ et $S_2$, on obtient le déphasage entre l'onde issue de $S_0$ et celle issue de $S_2$ :
+  \begin{equation}
+      \Delta\phi = \frac{2\pi}{n_2\lambda}n_2S_2B - \frac{2\pi}{n_1\lambda}n_1S_0B = \frac{2\pi}{\lambda}S_2H
+  \end{equation}
+  d'après le principe de retour inverse + théorème de Malus. Comme $\sin{\theta}=\frac{S_2H}{2a}$ : 
+  \begin{equation}
+      \sin(\theta_p) = \frac{p\lambda}{2a}
+  \end{equation}
+  Les angles d'incidence qui permettent la propagation dans la fibre prennent des valeurs discrètes ! \textbf{$p$ désigne un mode de propagation dans la fibre}.\\
+
+  Tous les modes ne peuvent pas se propager :
+  \begin{equation}
+      sin(\theta_p)\leq 1 \Rightarrow \omega \geq p\frac{\pi c}{a} = \omega_{c,p}
+  \end{equation}
+  \textbf{Une pulsation de coupure basse fréquence est associée à chaque mode en dessous de laquelle il n'y a pas guidage}. \textbf{On peut donc guider uniquement des ondes dont les longueurs d'ondes sont inférieures à $2a\sim10^{-3}m$} : optique, infrarouge.\\
+  Application numérique : pour $\lambda=500nm$ et $a=1mm$, on peut avoir $p=4000$ modes de propagation dans la fibre.\\
+
+  Voir Houard p66. Parler de dispersion intermodale et intramodale ? En parler après si on a le temps.\\
+
+  \textcolor{red}{Pour les ondes de plus basses fréquences, on est obligé d'utiliser d'autres systèmes : fil conducteur pour les ondes BF ($<1$MHz), câbles coaxiaux pour les ondes HF ($<1$GHz). Pour les ondes centimétriques, on a besoin de guide d'ondes creux dont on va maintenant détailler la physique plus quantitativement que pour les ondes lumineuses.}
+  
+  \section{Propagation d'une onde centimétrique dans un guide}
+   Dans les câbles coaxiaux, il y a une importante atténuation des signaux pour les fréquences supérieures à 1 GHz. On utilise pour ces fréquences d'autres supports. On va s'intéresser dans cette partie à la possibilité qu'une onde électromagnétique puisse se propager dans un guide plan. 
+  \subsection{Modélisation idéalisée du guide plan}
+  Faire le schéma. Voici les hypothèses :
+  \begin{itemize}
+      \item L'étude de la propagation des ondes dans les milieux conducteurs montre qu'il existe une onde evanescente qui transporte de l'énergie hors du guide. Ici on va supposer les \textbf{conducteurs parfaits} pour supprimer les pertes et simplifier les calculs,
+      \item Le milieu entre les plaques est de l'air qu'on va idéaliser à du vide pour enlever les effets de dispersion qui n'est pas propre au guidage.
+  \end{itemize}
+  L'équation de propagation est celle des ondes dans le vide c'est-à-dire une équation de d'Alembert :
+  \begin{align}
+      \mathbf{\Delta E} &= \frac{1}{c^2}\partialD{\mathbf{E}}{t} \\
+      \mathbf{\Delta B} &= \frac{1}{c^2}\partialD{\mathbf{B}}{t}
+  \end{align}
+  En revanche, du fait de la présence du guide, les champs $\mathbf{E}$ et $\mathbf{B}$ doivent satisfaire les conditions aux limites à savoir la continuité de la composante tangentielle de $\mathbf{E}$ et la composante normale de $\mathbf{B}$ qui s'annulent aux deux faces :
+  \begin{align}
+      E_z(x=0)&=E_z(x=a)=0 & E_y(x=0)&=E_y(x=a)\\
+      B_x(x=0)&=0 & B_x(x=a)&=0
+  \end{align}
+  On va chercher des solutions qui se propagent dans la direction z du guide. Comme il y a également invariance par translation suivant $\mathbf{\hat{u_z}}$, on peut écrire les ondes comme :
+  \begin{align}
+      \mathbf{E} &= \mathbf{E_m}(x)e^{i(\omega t - k_zz)}\\
+      \mathbf{B} &= \mathbf{B_m}(x)e^{i(\omega t - k_zz)}
+  \end{align}
+  Remarquons qu'ici on n'a pas la structure d'onde plane car il y a une dépendance de l'amplitude de l'onde EM en x. On définit alors :
+  \begin{equation}
+      \lambda_g = \frac{2\pi}{k_z}
+  \end{equation}
+  la longueur d'onde de l'onde guidée.\\
+  On va également définir :
+  \begin{itemize}
+      \item les ondes transverses électriques TE qui sont reliées aux composantes $E_z$ et $E_y$ de l'onde dans le guide,
+      \item les ondes transverses magnétiques reliées aux composantes $B_y$ et $B_z$ de l'onde dans le guide
+  \end{itemize}
+  Ce sont les équations de Maxwell-Faraday et Maxwell-Ampère qui nous permettent de définir ces deux groupes d'ondes transverses. La linéarité des équations permettent d'étudier séparément ces deux groupes et d'obtenir l'ensemble des solutions par combinaison linéaire.\\
+
+  \textcolor{red}{On va regarder uniquement les ondes TE.}
+  
+  \subsection{Relation de dispersion des ondes TE dans le guide}
+  On cherche les solutions $\mathbf{E}$ sous la forme :
+  \begin{equation}
+      \mathbf{E} = (E_x(x)\mathbf{\hat{e}_x}+E_y(x)\mathbf{\hat{e}_y})e^{i(\omega t - k_zz)}
+  \end{equation}
+  Comme $\grad\cdot\mathbf{E} = \partialD{E_z}{z}=ik_zE_z=0$ donc $E_z=0$. En injectant cette solution dans l'équation de d'Alembert :
+  \begin{align}
+      \frac{d^2E_y}{dx^2} + \frac{d^2E_y}{dz^2} &= \frac{1}{c^2}\partialD{^2E_z}{t^2} \\
+       \frac{d^2E_y(x)}{dx^2} + (k^2-k_z^2)E_y(x) &=0
+  \end{align}
+  avec les conditions $E_y(0)=E_y(a)=0$. Il y a trois cas de figure :
+  \begin{enumerate}
+      \item Si $k^2-k_z^2<0$, on peut montrer qu'il n'y a pas de solutions qui se propagent avec les CL,
+      \item Si $k^2-k_z^2=0$, on a une solution affine qui est nulle avec les CL,
+      \item Si $k^2-k_z^2=k_x^2>0$, on la possibilité d'une solution qui se propage dans le guide.
+  \end{enumerate}
+
+  La solution s'écrit : 
+  \begin{equation}
+      E_y = Ae^{ik_xx}+Be^{-ik_xx}
+  \end{equation}
+  Les CL donnent :
+  \begin{align}
+      E_y(x=0)=0 &\Rightarrow A=-B \\
+      E_y(x=a)=0 &\Rightarrow k_x=p\frac{\pi}{a}
+  \end{align}
+  On a alors des modes de propagation des ondes TE comme pour la fibre. On notera ces mode TE$_{p}$. On a une relation de dispersion non linéaire entre $k_z=\frac{2\pi}{\lambda_g}$ et $\omega=2\pi\frac{c}{\lambda_0}$ qu'on peut écrire comme :
+  \begin{equation}
+      \lambda_g^2 = \frac{\lambda_0^2}{1-\left(\frac{\lambda_0}{\lambda_c}\right)^2}
+  \end{equation}
+  On a ici introduit une \textbf{fréquence de coupure} $\lambda_c=\frac{2a}{p}$. Si on envoie une onde de longueur d'onde $\lambda$, elle peut se propager dans des modes TE$_p$ si $\lambda_p\geq\lambda_c$. Le guide se comporte comme un filtre passe-haut.\\
+  
+  Si il n'y a que le mode TE$_1$ qui peut se propager, \textcolor{green}{le guide est monomode}. Si l'onde peu se propager dans plusieurs modes TE, le guide est dit \textcolor{green}{multimode}. \\
+  
+  \textbf{Remarque :} le milieu est dispersif non par rapport à sa nature (on a supposé que c'était du vide) mais par rapport à la géométrie du guide.\\
+
+  \textcolor{red}{Transition : je vous propose de vérifier cette relation dans le cadre du guide d'onde rectangulaire.}
+
+  \subsection{Relation de dispersion du mode TE$_1$ dans le guide rectangulaire}
+  \textcolor{green}{Sur slide : }Pour être rigoureux, on peut montrer qu'il y a des modes TE$_{p,q}$ qui peuvent se propager dans le guide du fait de deux interfaces. La relation de dispersion du guide rectangulaire de côté $a$ et $b$ pour ces modes est :
+  \begin{equation}
+      k^2 = k_z^2 + p^2\frac{\pi^2}{a^2}+q^2\frac{\pi^2}{b^2}
+  \end{equation}
+  Ce guide est monomode pour des pulsations ($a=22.860\pm0.046$~mm et $b=10$~mm :
+  \begin{align}
+      \left(\frac{\pi^2}{a^2}\right) &\leq \frac{\omega^2}{c^2} \leq \left(\frac{\pi^2}{a^2}\right) + \left(\frac{\pi^2}{b^2}\right) \\
+      6.56~GHz &\leq f \leq 16.4GHz 
+  \end{align}
+  Comme on dispose d'une diode Gunn pouvant produire des ondes allant de $8.2$~GHz à $10$~GHz, on ne peut propager que le mode TE$_{10}$ dont la relation de dispersion est donnée par l'équation (15.17).\\
+  
+  \textcolor{blue}{Expérience quantitative :} Vérification de la relation de dispersion dans un guide et mesure de la fréquence de propagation dans un guide d'onde (TP Onde 2).
+
+  \subsection{Vitesse de phase et vitesse de groupe}
+  Pour $p=1$ :
+  \begin{align}
+      v_{\phi} &= \frac{\omega}{k_z} = \frac{c}{1-\frac{\lambda_0^2}{\lambda_c^2}} \\
+  \end{align}
+  \textcolor{red}{Transition : On a vu la relation de dispersion des ondes dans le guide, on va voir plus en détail l'aspect expérimental du guide d'onde.}
+
+  \section{Aspect expérimental du guide d'onde}
+  Si on a le temps : parler des pertes, du ROS, de l'abbaque de Smith.
+  
+  \section*{Conclusion}
+
+  
+
+  
+  
+
+\end{reportBlock}
